@@ -1,6 +1,14 @@
 ---
-name: coordinator
-description: "Coordena os agentes pedagógicos do OpenCode, controlando dependências, sequência de execução e estado dos artefatos."
+description: "Coordena o fluxo pedagógico do OpenCode, delegando planejamento, escrita, auditoria e criação de questões."
+mode: primary
+permission:
+  read: allow
+  edit: allow
+  glob: allow
+  grep: allow
+  skill: allow
+  task:
+    "*": allow
 ---
 
 # Coordinator

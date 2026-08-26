@@ -1,6 +1,13 @@
 ---
-name: writer
 description: "Transforma a ementa pedagógica em material de estudo didático, coeso e orientado à resolução de questões."
+mode: subagent
+permission:
+  read: allow
+  edit: allow
+  glob: allow
+  grep: allow
+  skill: allow
+  task: deny
 ---
 
 # Writer

@@ -1,8 +1,14 @@
 ---
-name: note-writer
-description: "Define como transformar tópicos da ementa em notas de estudo claras, didáticas e adequadas ao Obsidian."
+description: "Cria questões de concurso, questões resolvidas e comentadas e simulados alinhados à ementa e ao conteúdo estudado."
+mode: subagent
+permission:
+  read: allow
+  edit: allow
+  glob: allow
+  grep: allow
+  skill: allow
+  task: deny
 ---
-
 # Note Writer
 
 ## Objetivo

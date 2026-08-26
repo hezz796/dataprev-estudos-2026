@@ -1,6 +1,13 @@
 ---
-name: pedagogical-reviewer
 description: "Analisa editais e constrói ementas pedagógicas ordenadas por pré-requisitos, do básico ao avançado."
+mode: subagent
+permission:
+  read: allow
+  edit: allow
+  glob: allow
+  grep: allow
+  skill: allow
+  task: deny
 ---
 
 # Pedagogical Reviewer
