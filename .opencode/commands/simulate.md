@@ -1,5 +1,5 @@
 ---
-description: "Cria um simulado com base no conteúdo já estudado."
+description: "Cria um simulado com base no conteúdo já estudado, revisando sua qualidade textual."
 agent: coordinator
 ---
 
@@ -9,26 +9,38 @@ Solicitação:
 
 $ARGUMENTS
 
-Antes de produzir:
+## Procedimento
 
 1. Verifique o escopo solicitado.
 2. Consulte a ementa.
-3. Identifique quais conteúdos já foram estudados.
-4. Não inclua conteúdo que viole os pré-requisitos.
-5. Defina a distribuição das questões.
-6. Acione o `question-author`.
-7. Produza o simulado conforme o escopo.
-8. Mantenha o gabarito separado das questões quando o objetivo for simulação.
-9. Salve o simulado em:
+3. Identifique os conteúdos já estudados.
+4. Verifique os pré-requisitos.
+5. Acione o `question-author`.
+6. Produza o simulado.
+7. Acione o `text-quality-reviewer`.
+8. Corrija problemas linguísticos ou de integridade textual.
+9. Valide o simulado.
+10. Salve em:
 
 vault/_questions/simulados/
 
-Ao final, informe:
+## Regras
+
+Não inclua:
+
+- conteúdo posterior ao estágio estudado;
+- questões linguisticamente ambíguas por erro de redação;
+- conteúdo fora do escopo sem justificativa.
+
+## Resultado
+
+Informe:
 
 - quantidade de questões;
 - disciplinas;
 - tópicos;
 - distribuição;
 - dificuldade;
+- resultado da revisão textual;
 - localização do simulado;
 - localização do gabarito.

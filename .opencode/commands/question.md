@@ -1,5 +1,5 @@
 ---
-description: "Cria questões de concurso alinhadas ao conteúdo estudado."
+description: "Cria questões de concurso alinhadas ao conteúdo estudado e realiza revisão textual antes da conclusão."
 agent: coordinator
 ---
 
@@ -7,25 +7,36 @@ Crie questões de concurso sobre:
 
 $ARGUMENTS
 
-Antes de produzir:
+## Procedimento
 
 1. Consulte a ementa.
 2. Consulte as notas existentes.
-3. Verifique se os pré-requisitos foram estudados.
+3. Verifique os pré-requisitos.
 4. Acione o `question-author`.
-5. Não avalie conteúdo posterior à etapa estudada.
-6. Identifique claramente questões autorais, reais ou adaptadas.
-7. Produza questões com alternativas plausíveis.
-8. Quando solicitado, produza comentários completos.
-9. Explique palavras-chave e pegadinhas quando existirem.
-10. Salve as questões no local correto do vault.
+5. Produza as questões.
+6. Acione o `text-quality-reviewer`.
+7. Corrija problemas linguísticos ou de integridade textual.
+8. Valide o resultado.
+9. Salve as questões no local correto do vault.
 
-Ao final, informe:
+## Regras
+
+- Não avalie conteúdo ainda não estudado.
+- Não invente origem de questões.
+- Diferencie questões autorais, reais e adaptadas.
+- Utilize alternativas plausíveis.
+- Explique palavras-chave e pegadinhas quando solicitado.
+- Questões comentadas devem ensinar o raciocínio.
+
+## Resultado
+
+Informe:
 
 - quantidade produzida;
 - disciplina;
 - tópico;
 - subtópico;
 - dificuldade;
-- origem das questões;
+- origem;
+- resultado da revisão textual;
 - localização dos arquivos.

@@ -1,5 +1,5 @@
 ---
-description: "Mostra o estado atual da produção pedagógica no vault."
+description: "Mostra o estado atual da produção pedagógica e das revisões no vault."
 agent: coordinator
 ---
 
@@ -15,12 +15,14 @@ Verifique:
 4. subtópicos;
 5. notas produzidas;
 6. notas pendentes;
-7. auditorias;
-8. questões;
-9. simulados;
-10. possíveis bloqueios por pré-requisitos.
+7. revisão textual;
+8. auditoria pedagógica;
+9. questões;
+10. revisão textual das questões;
+11. simulados;
+12. possíveis bloqueios por pré-requisitos.
 
-Apresente o resultado nesta estrutura:
+Apresente:
 
 ```text
 PROJETO
@@ -37,7 +39,12 @@ NOTAS
 - produzidas
 - pendentes
 
-AUDITORIA
+REVISÃO TEXTUAL
+- aprovadas
+- pendentes
+- com problemas
+
+AUDITORIA PEDAGÓGICA
 - aprovadas
 - pendentes
 - com problemas

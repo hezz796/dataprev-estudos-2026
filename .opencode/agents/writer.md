@@ -101,11 +101,9 @@ Utilize:
 
 Não exagere nos recursos visuais.
 
-## Vault
+## Pré-requisitos
 
-As notas devem ser criadas dentro do vault.
-
-Respeite a estrutura existente.
+Nunca ensine ou utilize um conceito que dependa de conhecimento ainda não estudado, salvo quando a ementa indicar explicitamente a dependência e o contexto exigir uma referência breve.
 
 ## Expansão
 
@@ -120,6 +118,18 @@ Utilize:
 - `note-writer`;
 - `exam-pedagogy`;
 - `note-expander`.
+
+## Revisão textual
+
+Você não é o responsável final pela revisão linguística.
+
+Depois que sua nota for produzida, ela deverá passar pelo:
+
+```text
+text-quality-reviewer
+```
+
+Não tente compensar essa etapa reescrevendo desnecessariamente o conteúdo.
 
 ## Problemas pedagógicos
 
