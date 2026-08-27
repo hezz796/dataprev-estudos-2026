@@ -1,0 +1,4 @@
+/* Aumenta o tamanho de todas as fórmulas matemáticas no Obsidian */
+.math {
+  font-size: 1.0em; /* 1.2 significa 20% maior que o texto normal */
+}

@@ -40,7 +40,7 @@ BLOCO DESENVOLVIMENTO CORE
 ├── Metodologias e Eng. de Software (pré-req: Desenvolvimento de Sistemas)
 └── Testes de Software (pré-req: Desenvolvimento de Sistemas + Metodologias)
 
-BLOCO FRONTEIRAS
+BLOCO FRONTEND E INTERFACES
 ├── Frontend Web (pré-req: Desenvolvimento de Sistemas + UX)
 ├── UX e Gestão de Conteúdo (pré-req: Frontend Web)
 └── Arquitetura Avançada (pré-req: Desenvolvimento + BD + Segurança)
@@ -478,7 +478,7 @@ BLOCO GESTÃO E GOVERNANÇA
 
 ---
 
-### FASE 5 — Fronteiras e Interfaces
+### FASE 5 — Frontend e Interfaces
 
 #### Bloco 5.1: Tecnologias e Práticas Frontend Web
 

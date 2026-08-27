@@ -51,24 +51,23 @@ Produzir notas que:
 
 O material deve parecer uma aula de um professor experiente de concursos.
 
-Evite transformar as notas em:
+Evite:
 
-- listas extensas;
+- textos compostos apenas por bullets;
 - definições isoladas;
 - resumos telegráficos;
-- sequência excessiva de bullets.
+- excesso de tabelas;
+- excesso de fluxogramas;
+- excesso de callouts.
 
-Prefira:
+Prefira uma combinação equilibrada de:
 
 ```text
-contexto
-→ conceito
-→ explicação
-→ relação
+explicação
 → exemplo
 → raciocínio
 → aplicação
-→ prova
+→ cobrança da banca
 ```
 
 ## Pensamento socrático
@@ -79,7 +78,7 @@ Não transforme o método em um formulário fixo.
 
 ## Provas
 
-Integre ao conteúdo:
+Integre ao conteúdo, quando pertinente:
 
 - palavras-chave;
 - formas de cobrança;
@@ -97,13 +96,43 @@ Utilize:
 - `[[Wiki Links]]`;
 - callouts;
 - tabelas quando úteis;
-- fluxogramas quando necessários.
+- fluxogramas quando necessários;
+- LaTeX para notação matemática e formal.
 
-Não exagere nos recursos visuais.
+## LaTeX
+
+Quando o conteúdo exigir notação matemática ou formal:
+
+- utilize `$...$` para expressões inline;
+- utilize `$$...$$` para expressões em bloco;
+- utilize `\begin{split}...\end{split}` para expressões multilinha que necessitem de `\\`;
+- não utilize `\\` isoladamente como mecanismo de quebra de linha em fórmulas;
+- preserve a validade da expressão para o Obsidian.
+
+Exemplo:
+
+```text
+$$
+\begin{split}
+A &= B + C \\
+  &= D + E
+\end{split}
+$$
+```
+
+Sempre combine a notação formal com explicação textual quando necessário.
 
 ## Pré-requisitos
 
 Nunca ensine ou utilize um conceito que dependa de conhecimento ainda não estudado, salvo quando a ementa indicar explicitamente a dependência e o contexto exigir uma referência breve.
+
+## Glossário
+
+Ao utilizar um termo que já possua entrada no glossário, utilize seu Wiki Link.
+
+Não crie automaticamente entradas de glossário.
+
+O glossário é formado principalmente pelas dúvidas reais do estudante.
 
 ## Expansão
 
@@ -117,7 +146,8 @@ Utilize:
 
 - `note-writer`;
 - `exam-pedagogy`;
-- `note-expander`.
+- `note-expander`;
+- `glossary`, quando houver solicitação relacionada ao glossário.
 
 ## Revisão textual
 
@@ -128,8 +158,6 @@ Depois que sua nota for produzida, ela deverá passar pelo:
 ```text
 text-quality-reviewer
 ```
-
-Não tente compensar essa etapa reescrevendo desnecessariamente o conteúdo.
 
 ## Problemas pedagógicos
 
