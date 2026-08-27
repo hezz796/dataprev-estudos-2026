@@ -15,7 +15,7 @@
 
 Você certamente já precisou tomar uma decisão que dependia de mais de uma condição. Pense numa situação simples: quer sair de casa, mas só vai sair **se** estiver ensolarado **e** você não estiver cansado. Se chover ou você estiver exausto, fica em casa. Esse raciocínio do dia a dia — combinar condições, avaliar situações, tirar conclusões — é exatamente o que a **lógica proposicional** formaliza.
 
-Estudar **estruturas lógicas** é aprender a linguagem precisa por trás do raciocínio. É o alicerce sobre o qual se constrói tudo o que vem depois na ementa: [[Lógica de argumentação]], [[Lógica sentencial]], e por consequência, programação, banco de dados e arquitetura. Mesmo que você nunca tenha programado, a lógica proposicional será o ferramental que tornará esses conteúdos futuros muito mais acessíveis.
+Estudar **estruturas lógicas** é aprender a linguagem precisa por trás do raciocínio. É o alicerce sobre o qual se constrói tudo o que vem depois na ementa: [[Logica-de-Argumentacao]], [[Logica-Sentencial]], e por consequência, programação, banco de dados e arquitetura. Mesmo que você nunca tenha programado, a lógica proposicional será o ferramental que tornará esses conteúdos futuros muito mais acessíveis.
 
 ---
 
@@ -171,7 +171,7 @@ Esse é o ponto que conecta diretamente o que vimos na tabela original (variáve
 A chave: o **quantificador** ($\exists$ ou $\forall$) transforma uma expressão com variável livre em uma proposição completa. Sem o quantificador, a variável está "pulando" entre valores — não dá para dizer se é V ou F.
 
 > [!tip] Ponte com o próximo tópico
-> Esse contraste é a porta de entrada para a [[Lógica de primeira ordem]], onde veremos quantificadores existencial ($\exists$) e universal ($\forall$) em profundidade. Lá, vamos formalizar exatamente como "alguém", "ninguém", "todos" e "nenhum" se traduzem em símbolos.
+> Esse contraste é a porta de entrada para a [[Logica-de-Primeira-Ordem]], onde veremos quantificadores existencial ($\exists$) e universal ($\forall$) em profundidade. Lá, vamos formalizar exatamente como "alguém", "ninguém", "todos" e "nenhum" se traduzem em símbolos.
 >
 > Por agora, fixe: **variável solta = porta aberta = não é proposição**; **quantificador = trava = é proposição**.
 
@@ -335,7 +335,7 @@ Quando dizemos "$2 + 2 = 4$", não consultamos telescópios — consultamos **ax
 "A próxima Copa do Mundo será no Japão" — será verdadeira ou falsa? A resposta é: **é uma das duas, mas ainda não sabemos qual**. Isso não a impede de ser proposição. O valor de verdade existe **em princípio** — o evento vai acontecer ou não — mesmo que temporariamente não possamos verificá-lo. O critério é que o valor **está definido**, mesmo que **desconhecido** por nós.
 
 > [!tip] Atribuição arbitrária — o que vem na prática
-> Na lógica formal, especialmente quando construímos tabelas-verdade (que veremos em [[Lógica sentencial]]), **nós escolhemos** os valores de verdade das proposições para testar se um argumento é válido. Não estamos dizendo "isso é verdadeiro no mundo real" — estamos dizendo "suponha que uma proposição é verdadeira; o que acontece com a expressão completa?"
+> Na lógica formal, especialmente quando construímos tabelas-verdade (que veremos em [[Logica-Sentencial]]), **nós escolhemos** os valores de verdade das proposições para testar se um argumento é válido. Não estamos dizendo "isso é verdadeiro no mundo real" — estamos dizendo "suponha que uma proposição é verdadeira; o que acontece com a expressão completa?"
 >
 > É como um laboratório: você altera variáveis para ver o comportamento do sistema. Nas tabelas-verdade, testamos **todas** as combinações possíveis (V/V, V/F, F/V, F/F) para garantir que a lógica funciona **independentemente** dos valores específicos.
 
@@ -440,7 +440,7 @@ Existe um "ou" escondido na língua que a banca adora explorar: o **"ou" que exc
 | F | V | **V** |
 | F | F | **F** |
 
-A regra é quase simétrica ao bicondicional: enquanto o bicondicional é verdadeiro quando os valores são **iguais**, a exclusiva é verdadeira quando os valores são **diferentes**. (Guarde essa pista — ela volta nas pegadinhas.)
+A regra pode ser lida de forma ainda mais direta: a exclusiva é **verdadeira quando $P$ e $Q$ têm valores diferentes** e **falsa quando têm valores iguais** — quer sejam ambas V, quer ambas F. Se os valores são iguais, o XOR barra; se são diferentes, o XOR libera.
 
 ##### Simbologias que caem em prova
 
@@ -454,7 +454,7 @@ A exclusiva aparece com **várias faces** na notação, e a banca pode usar qual
 | **XOR** | "exclusive OR" | Linguagem de programação (C, Java, Python) |
 
 > [!tip] O fio lógico das simbologias
-> Repare que a exclusiva é o **contrário** da disjunção inclusiva $\lor$. Onde $\lor$ aceita ambos, a exclusiva recusa. Por isso, em [[Lógica sentencial]] você verá que $P \oplus Q$ **equivale também à negação do bicondicional** — uma conexão poderosa para a prova.
+> Repare que a exclusiva é o **contrário** da disjunção inclusiva $\lor$. Onde $\lor$ aceita ambos, a exclusiva recusa. Ela também guarda uma conexão poderosa para a prova com o conectivo que estudaremos na seção [[Estruturas-Logicas#3.5 Bicondicional (↔) — "SE E SOMENTE SE"|3.5 Bicondicional]] — exploraremos essa relação no momento certo.
 
 ##### A ÚNICA diferença diante da inclusiva
 
@@ -474,13 +474,12 @@ Coloquemos as duas disjunções lado a lado. Nas quatro combinações possíveis
 
 ##### Expressões equivalentes que valem pontos
 
-A exclusiva pode ser reescrita de formas que a banca usa para disfarçar. São três jeitos de dizer a mesma coisa:
+A exclusiva pode ser reescrita de formas que a banca usa para disfarçar. São dois jeitos de dizer a mesma coisa:
 
 $$
 \begin{split}
 P \oplus Q &\equiv (P \lor Q) \land \neg(P \land Q) \\
-           &\equiv (P \land \neg Q) \lor (\neg P \land Q) \\
-           &\equiv \neg (P \leftrightarrow Q)
+           &\equiv (P \land \neg Q) \lor (\neg P \land Q)
 \end{split}
 $$
 
@@ -488,10 +487,9 @@ Leia cada uma com calma:
 
 - **$(P \lor Q) \land \neg(P \land Q)$** — "ou um dos dois, **mas não ambos**". A parte $\neg(P \land Q)$ é a trava: ela corta justamente o caso em que os dois são verdadeiros.
 - **$(P \land \neg Q) \lor (\neg P \land Q)$** — as duas "rotas alternativas": ou $P$ **sem** $Q$, ou $Q$ **sem** $P$. Só um caminho pode ser trilhado.
-- **$\neg (P \leftrightarrow Q)$** — a mais surpreendente: a exclusiva é o **oposto do bicondicional**. Se o bicondicional é "iguais dão V", a exclusiva é "iguais dão F".
 
-> [!important] Conexão que aparece em prova — exclusiva × bicondicional
-> Repare na última linha da tabela da exclusiva: quando $P$ e $Q$ são **iguais** (V/V ou F/F), $P \oplus Q$ é **F**. Já o bicondicional $P \leftrightarrow Q$ dá **V** nessas mesmas linhas. Os dois são **exatamente opostos**: $P \oplus Q \equiv \neg(P \leftrightarrow Q)$. Se a banca perguntar "qual é o oposto do bicondicional?", a resposta é a exclusiva — e vice-versa.
+> [!note] Conexão adiada — exclusiva × bicondicional
+> A relação entre a disjunção exclusiva e o bicondicional será explorada na seção [[Estruturas-Logicas#3.5 Bicondicional (↔) — "SE E SOMENTE SE"|3.5 Bicondicional]].
 
 ##### Como a banca sinaliza exclusividade
 
@@ -532,10 +530,7 @@ O tempero que não pode faltar na prova:
 >
 > Memorize: **"Ou um, ou outro, mas nunca os dois juntos."** Se os dois entram juntos (V/V), o XOR barra (F).
 
-##### Mais duas pegadinhas de prova
-
-> [!warning] Pegadinha — confundir exclusiva com bicondicional (são opostos!)
-> Se $P$ e $Q$ são ambas **verdadeiras**: a exclusiva dá **F**, mas o bicondicional dá **V**. Muita gente decora "iguais = ..." e confunde os dois. São **exatamente opostos** ($P \oplus Q \equiv \neg(P \leftrightarrow Q)$). Na dúvida, monte uma linha da tabela antes de marcar.
+##### Pegadinha de prova — a precedência do $\oplus$
 
 > [!warning] Pegadinha — onde entra o $\oplus$ na precedência?
 > Na [[Estruturas-Logicas#3.7 Precedência de conectivos|precedência]], o $\oplus$ raramente aparece nas tabelas das bancas — e isso é proposital. Como é um "ou", costuma herdar o **mesmo nível da disjunção $\lor$**; porém, para evitar ambiguidade, as provas quase sempre o isolam com **parênteses**. Regra prática: se a expressão tem $\oplus$ sem parênteses, resolva junto com $\land$/$\lor$ da esquerda para a direita; se tem parênteses, **respeite-os**.
@@ -594,6 +589,27 @@ O bicondicional é verdadeiro quando ambas as proposições têm o **mesmo** val
 > **$P \leftrightarrow Q$**: "O sol está brilhando **se e somente se** está fazendo sol."
 >
 > Isso significa: se o sol está brilhando, então está fazendo sol. E se está fazendo sol, então o sol está brilhando. As duas proposições andam juntas — quando uma é verdadeira, a outra também é.
+
+> [!important] Conexão com a disjunção exclusiva — são opostos!
+> Agora que você conhece os dois conectivos, podemos revelar a relação que ficou guardada na [[Estruturas-Logicas#3.3.1 Disjunção exclusiva (⊕) — "OU exclusivo" (XOR)|3.3.1 Disjunção exclusiva]]:
+>
+> $$
+> P \oplus Q \equiv \neg(P \leftrightarrow Q)
+> $$
+>
+> A disjunção exclusiva é a **negação do bicondicional**. Compare as duas tabelas lado a lado:
+>
+> | $P$ | $Q$ | $P \leftrightarrow Q$ | $P \oplus Q$ |
+> |-----|-----|----------------------|--------------|
+> | V | V | **V** | **F** |
+> | V | F | F | **V** |
+> | F | V | F | **V** |
+> | F | F | **V** | **F** |
+>
+> Repare no padrão: onde o bicondicional é **verdadeiro** (valores **iguais** — V/V ou F/F), a exclusiva é **falsa**; onde o bicondicional é **falso** (valores **diferentes** — V/F ou F/V), a exclusiva é **verdadeira**. Linha por linha, um é o **oposto exato** do outro.
+
+> [!warning] Pegadinha — confundir exclusiva com bicondicional (são opostos!)
+> Se $P$ e $Q$ são ambas **verdadeiras**: a exclusiva dá **F**, mas o bicondicional dá **V**. Muita gente decora "iguais = ..." e confunde os dois. São **exatamente opostos** ($P \oplus Q \equiv \neg(P \leftrightarrow Q)$). Na dúvida, monte uma linha da tabela antes de marcar.
 
 ### 3.6 Proposições simples e compostas
 
@@ -714,13 +730,13 @@ A habilidade mais cobrada em prova não é apenas **reconhecer** se é simples o
 > [!warning] Pegadinha clássica de prova
 > Questões frequentemente apresentam uma frase como "Não é verdade que todos os candidatos passam" e perguntam quantas proposições simples existem. Muita gente responde **uma**, mas a resposta correta depende da estrutura:
 >
-> - "Todos os candidatos passam" pode ser uma proposição quantificada (veremos em [[Lógica de primeira ordem]])
+> - "Todos os candidatos passam" pode ser uma proposição quantificada (veremos em [[Logica-de-Primeira-Ordem]])
 > - "Não é verdade que..." aplica a negação sobre ela → composição com $\neg$
 >
 > **Estratégia:** Sempre tente decompor. Se você consegue isolar uma proposição completa antes de um conectivo, ela é simples e a frase é composta. Se não consegue decompor nada, é simples.
 
 > [!tip] Conexão com o que vem depois
-> Decompor proposições compostas é a base para construir **tabelas-verdade** (ver [[Lógica sentencial]]). Cada variável simples ($P$, $Q$, $R$) corresponde a uma **coluna** da tabela, e os conectivos determinam as regras de combinação. Quanto melhor você decompor agora, mais fácil será montar tabelas depois.
+> Decompor proposições compostas é a base para construir **tabelas-verdade** (ver [[Logica-Sentencial]]). Cada variável simples ($P$, $Q$, $R$) corresponde a uma **coluna** da tabela, e os conectivos determinam as regras de combinação. Quanto melhor você decompor agora, mais fácil será montar tabelas depois.
 
 ### 3.7 Precedência de conectivos
 
@@ -739,7 +755,7 @@ Sem uma regra de precedência, ela seria ambígua. Seria $(P \lor Q) \to (R \lan
 A **precedência de conectivos** é a regra que determina **qual conectivo é avaliado primeiro** quando uma expressão contém múltiplos operadores sem parênteses. É o equivalente lógico da "ordem das operações" da aritmética.
 
 > [!important] Por que isso cai em prova
-> Questões de [[Lógica sentencial]] frequentemente apresentam expressões com vários conectivos e pedem o valor de verdade ou a tabela-verdade correspondente. Se você avaliar os conectivos na ordem errada, chegará a uma resposta completamente diferente — e a banca inclui exatamente essa resposta incorreta como alternativa.
+> Questões de [[Logica-Sentencial]] frequentemente apresentam expressões com vários conectivos e pedem o valor de verdade ou a tabela-verdade correspondente. Se você avaliar os conectivos na ordem errada, chegará a uma resposta completamente diferente — e a banca inclui exatamente essa resposta incorreta como alternativa.
 
 #### Hierarquia completa de precedência
 
@@ -1267,7 +1283,7 @@ Em provas, é comum receber um texto e pedir para **identificar** as premissas e
 >    - Premissa 2: $Q \to R$ (quem tem vantagem aumenta chances)
 >    - Conclusão: $P \to R$ (quem estuda lógica aumenta suas chances)
 >
-> 3. **Validação:** Esse encadeamento é válido — veremos mais sobre deduções em cadeia no tópico [[Lógica de argumentação]].
+> 3. **Validação:** Esse encadeamento é válido — veremos mais sobre deduções em cadeia no tópico [[Logica-de-Argumentacao]].
 
 ### 5.6 Argumentos compostos com múltiplos conectivos
 
@@ -1321,9 +1337,9 @@ Na prática, argumentos raramente usam um único conectivo. É comum encontrar p
 
 Este tópico é a fundação. Os próximos tópicos deste bloco expandem esses conceitos:
 
-- [[Lógica de argumentação]] — analogias, inferências (dedutivas, indutivas, abdutivas) e deduções em cadeia
-- [[Lógica sentencial]] — tabelas-verdade, equivalências lógicas (Leis de De Morgan) e diagramas de Venn
-- [[Lógica de primeira ordem]] — quantificadores, predicados e variáveis
-- [[Raciocínio matemático aplicado]] — problemas aritméticos, geométricos, matriciais e progressões
+- [[Logica-de-Argumentacao]] — analogias, inferências (dedutivas, indutivas, abdutivas) e deduções em cadeia
+- [[Logica-Sentencial]] — tabelas-verdade, equivalências lógicas (Leis de De Morgan) e diagramas de Venn
+- [[Logica-de-Primeira-Ordem]] — quantificadores, predicados e variáveis
+- [[Raciocinio-Matematico-Aplicado]] — problemas aritméticos, geométricos, matriciais e progressões
 
 Cada um desses tópicos usa os conceitos de proposições e conectivos como base. Domine-os agora para que o restante flua naturalmente.

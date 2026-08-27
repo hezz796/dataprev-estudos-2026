@@ -97,8 +97,8 @@ $$
 $$
 
 > [!example] Exemplo do dia a dia
-> **Premissa 1:** Todo ciudadão brasileiro maior de 18 anos tem direito ao voto. (Regra geral)
-> **Premissa 2:** Maria é ciudadã brasileira e tem 25 anos. (Caso particular)
+> **Premissa 1:** Todo cidadão brasileiro maior de 18 anos tem direito ao voto. (Regra geral)
+> **Premissa 2:** Maria é cidadã brasileira e tem 25 anos. (Caso particular)
 > **Conclusão:** Logo, Maria tem direito ao voto. (Conclusão necessária)
 >
 > Se as duas premissas são verdadeiras, a conclusão **não pode ser falsa**. É como uma equação matemática: se os dados estão certos, o resultado é garantido.
@@ -235,15 +235,18 @@ Repare na mecânica: $Q$ aparece como **consequente** na primeira premissa e com
 Na prática, as cadeias não são sempre puras — elas combinam Modus Ponens, Modus Tollens e o hipotético-silogismo. Vejamos um exemplo mais complexo:
 
 > [!example] Exemplo encadeado
-> **Premissa 1:** Se o candidato não estuda lógica ($P$), então não resolve questões de raciocínio ($Q$). → $P \to Q$
-> **Premissa 2:** Se não resolve questões de raciocínio ($Q$), então erra na prova ($R$). → $Q \to R$
-> **Premissa 3:** Se erra na prova ($R$), então não é aprovado ($S$). → $R \to S$
-> **Premissa 4:** O candidato foi aprovado. ($\neg S$)
-> **Conclusão:** Logo, o candidato estudou lógica. ($\neg P$)
+> **Premissa 1:** Se o candidato não estuda lógica ($\neg P$), então não resolve questões de raciocínio ($\neg Q$): $\neg P \to \neg Q$
+> **Premissa 2:** Se não resolve questões de raciocínio ($\neg Q$), então erra na prova ($R$): $\neg Q \to R$
+> **Premissa 3:** Se erra na prova ($R$), então não é aprovado ($\neg S$): $R \to \neg S$
+> **Premissa 4:** O candidato foi aprovado. ($S$)
+> **Conclusão:** Logo, o candidato estudou lógica. ($P$)
 >
 > **Resolução passo a passo:**
-> 1. Das premissas 1, 2 e 3, pelo hipotético-silogismo: $P \to S$
-> 2. Pela premissa 4 ($\neg S$) e o resultado anterior ($P \to S$), aplicamos o **Modus Tollens**: $\neg P$
+> 1. Das premissas 1, 2 e 3, pelo hipotético-silogismo: $\neg P \to \neg S$
+> 2. Pela premissa 4 ($S$, que não é o consequente $\neg S$) e o resultado anterior ($\neg P \to \neg S$), aplicamos o **Modus Tollens**: como $S$ nega o consequente $\neg S$, concluímos $\neg(\neg P) = P$, ou seja, o candidato estudou lógica.
+
+> [!tip] Padrão de notação
+> Mantenha o padrão da seção 4.1: cada variável representa a proposição **positiva** ($P$ = "estuda lógica", $Q$ = "resolve questões", $R$ = "erra na prova", $S$ = "é aprovado") e a negação é aplicada explicitamente ($\neg P$, $\neg Q$, $\neg S$).
 
 Esse tipo de raciocínio — que combina encadeamento de condicionais com Modus Tollens — é **extremamente** cobrado em provas. A banca adora esconder a cadeia dentro de um texto narrativo para dificultar a identificação dos elos.
 
@@ -328,8 +331,8 @@ $$
 
 Este tópico expande os conceitos de [[Estruturas-Logicas]] para a avaliação de raciocínio. Os próximos tópicos deste bloco aprofundam a lógica sentencial e a lógica de primeira ordem:
 
-- [[Lógica sentencial]] — tabelas-verdade, equivalências lógicas (Leis de De Morgan) e diagramas de Venn
-- [[Lógica de primeira ordem]] — quantificadores, predicados e variáveis
-- [[Raciocínio matemático aplicado]] — problemas aritméticos, geométricos, matriciais e progressões
+- [[Logica-Sentencial]] — tabelas-verdade, equivalências lógicas (Leis de De Morgan) e diagramas de Venn
+- [[Logica-de-Primeira-Ordem]] — quantificadores, predicados e variáveis
+- [[Raciocinio-Matematico-Aplicado]] — problemas aritméticos, geométricos, matriciais e progressões
 
 Cada um desses tópicos utiliza os conceitos de argumentação estudados aqui. A habilidade de distinguir dedução, indução e abdução será reutilizada na interpretação de textos, na resolução de questões e na tomada de decisões — tanto na prova quanto no dia a dia.
