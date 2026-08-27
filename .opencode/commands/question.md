@@ -1,34 +1,76 @@
 ---
-description: "Cria questões de concurso alinhadas ao conteúdo estudado e realiza revisão textual antes da conclusão."
+description: "Pesquisa questões reais ou cria questões autorais alinhadas ao conteúdo estudado."
 agent: coordinator
 ---
 
-Crie questões de concurso sobre:
+Execute a operação solicitada sobre questões:
 
 $ARGUMENTS
 
-## Procedimento
+## Modos
 
-1. Consulte a ementa.
-2. Consulte as notas existentes.
-3. Verifique os pré-requisitos.
-4. Acione o `question-author`.
-5. Produza as questões.
-6. Acione o `text-quality-reviewer`.
-7. Corrija problemas linguísticos ou de integridade textual.
-8. Valide o resultado.
-9. Salve as questões no local correto do vault.
+### Pesquisa
+
+Quando o usuário solicitar pesquisa de questões:
+
+```text
+Question Researcher
+→ pesquisa fontes públicas
+→ seleciona questões
+→ classifica
+→ registra metadados
+→ identifica padrões
+```
+
+### Criação
+
+Quando o usuário solicitar questões para prática:
+
+```text
+Question Author
+→ consulta ementa
+→ consulta notas
+→ consulta questões reais, quando disponíveis
+→ cria questões autorais
+→ revisão textual
+```
+
+### Comentadas
+
+Quando solicitado:
+
+```text
+questão
+→ resolução
+→ raciocínio
+→ palavras-chave
+→ pegadinha
+→ comentário
+```
 
 ## Regras
 
-- Não avalie conteúdo ainda não estudado.
-- Não invente origem de questões.
-- Diferencie questões autorais, reais e adaptadas.
-- Utilize alternativas plausíveis.
-- Explique palavras-chave e pegadinhas quando solicitado.
-- Questões comentadas devem ensinar o raciocínio.
+- Não avaliar conteúdo ainda não estudado.
+- Não inventar origem de questões.
+- Diferenciar questões reais, adaptadas e autorais.
+- Não copiar mecanicamente questões reais.
+- Utilizar padrões de cobrança como referência quando houver evidência.
+- Registrar a fonte das questões pesquisadas.
+- Evitar duplicatas.
 
-## Resultado
+## Resultado da pesquisa
+
+Informe:
+
+- quantidade encontrada;
+- quantidade selecionada;
+- fontes;
+- bancas;
+- assuntos;
+- padrões observados;
+- arquivos criados ou atualizados.
+
+## Resultado da criação
 
 Informe:
 
@@ -37,6 +79,6 @@ Informe:
 - tópico;
 - subtópico;
 - dificuldade;
-- origem;
+- tipo;
 - resultado da revisão textual;
 - localização dos arquivos.

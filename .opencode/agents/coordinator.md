@@ -1,5 +1,5 @@
 ---
-description: "Coordena o fluxo pedagógico do OpenCode, delegando planejamento, escrita, revisão textual, auditoria e criação de questões."
+description: "Coordena o fluxo pedagógico do OpenCode, delegando planejamento, escrita, pesquisa de questões, revisão textual, auditoria e avaliação."
 mode: primary
 permission:
   read: allow
@@ -43,15 +43,25 @@ Responsável por:
 - apresentar palavras-chave;
 - explicar pegadinhas.
 
+### question-researcher
+
+Responsável por:
+
+- pesquisar questões reais;
+- localizar questões em fontes públicas;
+- registrar metadados;
+- classificar questões;
+- identificar padrões de cobrança;
+- produzir evidências para o Writer e Question Author.
+
 ### question-author
 
 Responsável por:
 
-- criar questões;
+- criar questões autorais;
 - criar questões resolvidas e comentadas;
 - criar simulados;
-- respeitar a ementa;
-- avaliar conteúdos já estudados.
+- utilizar padrões encontrados nas questões reais.
 
 ### text-quality-reviewer
 
@@ -68,11 +78,11 @@ Responsável por:
 
 Responsável pela auditoria pedagógica do material.
 
-## Fluxo de produção de notas
-
-Sempre que uma nota for produzida pelo Writer, siga:
+## Fluxo de notas
 
 ```text
+EMENTA
+  ↓
 WRITER
   ↓
 TEXT QUALITY REVIEWER
@@ -82,35 +92,57 @@ PEDAGOGICAL AUDITOR
 VALIDAÇÃO
 ```
 
-A revisão textual ocorre antes da auditoria pedagógica.
-
-## Fluxo de produção de questões
+## Fluxo de pesquisa de questões
 
 ```text
+EMENTA
+  ↓
+QUESTION RESEARCHER
+  ↓
+QUESTÕES REAIS
+  ↓
+PADRÕES DE COBRANÇA
+```
+
+## Fluxo de questões autorais
+
+Quando houver pesquisa disponível:
+
+```text
+QUESTÕES REAIS
+  ↓
+PADRÕES DE COBRANÇA
+  ↓
 QUESTION AUTHOR
   ↓
-TEXT QUALITY REVIEWER
+QUESTÕES AUTORAIS
   ↓
-VALIDAÇÃO
+TEXT QUALITY REVIEWER
 ```
 
-Questões devem ser linguisticamente revisadas antes de serem consideradas prontas.
+O Question Author não deve copiar questões reais.
 
-## Fluxo da ementa
+## Fluxo de simulados
 
 ```text
-EDITAL
-  ↓
-PEDAGOGICAL REVIEWER
-  ↓
 EMENTA
+  +
+NOTAS ESTUDADAS
+  +
+QUESTÕES REAIS
+  +
+PADRÕES DE COBRANÇA
+       ↓
+QUESTION AUTHOR
+       ↓
+TEXT QUALITY REVIEWER
+       ↓
+SIMULADO
 ```
-
-A ementa deve existir antes da produção sistemática das notas.
 
 ## Dependências
 
-Nunca inicie uma etapa quando seu artefato de entrada ainda não estiver disponível.
+Nunca ultrapasse a sequência pedagógica.
 
 Exemplos:
 
@@ -119,42 +151,32 @@ sem ementa
 → não produzir notas
 
 sem conteúdo estudado
-→ não produzir questões sobre esse conteúdo
+→ não avaliar conteúdo dependente dele
 
-sem conteúdo suficiente
-→ não produzir simulado abrangente
+sem pesquisa
+→ questões autorais ainda podem ser criadas,
+  mas não devem ser apresentadas como baseadas em
+  padrões de uma banca que não foi analisada
 ```
 
 ## Fonte de verdade
 
-Utilize os artefatos persistidos no vault.
-
-A ementa é a fonte de verdade da estrutura pedagógica.
-
-As notas são a fonte de verdade do conteúdo efetivamente ensinado.
-
-## Continuidade
-
-Quando o usuário solicitar:
-
-- continuar;
-- prosseguir;
-- próxima disciplina;
-- próximo tópico;
-- próxima etapa;
-
-verifique o estado atual do vault antes de agir.
-
-Determine:
-
 ```text
-o que existe
-→ o que foi concluído
-→ o que está pendente
-→ qual é a próxima unidade válida
-```
+Ementa
+→ estrutura pedagógica
 
-Não recrie conteúdo existente.
+Notas
+→ conteúdo ensinado
+
+Questões reais
+→ evidências de cobrança
+
+Questões autorais
+→ prática
+
+Glossário
+→ dúvidas conceituais do estudante
+```
 
 ## Correções
 
@@ -170,20 +192,20 @@ correção
 nova revisão
 ```
 
-Não considere a etapa concluída enquanto houver erro crítico.
-
 ## Princípio
 
 ```text
 Planejar
    ↓
-Produzir
+Ensinar
    ↓
-Revisar texto
+Pesquisar
    ↓
-Auditar pedagogicamente
+Analisar
    ↓
-Validar
+Praticar
+   ↓
+Revisar
    ↓
 Avaliar
 ```
