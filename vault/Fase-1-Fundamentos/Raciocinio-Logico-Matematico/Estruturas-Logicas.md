@@ -413,7 +413,7 @@ A disjunção combina duas proposições e resulta em **verdadeira quando pelo m
 A disjunção é **inclusiva**: quando ambas as partes são verdadeiras, o resultado é verdadeiro.
 
 > [!warning] Pegadinha clássica de prova
-> Muitas questões exploram a confusão entre **disjunção inclusiva** e **exclusiva**. Na lógica formal, "ou" significa **inclusivo** — aceita ambas verdadeiras. A disjunção exclusiva (XOR) tem uma simbologia e comportamento próprios, que veremos na [[Lógica sentencial]].
+> Muitas questões exploram a confusão entre **disjunção inclusiva** e **exclusiva**. Na lógica formal, "ou" significa **inclusivo** — aceita ambas verdadeiras. A disjunção exclusiva (XOR) tem uma simbologia e comportamento próprios, que veremos na [[Estruturas-Logicas#3.3.1 Disjunção exclusiva (⊕) — "OU exclusivo" (XOR)|3.3.1 Disjunção exclusiva]].
 >
 > Se a banca pergunta sobre "$P \lor Q$" quando $P$ e $Q$ são ambas verdadeiras, a resposta é **verdadeiro**. Não caia no "ou" coloquial, que muitas vezes implica "um ou outro, mas não os dois".
 
@@ -423,6 +423,122 @@ A disjunção é **inclusiva**: quando ambas as partes são verdadeiras, o resul
 > **$P \lor Q$**: "O candidato é formado em TI **ou** possui 3 anos de experiência."
 >
 > Se o candidato é formado em TI **e** também tem experiência, a condição continua sendo satisfeita. No "ou" lógico, ter os dois não é problema.
+
+#### 3.3.1 Disjunção exclusiva (⊕) — "OU exclusivo" (XOR)
+
+Existe um "ou" escondido na língua que a banca adora explorar: o **"ou" que exclui**. Na disjunção inclusiva ($\lor$), "ou" significa "pelo menos um" — aceita os dois. Mas há situações em que "ou" significa **uma opção ou a outra, nunca as duas**. É exatamente isso que a **disjunção exclusiva** expressa.
+
+> [!important] A regra de ouro da exclusiva
+> $P \oplus Q$ é **verdadeiro quando EXATAMENTE uma** das proposições é verdadeira, e **falso quando ambas têm o mesmo valor** — ou ambas V, ou ambas F. É o "ou" que **exclui** a possibilidade de ambos.
+
+**Tabela-verdade:**
+
+| $P$ | $Q$ | $P \oplus Q$ |
+|-----|-----|--------------|
+| V | V | **F** |
+| V | F | **V** |
+| F | V | **V** |
+| F | F | **F** |
+
+A regra é quase simétrica ao bicondicional: enquanto o bicondicional é verdadeiro quando os valores são **iguais**, a exclusiva é verdadeira quando os valores são **diferentes**. (Guarde essa pista — ela volta nas pegadinhas.)
+
+##### Simbologias que caem em prova
+
+A exclusiva aparece com **várias faces** na notação, e a banca pode usar qualquer uma:
+
+| Símbolo | Leitura | Onde aparece |
+|---------|---------|--------------|
+| $P \oplus Q$ | "P ou exclusivo Q" | Mais comum em lógica |
+| $P \underline{\vee} Q$ | "P disjunto exclusivo Q" | Variante com o "V" sublinhado |
+| $P \veebar Q$ (⊻) | "P ou exclusivo Q" | Variante gráfica |
+| **XOR** | "exclusive OR" | Linguagem de programação (C, Java, Python) |
+
+> [!tip] O fio lógico das simbologias
+> Repare que a exclusiva é o **contrário** da disjunção inclusiva $\lor$. Onde $\lor$ aceita ambos, a exclusiva recusa. Por isso, em [[Lógica sentencial]] você verá que $P \oplus Q$ **equivale também à negação do bicondicional** — uma conexão poderosa para a prova.
+
+##### A ÚNICA diferença diante da inclusiva
+
+Coloquemos as duas disjunções lado a lado. Nas quatro combinações possíveis, note onde elas concordam e onde divergem:
+
+| $P$ | $Q$ | $P \lor Q$ (inclusiva) | $P \oplus Q$ (exclusiva) |
+|-----|-----|------------------------|--------------------------|
+| V | V | **V** | **F** |
+| V | F | **V** | **V** |
+| F | V | **V** | **V** |
+| F | F | F | F |
+
+> [!warning] Pegadinha nº 1 de provas: tratar todo "ou" como exclusivo
+> Na lógica formal, **todo "ou" é inclusivo por padrão** — inclusive "ou...ou". A exclusiva **só aparece com indicação explícita**. A banca coloca "$P \lor Q$" e pergunta o valor quando $P$ e $Q$ são ambas verdadeiras; quem lê com o "ou" do cotidiano marca **F**, mas na lógica a resposta é **V**.
+>
+> A ÚNICA linha que muda entre as duas tabelas é a **V/V**. Em todas as outras, inclusiva e exclusiva dão o **mesmo** resultado. Decorar isso desarma a pegadinha mais comum.
+
+##### Expressões equivalentes que valem pontos
+
+A exclusiva pode ser reescrita de formas que a banca usa para disfarçar. São três jeitos de dizer a mesma coisa:
+
+$$
+\begin{split}
+P \oplus Q &\equiv (P \lor Q) \land \neg(P \land Q) \\
+           &\equiv (P \land \neg Q) \lor (\neg P \land Q) \\
+           &\equiv \neg (P \leftrightarrow Q)
+\end{split}
+$$
+
+Leia cada uma com calma:
+
+- **$(P \lor Q) \land \neg(P \land Q)$** — "ou um dos dois, **mas não ambos**". A parte $\neg(P \land Q)$ é a trava: ela corta justamente o caso em que os dois são verdadeiros.
+- **$(P \land \neg Q) \lor (\neg P \land Q)$** — as duas "rotas alternativas": ou $P$ **sem** $Q$, ou $Q$ **sem** $P$. Só um caminho pode ser trilhado.
+- **$\neg (P \leftrightarrow Q)$** — a mais surpreendente: a exclusiva é o **oposto do bicondicional**. Se o bicondicional é "iguais dão V", a exclusiva é "iguais dão F".
+
+> [!important] Conexão que aparece em prova — exclusiva × bicondicional
+> Repare na última linha da tabela da exclusiva: quando $P$ e $Q$ são **iguais** (V/V ou F/F), $P \oplus Q$ é **F**. Já o bicondicional $P \leftrightarrow Q$ dá **V** nessas mesmas linhas. Os dois são **exatamente opostos**: $P \oplus Q \equiv \neg(P \leftrightarrow Q)$. Se a banca perguntar "qual é o oposto do bicondicional?", a resposta é a exclusiva — e vice-versa.
+
+##### Como a banca sinaliza exclusividade
+
+A exclusiva quase nunca vem escrita como símbolo. Ela vem disfarçada por **expressões que indicam "um só"**. Fique atento a estes sinais:
+
+| Sinal de exclusividade | Exemplo |
+|------------------------|---------|
+| "ou ... ou ... **mas não ambos**" | "Ou estuda, ou trabalha, **mas não ambos**" |
+| "**um ou outro**, exclusivamente" | "Aprova-se um **ou outro**, exclusivamente" |
+| "**só um** dos dois" | "**Só um** dos dois será escolhido" |
+| "**exatamente um**" | "**Exatamente um** dos requisitos deve constar" |
+| "um deles, **e não o outro**" | "Vale um deles, **e não o outro**" |
+| "**alternativa**" | "São duas **alternativas** mutuamente excludentes" |
+
+> [!warning] Pegadinha de prova — a partição exaustiva
+> A banca coloca "**Ou João é aprovado ou reprovado**" e o candidato marca "exclusivo" por instinto. Na lógica formal, **sem indicação explícita, é inclusivo** ($\lor$) — e nesse caso específico o resultado é até **verdadeiro**, porque aprovado $\lor$ reprovado sempre tem uma parte V, e uma partição exaustiva como aprovado/reprovado cobre todos os casos. Use o "ou" do cotidiano como **pitada**, nunca como regra: a regra é **todo "ou" é inclusivo até que a banca diga o contrário**.
+
+##### Exemplo prático
+
+O tempero que não pode faltar na prova:
+
+> [!example] Exemplo — aprovação em exatamente uma fase
+> **$P$**: "O candidato foi aprovado na fase objetiva."
+> **$Q$**: "O candidato foi aprovado na fase discursiva."
+> **$P \oplus Q$**: "O candidato foi aprovado em **exatamente uma** das duas fases."
+>
+> | $P$ | $Q$ | $P \oplus Q$ | Leitura |
+> |-----|-----|--------------|---------|
+> | V | V | **F** | Aprovado nas duas → **não** atende (exige só uma) |
+> | V | F | **V** | Só na objetiva → ✅ atende |
+> | F | V | **V** | Só na discursiva → ✅ atende |
+> | F | F | **F** | Reprovado nas duas → **não** atende |
+>
+> Se a banca disser apenas "aprovado na objetiva **ou** na discursiva" (sem "exatamente uma"), o conectivo é **inclusivo** ($\lor$) e o caso V/V passa a ser **verdadeiro**. A diferença de uma palavra muda a resposta.
+
+> [!tip] Macete — "a porta de um só"
+> A disjunção inclusiva tem o macete da **porta** ("basta uma abrir"). A exclusiva é a **porta que embute a trava da recusa dupla**: ela **deixa passar SÓ UM**. Se tentarem passar dois juntos, a porta **não abre**.
+>
+> Memorize: **"Ou um, ou outro, mas nunca os dois juntos."** Se os dois entram juntos (V/V), o XOR barra (F).
+
+##### Mais duas pegadinhas de prova
+
+> [!warning] Pegadinha — confundir exclusiva com bicondicional (são opostos!)
+> Se $P$ e $Q$ são ambas **verdadeiras**: a exclusiva dá **F**, mas o bicondicional dá **V**. Muita gente decora "iguais = ..." e confunde os dois. São **exatamente opostos** ($P \oplus Q \equiv \neg(P \leftrightarrow Q)$). Na dúvida, monte uma linha da tabela antes de marcar.
+
+> [!warning] Pegadinha — onde entra o $\oplus$ na precedência?
+> Na [[Estruturas-Logicas#3.7 Precedência de conectivos|precedência]], o $\oplus$ raramente aparece nas tabelas das bancas — e isso é proposital. Como é um "ou", costuma herdar o **mesmo nível da disjunção $\lor$**; porém, para evitar ambiguidade, as provas quase sempre o isolam com **parênteses**. Regra prática: se a expressão tem $\oplus$ sem parênteses, resolva junto com $\land$/$\lor$ da esquerda para a direita; se tem parênteses, **respeite-os**.
 
 ### 3.4 Condicional (→) — "SE... ENTÃO"
 
@@ -1188,6 +1304,7 @@ Na prática, argumentos raramente usam um único conectivo. É comum encontrar p
 > - [ ] $\neg P$ (negação): inverte o valor
 > - [ ] $P \land Q$ (conjunção / E): verdadeiro só se **ambos** forem verdadeiros
 > - [ ] $P \lor Q$ (disjunção / OU inclusivo): falso só se **ambos** forem falsos
+> - [ ] $P \oplus Q$ (disjunção exclusiva / XOR): verdadeiro só se **exatamente um** for verdadeiro (iguais dão F); equivale a $\neg(P \leftrightarrow Q)$
 > - [ ] $P \to Q$ (condicional / se...então): falso **só** quando $P$ = V e $Q$ = F
 > - [ ] $P \leftrightarrow Q$ (bicondicional / se e somente se): verdadeiro quando **ambos iguais**
 > - [ ] **Modus Ponens:** $(P \to Q)$, $P$, $\therefore Q$ → **Válido**
