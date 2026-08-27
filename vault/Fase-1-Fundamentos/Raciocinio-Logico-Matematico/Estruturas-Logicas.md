@@ -50,7 +50,246 @@ Aqui mora a primeira armadilha de prova. Certos enunciados **parecem** proposiç
 >
 > **Dica rápida:** Se a frase poderia ser respondida com "sim" ou "não" sem ambiguidade, provavelmente é uma proposição. Se é uma ordem, pergunta ou exclamação, não é.
 
-### 2.1 Dúvidas frequentes sobre proposições
+### 2.1 Além dos 5 casos básicos — o que mais NÃO é proposição
+
+A seção anterior apresentou os cinco casos clássicos: **imperativo, interrogativo, exclamativo, variável livre e paradoxo**. São a base — mas não são tudo. As bancas (especialmente CESPE/Cebraspe e FCC) adoram explorar variações que fogem desses cinco modelos e pegam candidato que estudou superficialmente. Nesta seção, vamos revelar pelo menos cinco variações a mais — e os macetes para não cair nelas.
+
+---
+
+#### 1. Palavras da incerteza (modalidade)
+
+Uma família inteira de pegadinhas gira em torno de palavras que expressam **grau de certeza indefinido**. Sinônimos que aparecem em prova: "talvez", "possivelmente", "provavelmente", "é provável que", "pode ser que", "quase certo".
+
+A regra é direta: tudo o que carrega **incerteza modal** — ou seja, o enunciado não afirma nem nega com certeza, apenas aponta uma probabilidade — **não tem valor de verdade determinado** → não é proposição.
+
+> [!warning] Pegadinha clássica de prova
+> "É provável que o sistema caia amanhã." → **NÃO é proposição.**
+>
+> O enunciado não declara que o sistema caiu nem que não caiu — ele apenas aponta uma possibilidade. Sem valor V/F determinado, não passa no teste da proposição.
+
+Compare com o caso do **futuro incerto** que já vimos:
+
+| Enunciado | Classificação | Por quê? |
+|-----------|---------------|----------|
+| "A próxima Copa será no Japão." | **É proposição** | Valor existe (V ou F), só está desconhecido |
+| "Talvez a próxima Copa seja no Japão." | **NÃO é proposição** | "Talvez" destrói o valor de verdade — não há V/F definido |
+
+A distinção é sutil mas fundamental. Falaremos mais sobre ela na seção de [[Estruturas-Logicas#Nota de consistência — futuro incerto ≠ incerteza modal|Nota de consistência]] lá embaixo.
+
+---
+
+#### 2. Predicados vagos
+
+"João é alto." — Essa frase é proposição?
+
+Parece que sim, afirma algo sobre o mundo. Mas pense melhor: **alto em relação a quê?** Se o critério para "alto" não é definido (não há uma régua: $> 1{,}80\,\text{m}$? $> 1{,}90\,\text{m}$?), não conseguimos atribuir V/F de forma inequívoca.
+
+O mesmo vale para:
+
+- "Está quente." — Quente para quem? Em que contexto?
+- "Isso é caro." — Caro comparado com o quê?
+- "O filme foi bom." — Bom para quem?
+
+A **vaguidão** impede que o enunciado tenha um valor de verdade **definido**. Se a banca não fornece o parâmetro objetivo (cm, °C, R$, escala de 1 a 10), o predicado é vago → não é proposição.
+
+> [!tip] Macete da régua
+> Pergunte: **"Existe uma régua objetiva para medir isso?"** Se sim, com o parâmetro fornecido, vira proposição. Se não há régua, é vago → não é proposição.
+>
+> - "João tem 1,85 m" → **tem régua (metros)** → **é proposição**
+> - "João é alto" → **sem régua** → **não é proposição**
+
+---
+
+#### 3. Indexicais e pronomes — a família mais traiçoeira
+
+Essa é, sem exagero, a parte que mais gera erro em prova. Praticamente todos os pronomes da língua portuguesa aparecem em questões de proposição — mas nem todos funcionam da mesma forma. Dividimos em **três famílias** com comportamentos completamente distintos.
+
+**Família 1 — Pronomes deíticos** (apontam para o contexto)
+
+São pronomes como: **eu, tu, ele, ela, isto, isso, aquele, meu, seu, aqui, agora**. Eles funcionam como um "dedo apontando" — dependem de **quem fala, onde e quando** para ter significado. Enquanto a referência não for fixada, não há valor de verdade → **não são proposição**.
+
+| Pronome deítico | Enunciado | Problema |
+|-----------------|-----------|----------|
+| **ele** | "Ele é aprovado." | Quem é "ele"? |
+| **isto** | "Isto é caro." | O que é "isto"? |
+| **meu** | "Meu documento está pronto." | De quem? |
+| **aqui** | "Aqui está chovendo." | Onde é "aqui"? |
+| **agora** | "Agora faz frio." | Quando é "agora"? |
+
+> [!warning] Pegadinha de prova
+> "Ele passou no concurso." → **NÃO é proposição** (enquanto não soubermos quem é "ele"). Se o enunciado fosse "João passou no concurso" → **é proposição**. A banca troca o nome próprio por um pronome deítico e espera que você não perceba.
+
+**Família 2 — Pronomes quantificacionais/indefinidos** (carregam quantificador)
+
+São: **alguém, ninguém, tudo, nada, algum, qualquer, todos, nenhum**. A surpresa: esses pronomes **TÊM valor de verdade definido** → **SÃO proposição** (e já entram na lógica de primeira ordem, com quantificadores $\exists$ e $\forall$).
+
+| Pronome | Equivalência lógica | Exemplo | É proposição? |
+|---------|---------------------|---------|---------------|
+| **alguém** | $\exists x$ | "Alguém telefonou." | ✅ Sim — $\exists x\,\text{telefonou}(x)$ |
+| **ninguém** | $\neg \exists x$ | "Ninguém compareceu." | ✅ Sim — $\neg \exists x\,\text{compareceu}(x)$ |
+| **tudo/nada** | $\forall x$ / $\neg \exists x$ | "Tudo foi perdido." | ✅ Sim |
+| **algum** | $\exists x$ | "Algum candidato acertou." | ✅ Sim |
+
+> [!tip] Por que são proposição?
+> O segredo é que esses pronomes **quantificam** — eles dizem "existe pelo menos um" ($\exists$) ou "para todos" ($\forall$). Ao quantificar, prendem a variável e criam um valor de verdade definido. "Alguém telefonou" é **verdadeiro** se pelo menos uma pessoa telefonou e **falso** se ninguém telefonou. Não depende de contexto — depende da realidade.
+
+**Família 3 — Pronomes relativos** (amarram variável)
+
+São: **que, quem, o qual, cujo**. Eles ligam uma oração à outra e **amarram** a variável a um referente já mencionado. Por isso, **SÃO proposição**.
+
+> "O candidato **que** estudou passou." → **É proposição** — o "que" amarra "candidato" a uma ação definida.
+
+**A DUPLA CARA do "quem" — atenção máxima:**
+
+| Enunciado | Tipo do "quem" | É proposição? |
+|-----------|-----------------|---------------|
+| "**Quem** chegou cedo?" | Interrogativo (pergunta) | ❌ Não |
+| "O homem **que** chegou cedo foi recompensado." | Relativo (amarra variável) | ✅ Sim |
+
+> [!warning] Pegadinha clássica
+> A banca troca "que" por "quem" em contextos interrogativos e espera que você trate como se fosse sempre relativo. **"Quem" como pergunta NÃO é proposição** — é interrogativo. **"Quem" como relativo** (após vírgula ou em oração subordinada) **É proposição**.
+
+> [!tip] Macete do pronome-deítico — o "dedo"
+> Todo pronome deítico é um **dedo apontando**: ele precisa apontar para algo (fixar referência) para ter sentido. Sem o dedo (sem contexto que fixe a referência), não tem valor de verdade → não é proposição.
+>
+> "Isto é verdade" → Para ser proposição, precisamos saber: **isto o quê?** Se o contexto diz "A Terra é redonda. Isto é verdade." → agora é proposição, porque "isto" aponta para "A Terra é redonda".
+>
+> **Memorize:** "Sem dedo, sem valor."
+
+---
+
+#### 4. Variável livre vs. quantificada — o contraste que a banca adora
+
+Esse é o ponto que conecta diretamente o que vimos na tabela original (variável livre = não é proposição) com a lógica de primeira ordem. A banca adora testar se você percebe a diferença entre uma variável **solta** e uma variável **presa** por um quantificador.
+
+| Expressão | Classificação | Por quê? |
+|-----------|---------------|----------|
+| $x > 5$ | ❌ **NÃO é proposição** | $x$ está solta — vale para $x = 1$ (F), $x = 6$ (V), $x = 10$ (V) |
+| $\exists x\,(x > 5)$ | ✅ **É proposição** | "$\exists$" prende $x$ — o enunciado afirma que **existe** pelo menos um valor que satisfaz |
+| $\forall x\,(x > 5)$ | ✅ **É proposição** | "$\forall$" prende $x$ — o enunciado afirma que **para todo** valor, a condição vale |
+
+A chave: o **quantificador** ($\exists$ ou $\forall$) transforma uma expressão com variável livre em uma proposição completa. Sem o quantificador, a variável está "pulando" entre valores — não dá para dizer se é V ou F.
+
+> [!tip] Ponte com o próximo tópico
+> Esse contraste é a porta de entrada para a [[Lógica de primeira ordem]], onde veremos quantificadores existencial ($\exists$) e universal ($\forall$) em profundidade. Lá, vamos formalizar exatamente como "alguém", "ninguém", "todos" e "nenhum" se traduzem em símbolos.
+>
+> Por agora, fixe: **variável solta = porta aberta = não é proposição**; **quantificador = trava = é proposição**.
+
+---
+
+#### 5. Paradoxos além do mentiroso
+
+"Esta frase é falsa." é o paradoxo mais famoso da lógica — mas a banca não se limita a ele. Existem ao menos duas variações que caem em prova:
+
+| Paradoxo | Por que não é proposição |
+|----------|--------------------------|
+| "Esta frase é falsa." | Se é V → é F; se é F → é V → **sem valor coerente** |
+| "Estou mentindo agora." | Se é V → está mentindo → é F; se é F → não está mentindo → é V → **ciclo sem saída** |
+
+> [!warning] Pegadinha clássica de prova
+> A banca adora variar o **paradoxo do mentiroso**: troca "esta frase" por "estou mentindo agora", ou embute a auto-referência em frases diferentes. O ponto em comum é a **circularidade**: a frase se auto-avalia e não admite valor de verdade coerente.
+>
+> **Atenção:** nem toda auto-referência é paradoxo. "Esta frase é verdadeira" não gera contradição (pode ser simplesmente verdadeira), então, estritamente, **é uma proposição** — só é uma frase "estranha". A banca, porém, costuma agrupar frases auto-referenciais; o filtro seguro é: **se atribuir V ou F gera contradição, não é proposição; se dá para atribuir um valor sem contradição, é proposição**.
+>
+> **Regra geral:** Tudo que se **auto-avalia** e gera circularidade lógica não admite valor de verdade coerente → não é proposição.
+
+---
+
+#### Nota de consistência — futuro incerto ≠ incerteza modal
+
+> [!important] Distinção que define 1 erro em cada prova
+> O arquivo (na seção 2.2, Caso 3) trata o **futuro incerto** como proposição: "A próxima Copa será no Japão" → **é proposição**, porque o valor existe (V ou F), só está desconhecido.
+>
+> Já aqui dissemos que **"Talvez a próxima Copa seja no Japão"** → **NÃO é proposição**, porque o "talvez" destrói o valor de verdade.
+>
+> **Como conciliar?**
+>
+> | Tipo de incerteza | Exemplo | É proposição? | Por quê? |
+> |-------------------|---------|---------------|----------|
+> | **Incerteza no TEMPO** (futuro) | "A Copa será no Japão." | ✅ Sim | O valor existe em princípio — o evento acontece ou não |
+> | **Incerteza na CERTEZA** (modal) | "Talvez a Copa seja no Japão." | ❌ Não | O "talvez" impede que o enunciado declare qualquer coisa com valor definido |
+>
+> **Memorize:**
+> - **Futuro esconde a verdade** (mas ela existe) → é proposição
+> - **"Talvez" destrói a verdade** (ela não fica definida) → não é proposição
+>
+> Essa distinção é o **erro nº 1** de quem estudou pela metade. Se a banca colocar uma frase com "talvez" e outra com "será", marque apenas a segunda como proposição.
+
+---
+
+#### Os MACETES — 9 regras para nunca mais errar
+
+> [!tip] Macete 1 — Teste do SIM/NÃO
+> Pergunte: **"Essa frase responde sim ou não sem ambiguidade?"** Se sim → provavelmente é proposição. Se a resposta é "depende", "talvez" ou "o quê?" → não é proposição.
+
+> [!tip] Macete 2 — I.I.E. (3 modos do verbo)
+> **I**mperativo (manda), **I**nterrogativo (pergunta), **E**xclamativo (sente). Os três **não declaram** fatos → **não são proposição**. Se o verbo está no imperativo, interrogativo ou exclamativo, é golpe de certeza: não é proposição.
+
+> [!tip] Macete 3 — T.P.P. (palavras da dúvida)
+> **T**alvez, **P**ossivelmente, **P**rovavelmente. Se aparecer qualquer uma dessas (ou sinônimo), o enunciado carrega **incerteza modal** → sem valor fixo → **não é proposição**.
+
+> [!tip] Macete 4 — Régua do vago
+> "João é alto" precisa de uma **régua** para decidir V/F? Se não há régua objetiva (cm, °C, R$), o predicado é vago → **não é proposição**. Se a régua existe no enunciado ("João tem 1,85 m"), vira proposição.
+
+> [!tip] Macete 5 — Dedo do indexical/pronome-deítico
+> **Eu, tu, ele, isto, aqui, agora, meu, seu** → são "dedos apontando". Sem fixar a referência (o "dedo" apontar para algo concreto), **não tem valor** → não é proposição. Fixou? Aí vira proposição.
+
+> [!tip] Macete 6 — Variável presa
+> "$x$ solto = porta aberta pro valor mudar" → **não é proposição**. O quantificador ($\forall$ ou $\exists$) **prende** a variável → vira proposição. "$x > 5$" não é; "$\exists x\,(x > 5)$" é.
+
+> [!tip] Macete 7 — Espelho do paradoxo
+> "Esta frase é falsa" → se é V, vira F; se é F, vira V → **espelho infinito, sem valor**. Tudo que se auto-avalia e gera contradição circular não é proposição.
+
+> [!tip] Macete 8 — Tempo × Certeza
+> **Futuro** esconde a verdade (mas ela existe) → é proposição. **"Talvez"** destrói a verdade (não fica definida) → não é proposição. Não confunda incerteza temporal com incerteza modal.
+
+> [!tip] Macete 9 — Pronome: aponta / conta / amarra
+> - **Deítico** (eu, ele, isto) → **aponta** (não é até fixar referência)
+> - **Quantificacional** (alguém, ninguém, tudo) → **conta** (já é proposição — carrega $\exists$ ou $\forall$)
+> - **Relativo** (que, quem) → **amarra** variável (já é proposição)
+>
+> A banca mistura os três e espera que você trate todos iguais. Não trate.
+
+---
+
+#### Tabela-mestre — TUDO que NÃO é proposição (e o que JÁ é)
+
+| Categoria | Exemplo | Macete | Vira proposição se... |
+|-----------|---------|--------|------------------------|
+| **Imperativo** | "Feche a porta!" | I.I.E. — manda, não declara | Jamais — modo do verbo não é declarativo |
+| **Interrogativo** | "Que horas são?" | I.I.E. — pergunta, não declara | Jamais — é pergunta |
+| **Exclamativo** | "Que dia lindo!" | I.I.E. — sente, não declara | Jamais — é emoção |
+| **Incerteza (T.P.P.)** | "Talvez chova." | T.P.P. — cheiro de dúvida | Se retirar o "talvez": "Choveu." → sim, é proposição |
+| **Vago** | "João é alto." | Régua do vago | Se adicionar parâmetro: "João tem 1,85 m" → sim |
+| **Indexical / Deítico** | "Isto é caro." | Dedo do indexical | Se fixar referência: "O carro custa R$ 80 mil e é caro" → sim |
+| **Variável livre** | $x > 5$ | Variável presa | Se adicionar quantificador: $\exists x\,(x > 5)$ → sim |
+| **Paradoxo** | "Esta frase é falsa." | Espelho do paradoxo | Jamais — auto-contradição lógica |
+| **Pronome quantificacional** ✅ | "Alguém telefonou." | Já é proposição | — (já tem valor definido via $\exists$) |
+| **Pronome relativo** ✅ | "O candidato que estudou passou." | Já é proposição | — (variável amarrada) |
+
+> [!note] Leia a tabela de baixo para cima
+> As duas últimas linhas (quantificacional e relativo) **já são proposições** — aparecem aqui apenas para reforçar a distinção. A banca adora colocar "Alguém telefonou" como alternativa de "não é proposição". Não caia: **já é**.
+
+---
+
+#### Regra de ouro final
+
+> [!important] Proposição exige UMA só coisa
+> **Valor de verdade DEFINIDO** (V ou F, sem ambiguidade).
+>
+> Se o enunciado for:
+> - **Ordem** (imperativo) → não declara → ❌ não é proposição
+> - **Pergunta** (interrogativo) → não declara → ❌ não é proposição
+> - **Emoção** (exclamativo) → não declara → ❌ não é proposição
+> - **Dúvida** (talvez, provavelmente) → sem valor fixo → ❌ não é proposição
+> - **Vago** (sem régua objetiva) → sem V/F definido → ❌ não é proposição
+> - **Dependente de contexto** (pronome deítico sem fixar referência) → ❌ não é proposição
+> - **Variável solta** ($x > 5$ sem quantificador) → ❌ não é proposição
+> - **Auto-contraditório** (paradoxo) → sem valor coerente → ❌ não é proposição
+>
+> Mas se for **futuro incerto** ("A próxima Copa será no Japão") → o valor **existe** (só está desconhecido) → ✅ **É proposição**.
+
+### 2.2 Dúvidas frequentes sobre proposições
 
 Antes de avançar, vale esclarecer duas dúvidas que aparecem o tempo todo — tanto em fóruns de estudo quanto em provas disfarçadas.
 
@@ -510,6 +749,201 @@ $$\neg P \lor Q \to \neg R \land S \leftrightarrow T$$
 
 > [!warning] Erro 4: trocar a direção da avaliação de $\land$ e $\lor$
 > Quando múltiplos conectivos do mesmo nível aparecem, avalie **da esquerda para a direita**. Em $P \land Q \land R$, calcule $(P \land Q)$ primeiro e depois o resultado com $R$. Não comece pelo $\land$ da direita — a ordem importa (embora, para $\land$ e $\lor$, o resultado final seja o mesmo por associatividade, a banca pode cobrar o **processo**).
+
+### 3.8 Outros termos e formas de expressar os conectivos
+
+Até aqui, cada conectivo apareceu com seu nome canônico: "não", "e", "ou", "se...então", "se e somente se". Mas nas provas, a banca quase nunca escreve essas palavras exatas. Em vez disso, camufla os conectivos atrás de sinônimos, construções indiretas e variações linguísticas que fazem o candidato que só treinou com "E/OU/SE" tropeçar. Quem reconhece essas variações traduz a frase em segundos; quem não reconhece perde tempo (e pontos).
+
+A pergunta central desta seção é: **como reconhecer cada conectivo mesmo quando a banca disfarça a palavra?** Vamos conectivo por conectivo.
+
+---
+
+#### Negação ($\neg$) — "NÃO"
+
+| Termo / construção | Exemplo curto | Equivalência lógica |
+|--------------------|---------------|---------------------|
+| não | "Não chove hoje" | $\neg P$ |
+| nunca | "Nunca chove em dezembro" | $\neg P$ |
+| jamais | "Jamais voltaria" | $\neg P$ |
+| nenhum / nenhuma | "Nenhum candidato faltou" | $\neg P$ |
+| nem | "Nem um só passou" | $\neg P$ |
+| "não é verdade que..." | "Não é verdade que todos passaram" | $\neg P$ |
+| "é falso que..." | "É falso que o Sol orbita a Terra" | $\neg P$ |
+| "ao contrário" | "Ao contrário do que se pensa..." | $\neg P$ |
+| "impossível que..." | "Impossível que isso seja verdade" | $\neg P$ |
+
+> [!tip] Macete — "O espelho"
+> A negação é um espelho: ela **troca** V↔F. Não force o resultado ser falso — pergunte-se qual era o valor da frase original e **inverta**. Se o original era V, a negação é F; se o original era F, a negação é V. O "não" não é um interruptor que desliga — é um espelho que reflete o contrário.
+>
+> Memorize: **"Espelho inverte, não apaga."**
+
+> [!warning] Pegadinha clássica — "nem" nega o quantificador
+> Cuidado com frases como "nem todos os candidatos passaram". O "nem" aqui **nega o quantificador "todos"**, não a proposição inteira. Traduza assim:
+>
+> - "Todos passaram" = $\forall x \, P(x)$
+> - "Nem todos passaram" = $\neg(\forall x \, P(x))$ = $\exists x \, \neg P(x)$
+>
+> A banca adora trocar "não todos" por "nem todos" para testar se você percebe que o "nem" é uma negação — e que a negação de "todos" **não** é "nenhum". O "nem todos" significa "pelo menos um não passou", não "todos ficaram de fora".
+
+---
+
+#### Conjunção ($\land$) — "E"
+
+| Termo / construção | Exemplo curto | Equivalência lógica |
+|--------------------|---------------|---------------------|
+| e | "Chove **e** faz frio" | $P \land Q$ |
+| mas | "Chove **mas** faço sol" | $P \land Q$ |
+| porém | "É caro, **porém** vale a pena" | $P \land Q$ |
+| contudo | "É difícil, **contudo** possível" | $P \land Q$ |
+| bem como | "Estuda lógica **bem como** programação" | $P \land Q$ |
+| assim como | "Estuda lógica, **assim como** matemática" | $P \land Q$ |
+| tanto...quanto | "Estuda lógica **tanto quanto** português" | $P \land Q$ |
+| além de | "**Além de** estudar, resolve simulados" | $P \land Q$ |
+| juntamente com | "Chega cedo, **juntamente com** o colega" | $P \land Q$ |
+| também | "Estuda lógica e **também** português" | $P \land Q$ |
+| "que" (relativo ligando dois fatos) | "O candidato **que** estuda **e** passa é diligente" | $P \land Q$ |
+
+> [!tip] Macete — "O crivo exigente"
+> A conjunção é como uma **lista de checklist**: precisa marcar **TODAS** as caixas para passar. Se falta um único item, o crivo trava. Pense: "para ser V, precisa cumprir tudo — sem exceção."
+>
+> Memorize: **"Crivo exige tudo: um só faltando trava."**
+
+> [!warning] Pegadinha clássica — "mas", "porém" e "contudo" são conjunção!
+> Na vida cotidiana, "mas", "porém" e "contudo" soam como **oposição** — como se algo contradizesse o outro. Em lógica formal, eles são **sinônimos exatos de "e"**: precisam que **ambos** os lados sejam verdadeiros.
+>
+> Exemplo: "Chove **mas** faço sol" → $P \land Q$. Para essa expressão ser verdadeira, **precisa chover E precisa fazer sol ao mesmo tempo**. O "mas" não nega nada — apenas sinaliza que a combinação é surpreendente. A surpresa é psicológica, não lógica.
+>
+> **Regra de ouro para prova:** Substitua "mas"/"porém"/"contudo" por "e" na sua cabeça. Se a frase faz sentido com "e", é conjunção. Não caia na tentação de inverter o sinal por causa da "oposição" que a palavra sugere.
+
+---
+
+#### Disjunção ($\lor$) — "OU" (inclusivo)
+
+| Termo / construção | Exemplo curto | Equivalência lógica |
+|--------------------|---------------|---------------------|
+| ou | "Estuda **ou** trabalha" | $P \lor Q$ |
+| ou...ou | "**Ou** estuda, **ou** trabalha" | $P \lor Q$ |
+| quer...quer | "**Quer** estuda, **quer** trabalha" | $P \lor Q$ |
+| ora...ora | "**Ora** estuda, **ora** trabalha" | $P \lor Q$ |
+| seja...seja | "**Seja** estuda, **seja** trabalha" | $P \lor Q$ |
+| "pelo menos um de" | "**Pelo menos um** dos requisitos deve ser atendido" | $P \lor Q$ |
+| "ao menos" | "Precisa de **ao menos** 3 anos" | $P \lor Q$ |
+| "a menos que" | "Vai **a menos que** chova" | $P \lor Q$ (equivale a $\neg Q \to P$) |
+| "a não ser que" | "Vai **a não ser que** chova" | $P \lor Q$ (equivale a $\neg Q \to P$) |
+
+> [!tip] Macete — "Uma porta basta"
+> A disjunção é uma **catraca com duas portas**: basta uma abrir para passar. Só trava quando **ambas** estão fechadas (F∧F). Pense: "se pelo menos uma opção funciona, eu passo."
+>
+> Memorize: **"Duas portas, basta uma. Só trava com ambas fechadas."**
+
+> [!warning] Pegadinha 1 — "a menos que" NÃO é conjunção!
+> Essa é uma das maiores armadilhas em prova. O candidato lê "a menos que" e pensa em "restrição", como se fosse um "e" (exigindo algo a mais). Mas **"a menos que" traduz para disjunção ($\lor$)** — e, mais precisamente, para uma **condicional** com o antecedente negado.
+>
+> **Regra formal:** "$P$ a menos que $Q$" $\equiv \neg Q \to P \equiv P \lor Q$.
+>
+> Veja o exemplo: "Vai à festa **a menos que** chova."
+> - $V$ = "vai à festa", $C$ = "chova"
+> - Tradução: "Se **não** chover, vai" = $\neg C \to V$, que equivale a $V \lor C$ (vai **ou** chova — pelo menos um dos dois).
+>
+> O ponto que importa para prova: **"a menos que" é $\lor$ / $\to$, nunca $\land$**. A banca conta com você pensar "restrição" e marcar conjunção. Se a dúvida persistir, use a fórmula-mestra: troque "a menos que $Q$" por "se não $Q$" e monte a condicional $\neg Q \to P$.
+
+> [!warning] Pegadinha 2 — "ou...ou" é inclusivo salvo indicação explícita
+> Na lógica formal, **todo "ou" é inclusivo** por padrão. "Ou...ou" também é. Só vira **exclusivo** (XOR) quando a banca coloca uma indicação **explícita** como "mas não os dois", "um ou outro, exclusivamente", ou símbolo $\oplus$.
+>
+> Exemplo: "O candidato é aprovado ou reprovado" → Em provas, considere isso como inclusivo ($\lor$) a menos que a banca especifique exclusividade. Muita gente marca "exclusivo" por instinto — e erra.
+
+---
+
+#### Condicional ($\to$) — "SE... ENTÃO"
+
+| Termo / construção | Exemplo curto | Equivalência lógica |
+|--------------------|---------------|---------------------|
+| se | "**Se** estudar, passa" | $P \to Q$ |
+| caso | "**Caso** estude, terá vantagem" | $P \to Q$ |
+| supondo que | "**Supondo que** estude, passará" | $P \to Q$ |
+| contanto que | "**Contanto que** estude, passará" | $P \to Q$ |
+| desde que | "Passa **desde que** estude" | $P \to Q$ |
+| "na hipótese de" | "**Na hipótese de** chover, levo guarda-chuva" | $P \to Q$ |
+| "quando" (condicional) | "**Quando** chegar, aviso" | $P \to Q$ |
+| "é condição SUFICIENTE para" | "Estudar é **suficiente** para passar" | $P \to Q$ |
+| "é condição NECESSÁRIA para" | "Estudar é **necessário** para passar" | $Q \to P$ |
+
+> [!tip] Macete — "SUficiente antes da seta, NEcessária depois"
+> A confusão entre necessária e suficiente é o erro mais frequente em prova. Memorize assim:
+>
+> - **SU**ficiente → **S**ai **U**ma seta (antes da seta, no antecedente): "$P$ é suficiente para $Q$" → $P \to Q$
+> - **NE**cessária → **N**a c**E**la (depois da seta, no consequente): "$Q$ é necessária para $P$" → $P \to Q$
+>
+> Ou de forma direta: o que é **suficiente** fica antes da seta; o que é **necessário** fica depois da seta. Se inverter, inverteu a seta — e errou.
+
+> [!warning] Pegadinha — confundir necessária e suficiente inverte a seta
+> A banca adora testar: "Estudar é condição **necessária** para ser aprovado. Qual a expressão correta?"
+>
+> - Muita gente marca: $E \to A$ (estudar implica aprovação) ← **ERRADO!**
+> - Correto: "Estudar é necessário para ser aprovado" significa "sem estudo, não há aprovação". Tradução formal: $\neg E \to \neg A$ (equivalente a $A \to E$). Ou seja: **a aprovação implica o estudo** — $A \to E$.
+>
+> Note a diferença: no erro comum ($E \to A$), o estudo "garante" a aprovação. No correto ($A \to E$), a aprovação "pressupõe" o estudo. São sentidos opostos.
+>
+> **Dica de prova:** Sempre pergunte: **"Se acontece X, Y obrigatoriamente acontece?"** Se a resposta é "X é imprescindível para Y" (sem X não tem Y), então Y→X. O necessário vai **depois** da seta.
+
+---
+
+#### Bicondicional ($\leftrightarrow$) — "SE E SOMENTE SE"
+
+| Termo / construção | Exemplo curto | Equivalência lógica |
+|--------------------|---------------|---------------------|
+| se e somente se | "Passa **se e somente se** estuda" | $P \leftrightarrow Q$ |
+| sse (abrev. de "se e somente se") | "Passa **sse** estuda" | $P \leftrightarrow Q$ |
+| "se, e apenas se" | "Passa **se, e apenas se**, estuda" | $P \leftrightarrow Q$ |
+| "é condição necessária e suficiente" | "Estudar é **necessária e suficiente** para passar" | $P \leftrightarrow Q$ |
+| "equivale a" | "$P$ **equivale** a $Q$" | $P \leftrightarrow Q$ |
+| "tem o mesmo valor que" | "Tem o **mesmo valor que** ser aprovado" | $P \leftrightarrow Q$ |
+| **"somente se"** (⚠️ **só uma direção!**) | "Passa **somente se** estuda" | $P \to Q$ (**não** é $\leftrightarrow$!) |
+
+> [!tip] Macete — "Via de mão dupla"
+> O bicondicional é uma **estrada de mão dupla**: funciona nos dois sentidos. O símbolo $\leftrightarrow$ são literalmente **duas setas encarando**: $P \to Q$ **E** $Q \to P$. Quando a banca usa "se e somente se", ela está dizendo: "isso só acontece junto — nunca um sem o outro."
+>
+> Memorize: **"$\leftrightarrow$ = duas setas = ida e volta = juntos ou nada."**
+
+> [!warning] Pegadinha CRÍTICA — "somente se" sozinho é UMA via só
+> Essa é provavelmente a pegadinha mais perigosa desta seção. "Somente se" **sozinho** NÃO é bicondicional — é **condicional em uma direção só**. O "somente" restringe, não equivale.
+>
+> Compare os três casos com o mesmo exemplo:
+>
+> | Enunciado | Forma lógica | Conectivo |
+> |-----------|-------------|-----------|
+> | "Passa **se** estudar" | $E \to P$ | Condicional |
+> | "Passa **somente se** estudar" | $P \to E$ | Condicional (direção invertida!) |
+> | "Passa **se e somente se** estudar" | $P \leftrightarrow E$ | Bicondicional ✅ |
+>
+> Veja a diferença:
+> - "$E \to P$": "Se estuda, passa" — estudar garante aprovação.
+> - "$P \to E$": "Se passa, estudou" — quem passou necessariamente estudou (mas pode ser que nem todo estudante passe).
+> - "$P \leftrightarrow E$": "Passa se e somente se estudar" — os dois andam juntos sempre.
+>
+> **Regra de ouro:** "Somente se" sozinho = condicional (a direção do "somente" aponta para o antecedente da condicional). Só vira bicondicional com "**se e** somente se" — os dois precisam estar juntos.
+
+---
+
+> [!tip] Tabela de bolso para prova
+> Leve esta tabela para a prova — é um resumo de tudo que vimos:
+>
+> | Conectivo | Sinônimos que caem em prova | Macete |
+> |-----------|----------------------------|--------|
+> | $\neg$ (Negação) | não, nunca, jamais, nem, "não é verdade que", "é falso que", impossível | **Espelho** — inverte V↔F |
+> | $\land$ (Conjunção) | e, mas, porém, contudo, bem como, tanto...quanto, além de, também | **Crivo** — exige TODAS as caixas |
+> | $\lor$ (Disjunção) | ou, quer...quer, ora...ora, "pelo menos um", "a menos que", "a não ser que" | **Porta** — basta uma abrir |
+> | $\to$ (Condicional) | se, caso, desde que, contanto que, "é suficiente para", "é necessário para" | **Seta** — suficiente antes, necessário depois |
+> | $\leftrightarrow$ (Bicondicional) | se e somente se, sse, "equivale a", "mesmo valor que" | **Via dupla** — ida e volta |
+
+> [!important] Regra de ouro para o estudante
+> Ao encontrar qualquer uma dessas construções em prova, **não procure o símbolo** — procure o **significado**. Faça a si mesmo estas três perguntas:
+>
+> 1. **"Isso exige tudo ou basta um?"** → Se exige tudo, é $\land$. Se basta um, é $\lor$.
+> 2. **"Isso é uma promessa?"** (Se X acontecer, Y obrigatoriamente acontece?) → Se sim, é $\to$. A promessa só é quebrada com $V \to F$.
+> 3. **"Dá pra voltar o caminho?"** (Se eu sei o resultado, posso garantir a causa?) → Se sim, e funciona nos dois sentidos, é $\leftrightarrow$. Se funciona em uma direção só, é $\to$.
+>
+> Essas três perguntas substituem qualquer decoreba — e funcionam mesmo quando a banca inventa sinônimos novos.
 
 ---
 
