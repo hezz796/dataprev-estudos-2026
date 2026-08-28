@@ -88,7 +88,7 @@ Perceba o que **não** se acentua: "caju", "tatu", "abacaxi", "urubu" são oxít
 - Terminadas em -ps: bíceps, fórceps.
 - Terminadas em -ã/-ãs: irmã, órfã, imãs.
 - Terminadas em -ão/-ãos: órgão, bênção, órfãos.
-- Terminadas em -ei/-eis: jóquei, marquês? Não — "ei" não: vôlei, pastéis? Não, "pastéis" é oxítona. Paroxítona terminada em -ei: jóquei, hóquei. E em -eis: fáceis, úteis (plural de fácil/útil — mas veja: "fáceis" a sílaba tônica é "fá" — penúltima, terminação -eis → acentuada). Vamos citar: jóquei, vôlei (terminação -ei), fósseis, úteis (terminação -eis).
+- Terminadas em -ei/-eis: jóquei, hóquei, vôlei (terminação -ei); fósseis, úteis, fáceis (terminação -eis).
 - Terminadas em **ditongo** (combinação vogal + semivogal numa só sílaba — veremos ditongo na seção de divisão silábica): história, cárie, ânsia, memória, água, mágoa, série, prêmio.
 
 Há um jeito prático de lembrar esse "oceano" de terminações: a maior parte das palavras portuguesas é paroxítona, e a grande maioria **não** recebe acento — porque termina justamente em -a, -e, -o, -em, -ens ("casa", "mesa", "livro", "homem", "jovem", "item"). O acento só aparece quando a terminação foge desse padrão. Ou seja: para a classe das paroxítonas, **a regra é o contrário da oxítona** — o que se decora é a lista dos "fujões" (-i, -us, -um, -l, -n, -r, -x, -ps, -ã, -ão, -ei, ditongo). Se a palavra não está na lista, paroxítona sem acento.
@@ -97,7 +97,7 @@ Há um jeito prático de lembrar esse "oceano" de terminações: a maior parte d
 
 **Monossílabos — acentuam-se os tônicos terminados em -a, -e, -o (com ou sem -s) e em ditongos abertos -éi, -éu, -ói.**
 
-Um **monossílabo** é uma palavra de uma só sílaba. O monossílabo **tônico** é pronunciado com força própria: "pá" (strumento), "pé", "pó", "dó", "já", "trás", "fé", "mês", "só". Esses recebem acento. Já os monossílabos **átonos** — pronunciados sem força, "colados" na palavra seguinte — não recebem: "de", "que", "se", "lhe", "no", "me". Compare: "Você **dá** (acentuado, tônico) o livro a **nós** (acentuado)?" e "**De** volta para casa" (átono, sem acento).
+Um **monossílabo** é uma palavra de uma só sílaba. O monossílabo **tônico** é pronunciado com força própria: "pá" (instrumento), "pé", "pó", "dó", "já", "trás", "fé", "mês", "só". Esses recebem acento. Já os monossílabos **átonos** — pronunciados sem força, "colados" na palavra seguinte — não recebem: "de", "que", "se", "lhe", "no", "me". Compare: "Você **dá** (acentuado, tônico) o livro a **nós** (acentuado)?" e "**De** volta para casa" (átono, sem acento).
 
 > [!tip] Os três degraus de qualquer questão de acentuação
 > **1.** Onde está a sílaba tônica? → **2.** A palavra é oxítona, paroxítona ou proparoxítona? → **3.** A terminação dela está na lista da classe? Se sim, acentua; se não, não acentua.
@@ -421,7 +421,7 @@ Perceba como tudo se conecta: quem erra a divisão silábica ("ideia" dividida c
 Na hora de quebrar uma palavra no fim da linha, valem convenções simples:
 
 1. **Quebre sempre na fronteira de sílabas** — respeitando todas as regras de cima. Nunca separe letras de uma mesma sílaba.
-2. **Evite deixar uma vogal sozinha no fim ou no começo da linha.** Não há proibição gramatical de escrever "e-" e "escola" na linha seguinte? A rigor, separar "e-scola" é possível, mas as convenções de composição recomendam **evitar** deixar sílaba de uma letra só isolada (como "e-" no fim da linha). Na prática de prova, marque como errada a divisão que deixa uma letra sozinha.
+2. **Evite deixar uma vogal sozinha no fim ou no começo da linha.** Não há proibição gramatical de escrever "e-" no fim da linha e "escola" na linha seguinte; a rigor, separar "e-scola" é possível, mas as convenções de composição recomendam **evitar** deixar sílaba de uma letra só isolada (como "e-" no fim da linha). Na prática de prova, marque como errada a divisão que deixa uma letra sozinha.
 3. **Quando a palavra já tem hífen e a quebra cai justamente sobre ele**, o hífen deve aparecer **duas vezes**: um no fim da linha, outro no começo da seguinte (guarda- / -chuva). Fica feio e pouco usado digitalmente, mas é a convenção.
 
 ### 6.6 Tabela-resumo e pegadinhas da divisão silábica
@@ -437,7 +437,7 @@ Na hora de quebrar uma palavra no fim da linha, valem convenções simples:
 > [!warning] As pegadinhas da divisão silábica
 > **Pegadinha 1 — separar ch/lh/nh:** "cha-ve" dividido como "c-ha-ve", "ni-nho" como "n-i-nho" — errado. **Proteção:** dígrafo de um só som não se parte; quem carrega a sílaba é a vogal, e o "ch/lh/nh" fica com ela.
 >
-> **Pegadinha 2 — NÃO separar rr/ss:** "car-ro" dividido como "ca-rro", "as-sar" como "a-ssar" — errado. **Proteção:** ao contrário dos outros dígrafos, "rr" e "ss" **sempre** se separam, porque na pronúncia há um som em cada sílada.
+> **Pegadinha 2 — NÃO separar rr/ss:** "car-ro" dividido como "ca-rro", "as-sar" como "a-ssar" — errado. **Proteção:** ao contrário dos outros dígrafos, "rr" e "ss" **sempre** se separam, porque na pronúncia há um som em cada sílaba.
 >
 > **Pegadinha 3 — não separar hiato:** "saúde" dividido como "sau-de" (tratando "au" como ditongo) — errado. **Proteção:** "sa-ú-de" é hiato: o "a" e o "ú" ficam em sílabas distintas — e é justamente por isso que o "ú" é acentuado.
 >
@@ -463,7 +463,7 @@ Chegamos ao momento de transformar o conteúdo em pontos na prova. As bancas de 
 ### 7.2 Pegadinhas no padrão "armadilha → raciocínio errado → proteção"
 
 > [!warning] Pegadinha geral 1 — a palavra "escorregadia" dentro da alternativa
-> **A armadilha:** a alternativa está conceitualmente certa, mas contém uma palavra com ortografia errada — "a idéia principal", "o sistema foi **vôo**"? Não — um exemplo real: "a análise dos dados é fundamental para a tomada de decisão" — correta, exceto se grafar "análise" sem acento ("analise dos dados").
+> **A armadilha:** a alternativa está conceitualmente certa, mas contém uma palavra com ortografia errada — "a idéia principal", "o sistema foi **vôo**". Um exemplo real: "a análise dos dados é fundamental para a tomada de decisão" — correta, exceto se grafar "análise" sem acento ("analise dos dados").
 > **O raciocínio errado:** julgar a alternativa pelo conteúdo e "pular" a palavra.
 > **Como se proteger:** em toda questão de "grafia correta", leia **palavra por palavra**, com atenção redobrada a acentos, hífens e maiúsculas. A banca coloca o erro numa palavra "inocente" justamente para derrubar quem lê depressa.
 
