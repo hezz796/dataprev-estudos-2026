@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Sintaxe-da-Oracao.md",
+                "file": "Fase-3-Infraestrutura-de-Dados/Banco-de-Dados/Fundamentos-e-Modelagem/Fundamentos-e-Modelagem.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sintaxe-da-Oracao"
+              "title": "Fundamentos-e-Modelagem"
             }
           }
         ]
@@ -42,7 +42,7 @@
               "state": {
                 "sortOrder": "alphabetical",
                 "autoReveal": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
@@ -190,27 +190,41 @@
   },
   "active": "702a20c5f9aac5d7",
   "lastOpenFiles": [
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Periodo-Composto.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Classes-de-Palavras.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Estrutura-Morfossintatica.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Reescrita-de-Frases-e-Paragrafos.md",
-    "Fase-1-Fundamentos/Raciocinio-Logico-Matematico/Logica-Sentencial.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Pontuacao.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Regencia-e-Crase.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Sintaxe-da-Oracao.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Colocacao-Pronominal.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Coesao-Textual.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica/Concordancia.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Estrutura-Morfossintatica",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Compreensao-e-Interpretacao-de-Textos.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Ortografia-Oficial.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa/Tipos-e-Generos-Textuais.md",
-    "PARA PESQUISAR.md",
-    "Fase-1-Fundamentos/Lingua-Portuguesa",
-    "Fase-1-Fundamentos/Raciocinio-Logico-Matematico/Raciocinio-Matematico-Aplicado.md",
-    "Fase-1-Fundamentos/Raciocinio-Logico-Matematico/Logica-de-Primeira-Ordem.md",
-    "Fase-1-Fundamentos/Raciocinio-Logico-Matematico/Logica-de-Argumentacao.md",
+    "Fase-6-Seguranca-e-Governanca/Seguranca-da-Informacao/Autenticacao-e-Autorizacao.md",
     "_system/ementa.md",
-    "Fase-1-Fundamentos/Raciocinio-Logico-Matematico/Estruturas-Logicas.md"
+    "Fase-6-Seguranca-e-Governanca/Seguranca-da-Informacao/Fundamentos-de-Seguranca.md",
+    "Fase-1-Fundamentos/Legislacao-De-Seguranca-da-Informacao-e-LGPD/Lei-de-Acesso-a-Informacao-LAI.md",
+    "Fase-6-Seguranca-e-Governanca/Seguranca-da-Informacao",
+    "Fase-6-Seguranca-e-Governanca",
+    "Fase-5-Frontend-e-Interfaces/Arquitetura-Avancada-Seguranca-e-Inovacao/Transacoes-Distribuidas.md",
+    "Fase-5-Frontend-e-Interfaces/Arquitetura-Avancada-Seguranca-e-Inovacao/Arquitetura-de-Software-Avancada.md",
+    "Fase-5-Frontend-e-Interfaces/Arquitetura-Avancada-Seguranca-e-Inovacao/Design-de-Software-Avancado.md",
+    "Fase-5-Frontend-e-Interfaces/Arquitetura-Avancada-Seguranca-e-Inovacao/Blockchain.md",
+    "Fase-5-Frontend-e-Interfaces/Arquitetura-Avancada-Seguranca-e-Inovacao/Seguranca-de-Comunicacoes.md",
+    "Fase-5-Frontend-e-Interfaces/Arquitetura-Avancada-Seguranca-e-Inovacao",
+    "Fase-5-Frontend-e-Interfaces/UX-e-Gestao-de-Conteudo/Gestao-de-Conteudo-e-CMS.md",
+    "Fase-5-Frontend-e-Interfaces/UX-e-Gestao-de-Conteudo/Conceitos-de-UX.md",
+    "Fase-5-Frontend-e-Interfaces/UX-e-Gestao-de-Conteudo",
+    "Fase-5-Frontend-e-Interfaces/Frontend-Web/Arquiteturas-de-Apresentacao.md",
+    "Fase-5-Frontend-e-Interfaces/Frontend-Web/Frameworks-Frontend.md",
+    "Fase-5-Frontend-e-Interfaces/Frontend-Web/Fundamentos-Web.md",
+    "Fase-5-Frontend-e-Interfaces/Frontend-Web",
+    "Fase-5-Frontend-e-Interfaces",
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software/RPA.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software/Gestao-do-Ciclo-de-Vida-de-Testes.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software/Testes-Automatizados.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software/Testes-Ageis.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software/Fundamentos-de-Teste.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software",
+    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software/Engenharia-de-Requisitos.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software/Estimativas.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software/Tipos-de-Codificacao.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software/Padroes-de-Desenvolvimento-e-Reuso.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software/Metodologias-Ageis.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/DevOps-e-Controle-de-Versao.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Desenvolvimento-Mobile.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas",
+    "Fase-4-Nucleo-de-Desenvolvimento"
   ]
 }
