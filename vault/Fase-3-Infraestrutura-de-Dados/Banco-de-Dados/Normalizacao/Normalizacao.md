@@ -13,9 +13,9 @@
 
 ## 1. Por que estudar normalização?
 
-Na [[Fundamentos-e-Modelagem]], você aprendeu a construir o modelo lógico: entidades viram tabelas, relacionamentos viram chaves estrangeiras, e a integridade referencial garante que um pedido não aponte para um cliente inexistente. Mas o modelo lógico produzido ali pode ser **bom no desenho e ruim no projeto**: basta uma única tabela que misture dados de naturezas diferentes para aparecerem repetição, inconsistência e até perda de informação.
+Em [[Fundamentos-e-Modelagem|Fundamentos e Modelagem]], você aprendeu a construir o modelo lógico: entidades viram tabelas, relacionamentos viram chaves estrangeiras, e a integridade referencial garante que um pedido não aponte para um cliente inexistente. Mas o modelo lógico produzido ali pode ser **bom no desenho e ruim no projeto**: basta uma única tabela que misture dados de naturezas diferentes para aparecerem repetição, inconsistência e até perda de informação.
 
-A **normalização** é a disciplina que responde a duas perguntas: *como saber se uma tabela está bem projetada?* e *como transformar uma tabela mal projetada em várias tabelas bem projetadas?* Ela foi proposta por **Edgar Codd**, o mesmo criador do modelo relacional — o que faz dela não um enfeite, mas uma parte estrutural da teoria relacional.
+A **normalização** é a disciplina que responde a duas perguntas: *como saber se uma tabela está bem projetada?* E *como transformar uma tabela mal projetada em várias tabelas bem projetadas?* Ela foi proposta por **Edgar Codd**, o mesmo criador do modelo relacional — o que faz dela não um enfeite, mas uma parte estrutural da teoria relacional.
 
 A ementa do DATAPREV tem um aviso explícito: *"Normalização é alvo frequente de questões — praticar com exercícios de decomposição."* Ou seja: a FGV não cobra apenas definições decoradas; ela cobra **raciocínio sobre dependências e decomposição**. Por isso, esta nota termina com dois exemplos resolvidos, passo a passo — um até a 3FN e outro até a BCNF — e você deve refazê-los sozinho, de olhos fechados para a solução, até o processo virar automático.
 

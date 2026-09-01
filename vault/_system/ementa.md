@@ -64,38 +64,38 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Compreensão e interpretação de textos
+1. [[Compreensao-e-Interpretacao-de-Textos|Compreensão e interpretação de textos]]
    - Interpretação literal e inferencial
    - Identificação de ideia central e ideias secundárias
    - Reconhecimento de intenção comunicativa do autor
 
-2. Tipos e gêneros textuais
+2. [[Tipos-e-Generos-Textuais|Tipos e gêneros textuais]]
    - Narrativo, dissertativo (argumentativo e expositivo), descritivo, injuntivo
    - Gêneros: editorial, artigo, resenha, relatório, manual técnico, email profissional
 
-3. Ortografia oficial
+3. [[Ortografia-Oficial|Ortografia oficial]]
    - Regras de acentuação (oxítona, paroxítona, proparoxítona)
    - Uso de hífen e crase
    - Letras maiúsculas e minúsculas
    - Divisão silábica
 
-4. Coesão textual
+4. [[Coesao-Textual|Coesão textual]]
    - Referenciação: pronomes, sinonímia, hiperonímia, substituição, elipse
    - Conectores lógicos e temporais (portanto, entretanto, ademais, além disso)
    - Tempos verbais e coerência narrativa
 
-5. Estrutura morfossintática
-   - Classes de palavras: substantivos, adjetivos, verbos, advérbios, preposições, conjunções, pronomes, interjeições
-   - Sintaxe: sujeito, predicado, complementos, apostos, adjuntos
+5. [[Estrutura-Morfossintatica|Estrutura morfossintática]]
+   - [[Classes-de-Palavras|Classes de palavras]]: substantivos, adjetivos, verbos, advérbios, preposições, conjunções, pronomes, interjeições
+   - [[Sintaxe-da-Oracao|Sintaxe]]: sujeito, predicado, complementos, apostos, adjuntos
    - Coordenação (e, ou, mas, porém, todavia)
    - Subordinação (substantiva, adjectival, adverbial)
-   - Pontuação: vírgula, ponto e vírgula, dois-pontos, ponto final, pontinhos suspensivos
-   - Concordância nominal e verbal
-   - Regência verbal e nominal
-   - Crase: regras e exceções
-   - Pronomes oblíquos átonos (colocação: próclise, mesóclise,ênclise)
+   - [[Pontuacao|Pontuação]]: vírgula, ponto e vírgula, dois-pontos, ponto final, pontinhos suspensivos
+   - [[Concordancia|Concordância nominal e verbal]]
+   - [[Regencia-e-Crase|Regência verbal e nominal]]
+   - [[Regencia-e-Crase|Crase]]: regras e exceções
+   - [[Colocacao-Pronominal|Pronomes oblíquos átonos]] (colocação: próclise, mesóclise,ênclise)
 
-6. Reescrita de frases e parágrafos
+6. [[Reescrita-de-Frases-e-Paragrafos|Reescrita de frases e parágrafos]]
    - Transformação de voz (ativa/passiva)
    - Substituição de vocabulário (paráfrase)
    - Reorganização de períodos complexos
@@ -116,26 +116,26 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Estruturas lógicas
+1. [[Estruturas-Logicas|Estruturas lógicas]]
    - Proposições e conectivos (e, ou, se...então, não, se e somente se)
    - Leitura e construção de argumentos
 
-2. Lógica de argumentação
+2. [[Logica-de-Argumentacao|Lógica de argumentação]]
    - Analogias: identificação de relações entre pares
    - Inferências: dedutivas, indutivas e abdutivas
    - Deduções em cadeia a partir de premissas
 
-3. Lógica sentencial
+3. [[Logica-Sentencial|Lógica sentencial]]
    - Tabelas-verdade
    - Equivalências lógicas (leis de De Morgan, distributiva, associativa)
    - Diagramas de Venn para proposições simples
 
-4. Lógica de primeira ordem
+4. [[Logica-de-Primeira-Ordem|Lógica de primeira ordem]]
    - Quantificadores (universal e existencial)
    - Predicados e variáveis
    - Negação de quantificadores
 
-5. Raciocínio matemático aplicado
+5. [[Raciocinio-Matematico-Aplicado|Raciocínio matemático aplicado]]
    - Problemas aritméticos: porcentagem, regra de três, juros simples e compostos, média ponderada
    - Problemas geométricos: áreas, volumes, relações de semelhança e congruência
    - Problemas matriciais: operações com matrizes, sistemas lineares elementares
@@ -156,25 +156,25 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Lei de Acesso à Informação — LAI (Lei 12.527/2011)
+1. [[Lei-de-Acesso-a-Informacao-LAI|Lei de Acesso à Informação — LAI]] (Lei 12.527/2011)
    - Princípio da publicidade e transparência
    - Classificação da informação: reservado, secreto, altamente secreto
    - Procedimento de requisição e prazos
    - Informações pessoais e dados sensíveis
 
-2. Lei Carolina Dieckmann (Lei 12.737/2012)
+2. [[Lei-Carolina-Dieckmann|Lei Carolina Dieckmann]] (Lei 12.737/2012)
    - Inserção de dispositivos no Código Penal
    - Acesso indevido a dispositivo informático
    - Penas e circunstâncias agravantes
 
-3. Marco Civil da Internet (Lei 12.965/2014)
+3. [[Marco-Civil-da-Internet|Marco Civil da Internet]] (Lei 12.965/2014)
    - Princípios de uso da internet no Brasil
    - Privacidade e proteção de dados
    - Neutralidade da rede
    - Responsabilidade dos provedores
    - Retenção de dados
 
-4. Lei Geral de Proteção de Dados — LGPD (Lei 13.709/2018)
+4. [[LGPD-Lei-Geral-de-Protecao-de-Dados|Lei Geral de Proteção de Dados — LGPD]] (Lei 13.709/2018)
    - Princípios: finalidade, adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não discriminação, responsabilização e prestação de contas
    - Bases legais (art. 7): consentimento, obrigação legal, política pública, etc.
    - Direitos dos titulares
@@ -202,12 +202,12 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Compreensão de textos em inglês
+1. [[Compreensao-de-Textos-em-Ingles|Compreensão de textos em inglês]]
    - Leitura crítica de textos técnicos e acadêmicos
    - Identificação de ideia principal e argumentos secundários
    - Inferência de significado por contexto
 
-2. Gramática inglesa aplicada
+2. [[Gramatica-Inglesa-Aplicada|Gramática inglesa aplicada]]
    - Tempos verbais: Simple Present, Past, Future; Present Perfect, Past Perfect; Continuous (Present/Past)
    - Condicionais: Zero, Primeira, Segunda, Terceira, Mistas
    - Voz passiva
@@ -232,21 +232,21 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Temáticas atuais
+1. [[Tematicas-Atuais|Temáticas atuais]]
    - Segurança nacional e ciberguerra
    - Política nacional e internacional
    - Economia digital e transformação digital
    - Sustentabilidade e tecnologia
    - Saúde pública e inovação
 
-2. Inteligência Artificial — Conceitos fundamentais
+2. [[Inteligencia-Artificial-Conceitos-Fundamentais|Inteligência Artificial — Conceitos fundamentais]]
    - Definição de IA, ML e Deep Learning
    - Aprendizagem supervisionada, não-supervisionada e por reforço
    - Redes neurais: conceito geral
    - Modelos generativos e LLMs (Large Language Models)
    - Prompt engineering: conceito básico
 
-3. IA e Ética
+3. [[IA-e-Etica|IA e Ética]]
    - Viés algorítmico (bias)
    - Transparência e explicabilidade
    - Regulamentação de IA no Brasil e no mundo
@@ -273,20 +273,20 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Fundamentos e Modelagem
+1. [[Fundamentos-e-Modelagem|Fundamentos e Modelagem]]
    - Conceito de banco de dados e SGBD
    - Abordagens: hierárquica, rede, relacional, orientada a objetos
    - Modelagem conceitual: entidade, atributo, relacionamento, cardinalidade
    - Modelagem lógica: modelo relacional, chaves primárias e estrangeiras
    - Modelagem física: indexação, particionamento, tablespaces
 
-2. Normalização
+2. [[Normalizacao|Normalização]]
    - Formas normais (1FN, 2FN, 3FN, BCNF)
    - Dependências funcionais
    - Decomposição e perda de informação
    - Anomalias de atualização
 
-3. SQL — DDL e DML
+3. [[SQL-DDL-e-DML|SQL — DDL e DML]]
    - DDL: CREATE, ALTER, DROP, TRUNCATE
    - DML: SELECT, INSERT, UPDATE, DELETE
    - JOINs: INNER, LEFT, RIGHT, FULL, CROSS
@@ -294,18 +294,18 @@ BLOCO GESTÃO E GOVERNANÇA
    - Funções de agregação (COUNT, SUM, AVG, MIN, MAX)
    - Views, triggers, stored procedures (conceito)
 
-4. Transações e ACID
+4. [[Transacoes-e-ACID|Transações e ACID]]
    - Propriedades ACID: Atomicidade, Consistência, Isolamento, Durabilidade
    - Níveis de isolamento
    - Deadlocks: conceito e mecanismos de resolução
 
-5. NoSQL
+5. [[NoSQL|NoSQL]]
    - Quando usar NoSQL vs. SQL
    - Tipos: document, key-value, column-family, graph
    - Exemplos: MongoDB, Redis, Cassandra, Neo4j
    - Eventual consistency vs. strong consistency
 
-6. Big Data
+6. [[Big-Data|Big Data]]
    - Características: Volume, Velocidade, Variabilidade, Veracidade, Valor
    - Hadoop e MapReduce (conceito)
    - Apache Spark (conceito)
@@ -332,33 +332,33 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Paradigma Orientado a Objetos
+1. [[Paradigma-Orientado-a-Objetos|Paradigma Orientado a Objetos]]
    - Conceitos: classe, objeto, herança, polimorfismo, encapsulamento, abstração
    - SOLID: princípios básicos
    - Princípios de Clean Code: nomes significativos, funções pequenas, comentários úteis
 
-2. Java e Ecossistema JVM
+2. [[Java-e-Ecossistema-JVM|Java e Ecossistema JVM]]
    - Java (v6+): tipos primitivos, coleções, tratamento de exceções, generics
    - JavaEE (v6+): Servlets, JSP, CDI, Bean Validation, JAX-RS
    - JakartaEE: evolução do JavaEE, mudanças de namespace
    - JPA (v2+): mapeamento ORM, entidades, repositórios, consultas JPQL
    - Hibernate: configuração, cascata, lazy/eager loading, cache
 
-3. JavaScript
+3. [[JavaScript|JavaScript]]
    - Sintaxe básica e tipos
    - Funções, closures, escopo
    - Prototype e cadeia de protótipos
    - Async/Await, Promises
    - ES6+: let/const, arrow functions, destructuring, spread/rest
 
-4. Frameworks Java
+4. [[Frameworks-Java|Frameworks Java]]
    - Spring: IoC, DI, Spring MVC, Spring Data
    - Spring Boot: autoconfiguração, starter dependencies
    - Spring Cloud: Discovery (Eureka), Config, Gateway, Circuit Breaker
    - JSF (JavaServer Faces): ciclos de vida, componentes
    - Primefaces: componentes, temas, integração com JSF
 
-5. Padrões de Projeto e Arquitetura
+5. [[Padroes-de-Projeto-e-Arquitetura|Padrões de Projeto e Arquitetura]]
    - Padrões GoF (criação, estruturais, comportamentais): Singleton, Factory, Strategy, Observer, etc.
    - MVC, MVP, MVVM
    - SOA (Service Oriented Architecture)
@@ -366,18 +366,18 @@ BLOCO GESTÃO E GOVERNANÇA
    - APIs RESTful: verbos HTTP, status codes, recursos
    - Swagger/OpenAPI: especificação e documentação
 
-6. Formatos de Dados e Integração
+6. [[Formatos-de-Dados-e-Integracao|Formatos de Dados e Integração]]
    - XML: sintaxe, namespaces, validação (XSD)
    - XSLT: transformação de XML
    - JSON: sintaxe, parsing, serialização
    - UDDI: registro e descoberta de serviços
 
-7. Desenvolvimento Mobile
+7. [[Desenvolvimento-Mobile|Desenvolvimento Mobile]]
    - Android: Activity, Fragment, Intent, RecyclerView, lifecycle
    - iOS: UIKit, SwiftUI (conceito), ciclo de vida
    - Low-code e no-code: conceitos, plataformas, quando usar
 
-8. DevOps e Controle de Versão
+8. [[DevOps-e-Controle-de-Versao|DevOps e Controle de Versão]]
    - Git: init, add, commit, branch, merge, rebase, pull request
    - CI/CD: conceito, Jenkins, GitHub Actions (conceito)
    - Containerização: Docker (conceito básico)
@@ -401,28 +401,28 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Metodologias Ágeis
+1. [[Metodologias-Ageis|Metodologias Ágeis]]
    - Scrum: papéis (Product Owner, Scrum Master, Dev Team), eventos (Sprint, Daily, Review, Retrospective), artefatos (Product Backlog, Sprint Backlog, Increment)
    - Kanban: tabuleiro, WIP limits, fluxo contínuo
    - XP (Extreme Programming): programação em par, TDD, refatoração, integração contínua
 
-2. Padrões de Desenvolvimento e Reuso
+2. [[Padroes-de-Desenvolvimento-e-Reuso|Padrões de Desenvolvimento e Reuso]]
    - Padrões de projeto aplicados ao desenvolvimento
    - Componentização e modularização
    - Bibliotecas e frameworks como formas de reuso
 
-3. Tipos de Codificação
+3. [[Tipos-de-Codificacao|Tipos de Codificação]]
    - Sistemas transacionais: CRUD, integração, regras de negócio
    - Analíticos: relatórios, dashboards, processamento de dados
    - Mobile: nativo, híbrido, responsividade
    - API: desenvolvimento e versionamento
 
-4. Estimativas
+4. [[Estimativas|Estimativas]]
    - Pontos de Função (APF): contagem de transações, funções de dados, conversão para PF
    - Story Points: estimativa relativa, Planning Poker, fibonacci
    - Relação entre APF e Story Points (conceito)
 
-5. Engenharia de Requisitos
+5. [[Engenharia-de-Requisitos|Engenharia de Requisitos]]
    - Elicitação: entrevistas, questionários, observação, workshops
    - Documentação: User Stories, casos de uso, especificações
    - Gerenciamento de requisitos: rastreabilidade, priorização (MoSCoW, Kano)
@@ -445,28 +445,28 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Fundamentos de Teste
+1. [[Fundamentos-de-Teste|Fundamentos de Teste]]
    - Níveis: unitário, integração, sistema, aceitação
    - Tipos: funcionais, não-funcionais, estruturais, regressão
    - Estratégias: caixa-branca, caixa-preta, cinza
 
-2. Testes Ágeis
+2. [[Testes-Ageis|Testes Ágeis]]
    - TDD (Test-Driven Development): ciclo Red-Green-Refactor
    - BDD (Behavior-Driven Development): Cucumber, Gherkin (conceito)
    - Testes em sprints: definição de pronto (DoD)
 
-3. Testes Automatizados
+3. [[Testes-Automatizados|Testes Automatizados]]
    - JUnit: anotações, asserts, suítes de teste
    - Mockito: mocks e stubs
    - Selenium: testes de UI web (conceito)
    - Cobertura de código: métricas e ferramentas
 
-4. Gestão do Ciclo de Vida de Testes
+4. [[Gestao-do-Ciclo-de-Vida-de-Testes|Gestão do Ciclo de Vida de Testes]]
    - Planejamento: plano de teste, casos de teste, dados de teste
    - Execução: registro de defeitos, severidade e prioridade
    - Relatórios: métricas (defeitos por fase, taxa de falha, MTBF)
 
-5. RPA (Robotic Process Automation)
+5. [[RPA|RPA (Robotic Process Automation)]]
    - Conceito e quando aplicar
    - Diferença entre RPA e automação de testes
    - Ferramentas: UiPath, Automation Anywhere (conceito)
@@ -489,18 +489,18 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Fundamentos Web
+1. [[Fundamentos-Web|Fundamentos Web]]
    - HTML5: semântica, forms, acessibilidade básica
    - CSS3: seletores, box model, flexbox, grid, responsividade
    - UX: princípios básicos de usabilidade, heurísticas de Nielsen
    - Ajax: requisições assíncronas, API calls do navegador
 
-2. Frameworks Frontend
+2. [[Frameworks-Frontend|Frameworks Frontend]]
    - VueJS: componentes, reatividade, Vue Router, Vuex/Pinia
    - Angular: componentes, diretivas, serviços, RxJS, Angular CLI
    - React: componentes, hooks, JSX, React Router, Context API
 
-3. Arquiteturas de Apresentação
+3. [[Arquiteturas-de-Apresentacao|Arquiteturas de Apresentação]]
    - SPA (Single Page Application): conceito, vantagens e limitações
    - PWA (Progressive Web App): service workers, manifest, offline capability
    - SSR (Server-Side Rendering) vs. CSR (Client-Side Rendering) — conceito
@@ -521,14 +521,14 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Conceitos de UX (User Experience)
+1. [[Conceitos-de-UX|Conceitos de UX (User Experience)]]
    - Design Centrado no Usuário
    - Heurísticas de Nielsen
    - Pesquisa com usuários: entrevistas, testes de usabilidade, A/B testing
    - Wireframes, protótipos, mockups
    - Acessibilidade: WCAG, leitores de tela, navegação por teclado
 
-2. Gestão de Conteúdo e CMS
+2. [[Gestao-de-Conteudo-e-CMS|Gestão de Conteúdo e CMS]]
    - Arquitetura da informação: taxonomia, ontologia, folksonomia
    - Portais: conceito, tipos, gestão editorial
    - CMS (Content Management System): conceito, tipos (headless, decoupled)
@@ -553,30 +553,30 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Segurança de Comunicações
+1. [[Seguranca-de-Comunicacoes|Segurança de Comunicações]]
    - HTTPS: funcionamento, certificados digitais
    - SSL/TLS: handshake, cifragem, integridade
    - Certificados: CA, cadeia de confiança
 
-2. Blockchain
+2. [[Blockchain|Blockchain]]
    - Conceito: ledger distribuído, mineração, consenso
    - Criptomoedas: Bitcoin, Ethereum (conceito)
    - Smart contracts
    - Aplicações além das criptomoedas: supply chain, identidade digital
 
-3. Design de Software
+3. [[Design-de-Software-Avancado|Design de Software]]
    - Design patterns avançados
    - Domain-Driven Design (DDD): entidades, value objects, agregados
    - Event-Driven Architecture: event sourcing, CQRS
 
-4. Arquitetura de Software Avançada
+4. [[Arquitetura-de-Software-Avancada|Arquitetura de Software Avançada]]
    - Arquitetura Hexagonal (Ports and Adapters)
    - Microsserviços: princípios, desafios, comunicação (síncrona/assíncrona)
    - Containers: Docker (images, containers, volumes, networks)
    - Orquestração: Kubernetes (conceito: pods, services, deployments)
    - Service Mesh: conceito
 
-5. Transações Distribuídas
+5. [[Transacoes-Distribuidas|Transações Distribuídas]]
    - CAP Theorem
    - Two-Phase Commit (2PC)
    - Saga Pattern
@@ -603,23 +603,23 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Fundamentos de Segurança da Informação
+1. [[Fundamentos-de-Seguranca|Fundamentos de Segurança da Informação]]
    - Tríade CID: Confidencialidade, Integridade, Disponibilidade
    - Políticas e procedimentos de segurança
    - Normas ISO 27001 e ISO 27002: estrutura e principais controles
 
-2. Autenticação e Autorização
+2. [[Autenticacao-e-Autorizacao|Autenticação e Autorização]]
    - OAuth2: fluxos (Authorization Code, Client Credentials, PKCE)
    - SSO (Single Sign-On): conceito, SAML, OpenID Connect
    - JWT (JSON Web Tokens): estrutura, validade, refresh tokens
    - MFA (Multi-Factor Authentication): conceito
 
-3. Gestão de Riscos
+3. [[Gestao-de-Riscos|Gestão de Riscos]]
    - Identificação e avaliação de riscos
    - Matriz de risco: probabilidade x impacto
    - Planos de contingência e recuperação
 
-4. Segurança no Desenvolvimento
+4. [[Seguranca-no-Desenvolvimento|Segurança no Desenvolvimento]]
    - SDL (Security Development Lifecycle): fases e práticas
    - OWASP Top 10: principais vulnerabilidades (Injection, XSS, CSRF, Broken Auth, etc.)
    - SAST (Static Application Security Testing): análise estática
@@ -645,25 +645,25 @@ BLOCO GESTÃO E GOVERNANÇA
 
 **Tópicos:**
 
-1. Gerenciamento de Projetos
+1. [[Gerenciamento-de-Projetos|Gerenciamento de Projetos]]
    - Tradicional (Waterfall): fases sequenciais, WBS, cronograma
    - Híbrido: combinação de ágil e tradicional
    - Ágil: Scrum, Kanban como gestão de projetos
    - Métricas: CPI, SPI, EVM (conceito básico)
 
-2. ITIL v4
+2. [[ITIL-v4|ITIL v4]]
    - Conceito de serviço de TI
    - Dimensões: organização e pessoas, informação e tecnologia, parceiros e suprimentos, valor e fluxos de serviço
    - Práticas: gestão de incidentes, gestão de problemas, gestão de mudanças, gestão de serviço de segurança
    - Ciclo de vida do serviço: estratégia, desenho, transição, operação, melhoria contínua
 
-3. COBIT 2019
+3. [[COBIT-2019|COBIT 2019]]
    - Framework de governança e gestão de TI
    - Objetivos de governança e gestão
    - Princípios: atendendo às necessidades das partes interessadas
    - Relação com ITIL
 
-4. BPMN (Business Process Model and Notation)
+4. [[BPMN|BPMN (Business Process Model and Notation)]]
    - Notação básica: eventos, atividades, gateway, fluxo de sequência
    - Modelagem de processos de negócio
    - Subprocessos e pools/lanes
