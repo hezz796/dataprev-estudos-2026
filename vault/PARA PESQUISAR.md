@@ -1,1 +1,0 @@
-Falta checar a qualidade de texto da nota 6 de língua portuguesa
