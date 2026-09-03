@@ -136,15 +136,196 @@ public class Beneficiario extends Pessoa {
 }
 ```
 
-> [!warning] PEGADINHA — herança vs. composição
-> A pergunta clássica de prova: *"deve-se preferir herança ou composição?"* A resposta favorita da banca moderna é **favorável à composição** ("**prefira composição a herança**" — é um princípio defendido pela comunidade, inclusive por autores de Clean Code). Composição é a relação "tem-um" (um `Carro` *tem* um `Motor`), enquanto herança é "é-um" (um `Carro` *é* um `Veículo`). Herança cria um **acoplamento forte** entre as classes (mudar o pai afeta todos os filhos) e pode gerar hierarquias rígidas; composição é mais flexível. Quando a prova perguntar qual princípio orienta o design atual, a tendência é: **composição antes de herança**, exceto quando a "é-um" for genuína e estável.
+### 3.4 Herança vs. Composição
 
-### 3.4 Polimorfismo
+A seção 3.3 definiu herança como a relação "é-um". Mas existe outro mecanismo para reutilizar código: a **composição**, relação "tem-um" (*has-a*). A pergunta clássica de prova é: *"deve-se preferir herança ou composição?"* A resposta da banca moderna é **composição antes de herança** — mas para entender por que, é preciso ver os dois lado a lado.
+
+**Composição** significa que uma classe **contém** outra como atributo, em vez de herdar dela. A classe "dono" **delega** o trabalho para o objeto que guarda, em vez de assumir o comportamento como próprio.
+
+#### Exemplo 1 — A mesma ideia, dois caminhos
+
+Imagine um sistema de benefícios da DATAPREV. Um benefício precisa calcular seu valor. Veja como ficaria com herança e com composição:
+
+```java
+// ═══════════════════════════════════════════════════
+// CAMINHO A — HERANÇA ("é-um")
+// ═══════════════════════════════════════════════════
+public class CalculoBeneficio {
+    protected double valorBase;
+
+    public double calcular() {
+        return valorBase;   // comportamento padrão: retorna o valor base
+    }
+}
+
+public class CalculoAposentadoria extends CalculoBeneficio {
+    // herda valorBase e calcular()
+
+    public double calcularComAcrescimo() {
+        return calcular() * 1.10;   // acresce 10% sobre o cálculo do pai
+    }
+}
+
+public class CalculoPensao extends CalculoBeneficio {
+    // herda valorBase e calcular()
+
+    public double calcularComDesconto() {
+        return calcular() * 0.90;   // desconta 10% sobre o cálculo do pai
+    }
+}
+```
+
+```java
+// ═══════════════════════════════════════════════════
+// CAMINHO B — COMPOSIÇÃO ("tem-um")
+// ═══════════════════════════════════════════════════
+// Cada regra de cálculo é uma classe independente
+public class RegraAposentadoria {
+    public double calcular(double valorBase) {
+        return valorBase * 1.10;   // acresce 10%
+    }
+}
+
+public class RegraPensao {
+    public double calcular(double valorBase) {
+        return valorBase * 0.90;   // desconta 10%
+    }
+}
+
+// A classe Beneficio NÃO herda nada — ela TEM UMA regra
+public class Beneficio {
+    private double valorBase;
+    private RegraAposentadoria regra;   // composição: "tem-um"
+
+    public Beneficio(double valorBase) {
+        this.valorBase = valorBase;
+        this.regra = new RegraAposentadoria();  // cria a regra internamente
+    }
+
+    public double getValorFinal() {
+        return regra.calcular(valorBase);       // delega o cálculo
+    }
+}
+```
+
+Repare na diferença central: no caminho A, `CalculoAposentadoria` **é um** `CalculoBeneficio` — ela herda `valorBase` e o método `calcular()`. No caminho B, `Beneficio` **não herda** nada — ele apenas **guarda** um objeto `RegraAposentadoria` como atributo e **chama** seu método quando precisa. A `Beneficio` não interessa *como* a regra calcula; ela só pede: "calcule isso para mim".
+
+#### Exemplo 2 — Por que composição é mais flexível
+
+Suponha que amanhã a DATAPREV precise criar uma nova regra: o BPC (Benefício de Prestação Continuada), que não aplica acréscimo nem desconto. Compare o impacto:
+
+```java
+// COM HERANÇA: preciso criar uma nova subclasse
+public class CalculoBPC extends CalculoBeneficio {
+    public double calcularSemAcrescimo() {
+        return calcular();   // retorna o valor base sem alteração
+    }
+}
+// Problema: CalculoBPC "é" um CalculoBeneficio — mas e se o cálculo
+// do BPC precisar usar dados que NÃO existem em CalculoBeneficio?
+// Ex.: dados do Órgão Concedente, que não tem nada a ver com herança.
+```
+
+```java
+// COM COMPOSIÇÃO: basta criar uma nova classe simples
+public class RegraBPC {
+    public double calcular(double valorBase) {
+        return valorBase;   // BPC não tem acréscimo
+    }
+}
+
+// E posso usar a mesma regra fora de Beneficio, se precisar:
+RegraBPC regra = new RegraBPC();
+double valorCalculado = regra.calcular(1412.0);   // funciona sozinha
+```
+
+A composição permite **trocar a regra** (de `RegraAposentadoria` para `RegraBPC`) e **reutilizar a regra** em qualquer lugar — algo impossível com herança, que amarra a identidade do objeto à sua árvore genealógica.
+
+#### Exemplo 3 — O problema do acoplamento forte
+
+O perigo real da herança aparece quando a superclasse muda:
+
+```java
+// Cenário: herança profunda
+public class Pessoa {
+    protected String nome;
+    protected String cpf;
+
+    public String getNome() { return nome; }
+}
+
+public class Servidor extends Pessoa {
+    protected String matricula;
+
+    public String getMatricula() { return matricula; }
+}
+
+public class ServidorDATAPREV extends Servidor {
+    protected String lotacao;
+    // herda getNome() de Pessoa e getMatricula() de Servidor
+}
+
+// PROBLEMA: se alguém mudar Pessoa.getNome() para retornar
+// nome.toUpperCase(), TODAS as subclasses são afetadas:
+// Servidor e ServidorDATAPREV passam a retornar nome em maiúsculas,
+// sem ter pedido isso.
+// E se Pessoa passar a exigir construtor com parâmetro?
+// TODOS os filhos quebram — precisam repassar o parâmetro.
+```
+
+```java
+// COM COMPOSIÇÃO, a mudança é isolada
+public class Pessoa {
+    private String nome;
+    private String cpf;
+
+    public String getNome() { return nome; }
+    public String getNomeMaiusculo() { return nome.toUpperCase(); }
+}
+
+public class Servidor {
+    private Pessoa dadosPessoais;   // guarda uma Pessoa, não herda
+    private String matricula;
+
+    public Servidor(String nome, String cpf, String matricula) {
+        this.dadosPessoais = new Pessoa(nome, cpf);  // cria internamente
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return dadosPessoais.getNome();   // chama o método que sempre existiu
+    }
+}
+// Se Pessoa mudar para adicionar getNomeMaiusculo(),
+// Servidor NÃO é afetado — ele só usa getNome(), que continua igual.
+```
+
+#### Resumo: quando usar cada um
+
+| Critério | Herança ("é-um") | Composição ("tem-um") |
+|---|---|---|
+| Relacionamento | Genuine e estável (`Beneficiario` *é* uma `Pessoa`) | Flexível e trocável (`Beneficio` *tem* uma `RegraAposentadoria`) |
+| Acoplamento | **Forte** — filhos dependem da implementação do pai | **Fraco** — depende apenas do método chamado |
+| Troca de comportamento | Precisa criar nova subclasse | Basta criar nova classe e injetar |
+| Reutilização | Só dentro da hierarquia | Em qualquer contexto |
+| Profundidade | Perigosa acima de 2-3 níveis | Não gera hierarquia |
+
+> [!warning] PEGADINHA — FGV inverte a preferência
+> A banca pode afirmar: *"É preferível usar herança a composição para promover a reutilização de código"* — **falso**. O princípio moderno é **"prefira composição a herança"** (*Favor Composition Over Inheritance*), defendido por GoF, Joshua Bloch (*Effective Java*) e Robert Martin (*Clean Code*). A única exceção aceita é quando o relacionamento "é-um" é genuíno e estável — como `Beneficiario` *é* uma `Pessoa`. Fora disso, composição é a escolha segura.
+
+> [!note] Conexão com o polimorfismo (seção 3.5)
+> Na seção 3.5 você verá como o **polimorfismo** eleva a composição a outro nível: ao definir uma **interface** comum (ex.: `RegraCalculo`), `Beneficio` poderia aceitar *qualquer* regra que implemente essa interface — não apenas `RegraAposentadoria`. Por enquanto, o ponto central é a **estrutura**: herança herda identidade, composição guarda e delega.
+
+### 3.5 Polimorfismo
 
 **Polimorfismo** (do grego, "muitas formas") é a capacidade de **tratar objetos de classes diferentes de maneira uniforme**, através de uma **interface comum**, de modo que cada objeto **responda de forma própria** à mesma chamada. O polimorfismo tem duas faces cobradas:
 
 - **sobrescrita (override):** a subclasse **redefine** um método herdado — cada classe tem sua versão;
 - **sobrecarga (overload):** a mesma classe tem **vários métodos com o mesmo nome**, mas assinaturas (parâmetros) diferentes.
+
+#### Sobrescrita (Override) — herança especializa comportamento
+
+**Override** ocorre quando uma **subclasse** redefine um método que herdou da superclasse. A ideia central: a subclasse **já tem** o método (por herança), mas **escolhe** fornecer uma implementação diferente. Para isso, a **assinatura deve ser idêntica** (mesmo nome, mesmos tipos de parâmetros, mesma quantidade).
 
 ```java
 // Sobrescrita: mesma assinatura, comportamento diferente por classe
@@ -183,30 +364,252 @@ processar(new PagamentoCartao(100.0));
 
 Repare: quem chama `processar` **não sabe** se o pagamento é Pix ou cartão — ele só vê a interface `Pagamento` e chama `calcularValor()`. Cada objeto concreto responde do seu jeito. É a essência do polimorfismo: **mesmo código, comportamento variado conforme o objeto real**.
 
+> [!important] Por que `@Override`?
+> A anotação `@Override` não é obrigatória, mas é **recomendada** porque: (1) garante que você realmente está sobrescrevendo (se o método pai mudar de nome, o compilador avisa); (2) torna a intenção explícita no código. Muitas bancas cobram se `@Override` é obrigatório — **não é**, mas é boa prática.
+
+#### Sobrecarga (Overload) — mesma classe, várias "faces"
+
+**Overload** ocorre quando a **mesma classe** possui dois ou mais métodos com o **mesmo nome**, mas **assinaturas diferentes** (tipos, ordem ou quantidade de parâmetros). Isso é útil quando a mesma operação pode receber dados de formatos distintos.
+
+```java
+public class CalculadoraBeneficio {
+
+    // Versão 1: recebe valor bruto
+    public double calcular(double valor) {
+        return valor;
+    }
+
+    // Versão 2: recebe valor bruto e percentual de desconto
+    public double calcular(double valor, double desconto) {
+        return valor * (1 - desconto);
+    }
+
+    // Versão 3: recebe valor bruto como String (ex.: importação de legado)
+    public double calcular(String valorStr) {
+        double valor = Double.parseDouble(valorStr);
+        return valor;
+    }
+}
+
+// Chamadas — o compilador escolhe a versão correta
+CalculadoraBeneficio calc = new CalculadoraBeneficio();
+calc.calcular(100.0);          // usa versão 1
+calc.calcular(100.0, 0.10);   // usa versão 2
+calc.calcular("150.0");       // usa versão 3
+```
+
+O compilador decide **qual versão chamar** com base nos argumentos fornecidos — isso se chama **resolução de sobrecarga**. Não há relação de herança: todos os métodos vivem na mesma classe.
+
+#### Tabela comparativa: override vs. overload
+
+| Critério | Override (sobrescrita) | Overload (sobrecarga) |
+|---|---|---|
+| **Relação entre classes** | Superclasse ↔ Subclasse | Mesma classe |
+| **Assinatura** | Idêntica (mesmo nome, mesmos parâmetros) | Diferente (mesmo nome, parâmetros distintos) |
+| **Anotação** | `@Override` (recomendada) | Nenhuma |
+| **Polimorfismo?** | Sim — é a base do polimorfismo dinâmico | Não — é resolvido em **compilação** |
+| **Quem decide qual método executar?** | O **tipo do objeto** em tempo de execução | O **compilador**, em tempo de compilação |
+
+> [!warning] PEGADINHA CLÁSSICA — FGV troca os pares
+> Banca afirma: *"Sobrecarga (overload) é quando a subclasse redefine um método da superclasse"* — **falso**. Isso é sobrescrita (override). Outra frase comum: *"Override permite múltiplos métodos com o mesmo nome e assinaturas diferentes"* — **falso**. Isso é overload. O truque da FGV é trocar os nomes dos conceitos.
+
+> [!tip] Regra de ouro para não confundir
+> **Override** = herança + assinatura igual → **redefinir comportamento herdadado**.
+> **Overload** = mesma classe + assinatura diferente → **variar a entrada da mesma operação**.
+
 > [!tip] Por que o polimorfismo é a base das boas arquiteturas?
 > É o polimorfismo que permite escrever uma regra genérica ("processe o pagamento") sem `if` gigantes para cada tipo. O código fica **aberto para extensão** (basta criar uma nova subclasse `PagamentoBoleto` sem alterar `processar`) — e isso é exatamente o princípio Open/Closed do SOLID que veremos na seção 6.
 
-### 3.5 Visibilidade dos membros
+### 3.6 Visibilidade dos membros
 
 Por trás do encapsulamento está o controle de visibilidade. A FGV cobra os quatro níveis:
 
-| Modificador | Visível na mesma classe | Visível na subclasse | Visível no pacote | Visível fora do pacote |
+| Modificador | Visível na mesma classe | Visível no pacote | Visível na subclasse | Visível fora do pacote |
 |---|---|---|---|---|
-| `private` | sim | **não** | **não** | **não** |
-| *(padrão, sem modificador)* | sim | **não** | sim | **não** |
-| `protected` | sim | sim | sim | **não** |
 | `public` | sim | sim | sim | sim |
+| `protected` | sim | sim | sim | **não** |
+| *(padrão, sem modificador)* | sim | sim | **não** | **não** |
+| `private` | sim | **não** | **não** | **não** |
 
 > [!warning] PEGADINHA — `protected` e o `private`
 > O `private` **não é herdado** (a subclasse não enxerga o atributo `private` do pai — ela só acessa via métodos públicos/protegidos). Já o `protected` é herdado e visível na subclasse. Frase clássica de prova: "o membro `private` é acessível na subclasse" — **falso**. E atenção: `protected` é visível **no pacote** também, embora o nome sugira só a hierarquia.
+
+### 3.7 Interface vs. Abstract Class
+
+Na seção 3.3 você viu que **herança** cria uma relação "é-um": `Beneficiario` *é* uma `Pessoa`. Na seção 3.5, o **polimorfismo** mostrou que podemos tratar objetos diferentes de forma uniforme, desde que compartilhem uma *interface comum*. Mas que tipo de "contrato" define essa interface comum? Em Java, existem dois mecanismos para isso: a **interface** e a **classe abstrata** (*abstract class*). Ambas servem para definir *o que* uma classe deve fazer, mas diferem radicalmente em *quanto* elas podem dizer sobre *como*.
+
+> [!note] O que é um "contrato" em tecnologia?
+> Sempre que você ler "contrato" (ou "especificação", "interface") em tecnologia, pense em uma pergunta simples: *o que cada lado pode esperar do outro?* O **contrato** é um acordo formal sobre o **que** algo deve fazer — separado de **como** isso é feito (a **implementação**). Em POO, a interface é o contrato (define *quais* métodos existem) e a classe concreta é a implementação (fornece o *código*). Essa mesma lógica reaparece em vários pontos do curso: **JPA** é a especificação/contrato e **Hibernate** a implementação; **WSDL/XSD** descreve o contrato de um Web Service e o **SOAP** transporta as mensagens. Quem depende do contrato fica livre para trocar a implementação sem reescrever nada — é exatamente essa flexibilidade que o **polimorfismo** (seção 3.5) e o DIP (seção 6.5) exploram.
+
+#### Interface — contrato puro
+
+Uma **interface** é um **contrato completamente abstrato**: ela define *quais métodos* existem, mas **não implementa** como eles funcionam (com exceção dos métodos `default` e `static`, introduzidos no Java 8). Quando uma classe "implementa" uma interface, ela se compromete a fornecer o código de *todos* os métodos abstratos — caso contrário, não compila.
+
+Pense numa interface como o **regulamento de um concurso**: ele diz "o candidato deve provar conhecimentos em X, Y e Z", mas não ensina o conteúdo. Cada candidato (classe) decide *como* se preparar (implementar).
+
+```java
+// Interface — contrato puro: o QUE fazer
+public interface CalculoBeneficio {
+    double calcularValor(double valorBase);
+    boolean ehElegivel(Beneficiario b);
+}
+
+// Uma classe concreta implementa o contrato
+public class CalculoAposentadoria implements CalculoBeneficio {
+
+    @Override
+    public double calcularValor(double valorBase) {
+        // Regra específica: aposentadoria pode incluir abono anual
+        return valorBase + (valorBase * 0.08);
+    }
+
+    @Override
+    public boolean ehElegivel(Beneficiario b) {
+        return b.getIdade() >= 65 && b.getContribuicoes() >= 180;
+    }
+}
+
+// Outra classe implementa o mesmo contrato de forma diferente
+public class CalculoPensao implements CalculoBeneficio {
+
+    @Override
+    public double calcularValor(double valorBase) {
+        // Pensão não inclui abono — retorna o valor base
+        return valorBase;
+    }
+
+    @Override
+    public boolean ehElegivel(Beneficiario b) {
+        return b.getFalecido() != null && b.getDependentes() > 0;
+    }
+}
+```
+
+Note a consequência: o código que *usa* o cálculo não precisa saber se é aposentadoria ou pensão. Ele chama `calcularValor` na interface e recebe a resposta correta — é o polimorfismo em ação.
+
+#### Classe abstrata — contrato parcial
+
+Uma **classe abstrata** é um **contrato misto**: ela pode definir *quais métodos* existem (abstratos) **e também implementar** parte do comportamento (métodos concretos). Pode ter **atributos de estado**, **construtores** e **métodos com corpo completo**. A classe abstrata é usada quando existe uma **implementação parcial compartilhada** entre classes filhas — ou seja, quando parte do comportamento é igual para todas, mas parte varia.
+
+A analogia é um **formulário padrão** com campos preenchidos e campos em branco: os campos preenchidos são os métodos concretos; os em branco são os abstratos que cada subclasse deve preencher.
+
+```java
+// Classe abstrata — contrato parcial: o QUE + parte do COMO
+public abstract class BeneficioBase {
+    protected double valorBase;
+    protected String tipoBeneficio;
+
+    // Construtor — interfaces NÃO podem ter
+    public BeneficioBase(double valorBase, String tipoBeneficio) {
+        this.valorBase = valorBase;
+        this.tipoBeneficio = tipoBeneficio;
+    }
+
+    // Método concreto — compartilhado por todas as subclasses
+    public double calcularIRRF(double valor) {
+        // Regra comum de imposto de renda sobre benefício
+        if (valor > 2815.00) {
+            return valor * 0.275;
+        }
+        return 0.0;
+    }
+
+    // Método concreto utilitário
+    public String formatarValor(double valor) {
+        return String.format("R$ %.2f", valor);
+    }
+
+    // Método abstrato — cada filho DEVE implementar
+    public abstract double calcularBeneficio();
+}
+```
+
+As subclasses herdam tudo e precisam implementar apenas o que falta:
+
+```java
+public class Aposentadoria extends BeneficioBase {
+
+    public Aposentadoria(double valorBase) {
+        super(valorBase, "APOSENTADORIA");
+    }
+
+    @Override
+    public double calcularBeneficio() {
+        double bruto = valorBase * 1.08;   // inclui abono anual
+        double irrf = calcularIRRF(bruto); // reutiliza método do pai
+        return bruto - irrf;
+    }
+}
+
+public class Pensao extends BeneficioBase {
+
+    public Pensao(double valorBase) {
+        super(valorBase, "PENSAO");
+    }
+
+    @Override
+    public double calcularBeneficio() {
+        double bruto = valorBase;          // sem abono
+        double irrf = calcularIRRF(bruto);
+        return bruto - irrf;
+    }
+}
+```
+
+Observe que `Aposentadoria` e `Pensao` **reutilizam** o `calcularIRRF` e o `formatarValor` do pai — código duplicado é eliminado, sem criar um novo construtor para cada regra de cálculo. A classe abstrata faz o meio-termo entre interface pura e classe concreta.
+
+#### Tabela comparativa
+
+| Critério | `interface` | `abstract class` |
+|---|---|---|
+| **Palavra-chave** | `interface` | `abstract class` |
+| **Múltipla herança de contrato** | **Sim** — uma classe pode implementar várias interfaces | **Não** — uma classe pode herdar de uma única classe abstrata |
+| **Construtor** | **Não** — não pode ter construtor | **Sim** — pode ter construtor (invocado com `super()`) |
+| **Atributos de estado** | **Não** — apenas `public static final` (constantes) | **Sim** — pode ter atributos com `private`, `protected`, etc. |
+| **Métodos concretos** | Só `default` (instância) e `static` (classe), desde Java 8 | Sim — métodos com corpo completo |
+| **Métodos abstratos** | Sim — todos são abstratos por padrão | Sim — marcados com `abstract` |
+| **Quando usar** | Quando é preciso definir um **contrato puro** — o QUE fazer, sem impor implementação | Quando existe **comportamento compartilhado** — o QUE + parte do COMO |
+
+> [!important] A regra de ouro
+> Use **interface** quando quiser definir um *contrato* que qualquer classe pode implementar, independentemente de sua hierarquia. Use **classe abstrata** quando quiser *reutilizar código concreto* entre classes que compartilham uma estrutura comum. A pergunta-chave é: *existe código concreto que se repete entre as subclasses?* Se sim, `abstract class`. Se não, `interface`.
+
+#### PEGADINHAS FGV clássicas
+
+> [!warning] "Interface pode ter atributos?"
+> **Sim, mas com restrição.** Todo atributo em uma interface é implicitamente `public static final` — ou seja, uma **constante**. Não existe atributo de estado (variável de instância) em interface. A banca adora perguntar: *"Uma interface pode conter atributos?"* — a resposta correta é **sim**, mas eles são constantes. Se a alternativa disser "sim, variáveis de instância", é falso.
+
+> [!warning] "Interface pode ter construtor?"
+> **Não.** Interfaces não podem ser instanciadas — você não faz `new CalculoBeneficio()` porque `CalculoBeneficio` é uma interface. Sem instanciação, não faz sentido ter construtor. A alternativa que diz "interfaces podem ter construtores" está errada.
+
+> [!warning] "Uma classe pode implementar várias interfaces?"
+> **Sim.** Essa é a "múltipla herança de contrato": `class CalculoAposentadoria implements CalculoBeneficio, Serializable, Comparable<Beneficiario>` — perfeitamente válido. O que **não** se pode fazer é herdar de múltiplas classes (`extends ClasseA, ClasseB` — compilação falha). A FGV troca os termos: "uma classe pode herdar de múltiplas classes" (**falso**) vs. "uma classe pode implementar múltiplas interfaces" (**verdadeiro**).
+
+> [!warning] "Classe abstrata pode ter construtor?"
+> **Sim.** O construtor de uma classe abstrata não pode ser chamado diretamente com `new`, mas é invocado pelas subclasses via `super()`. O construtor existe para inicializar atributos comuns. A banca tenta confundir: "como classe abstrata não pode ser instanciada, ela não pode ter construtor" — raciocínio falso, porque o construtor serve para as *filhas*, não para instanciar a abstrata diretamente.
+
+#### Conexão com SOLID
+
+O uso correto de interfaces conecta diretamente com dois princípios vistos na seção 6:
+
+O **ISP** (seção 6.4) — Interface Segregation Principle — recomenda que interfaces sejam **pequenas e específicas**. Em vez de criar uma única `InterfaceBeneficio` com 15 métodos (cálculo, notificação, relatório, auditoria), o ISP orienta a dividir em `CalculoBeneficio`, `NotificacaoBeneficio` e `AuditoriaBeneficio`. Assim, quem só precisa calcular não é obrigado a implementar métodos de notificação — reduzindo acoplamento e código morto.
+
+O **DIP** (seção 6.5) — Dependency Inversion Principle — afirma que módulos de alto nível devem depender de **abstrações** (interfaces), não de **implementações concretas**. No contexto DATAPREV, um serviço de concessão de benefícios não deveria dizer `CalculoAposentadoria calc = new CalculoAposentadoria()`. Em vez disso, deveria receber um `CalculoBeneficio` via construtor (injeção de dependência) — e só descobriria qual implementação concreta usar no momento da configuração. Isso permite trocar a regra de cálculo sem alterar quem a usa.
+
+> [!note] A ponte entre seções
+> A interface `CalculoBeneficio` é exatamente o tipo de abstração que o DIP (seção 6.5) defende: quem *usa* o cálculo depende do *contrato*, não da *implementação concreta*. E o ISP (seção 6.4) garante que esse contrato não fique inchado com métodos que nem todos precisam implementar. Interface e classe abstrata são, portanto, as *ferramentas de implementação* dos princípios SOLID — não apenas conceitos soltos.
+
+> [!tip] Resumo para revisão rápida
+> **Interface** = contrato puro, sem construtor, sem estado, múltipla herança de contrato.
+> **Classe abstrata** = contrato parcial, com construtor, com estado, herança simples.
+> **A pergunta da prova:** *existe código concreto compartilhado entre as subclasses?* Sim → `abstract class`. Não → `interface`.
 
 ---
 
 ## 4. A relação entre POO e o mundo dos dados
 
-Antes de avançar para SOLID, vale consolidar a conexão com o Banco de Dados, pois ela reaparecerá nos tópicos 2, 4 e 5 desta fase.
+Antes de avançar para SOLID, vale consolidar a conexão com o Banco de Dados, pois ela reaparecerá nos tópicos 2, 4 e 5 desta fase. A referência para [[Fundamentos-e-Modelagem|modelagem]] de dados é a ponte entre os dois mundos:
 
-| Mundo do banco ([[Fundamentos-e-Modelagem|modelagem]]) | Mundo do POO (código) |
+| Mundo do banco (modelagem) | Mundo do POO (código) |
 |---|---|
 | Entidade (conceitual) / tabela (lógico) | Classe |
 | Ocorrência / tupla (linha) | Objeto |
