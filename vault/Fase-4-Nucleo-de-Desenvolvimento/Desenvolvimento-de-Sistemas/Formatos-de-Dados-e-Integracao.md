@@ -186,7 +186,7 @@ E os **tipos de valor**:
 - **number** (inteiro ou decimal);
 - **boolean** (`true`/`false`);
 - **null** (valor nulo);
-- objeto ou array (aninhamento).
+- **objeto** ou **array** (aninhamento).
 
 > [!question] Por que as chaves JSON precisam de aspas duplas?
 > No JSON, **toda chave de objeto é uma string** e deve ser escrita **entre aspas duplas** — diferente do JavaScript puro (onde a chave pode ser um identificador sem aspas). Isso faz parte da **sintaxe rigorosa** do JSON: ele é um *formato de dados* independente de linguagem, e a rigidez garante que qualquer parser, em qualquer linguagem, interprete igual.
