@@ -3,22 +3,25 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 1. Paradigma Orientado a Objetos
+> **Tópico:** 2. Paradigma Orientado a Objetos
 > **Subtópicos:** Conceitos (classe, objeto, herança, polimorfismo, encapsulamento, abstração) · SOLID (princípios básicos) · Clean Code (nomes significativos, funções pequenas, comentários úteis) · Análise estática de código e SonarQube
-> **Pré-requisitos:** [[Raciocinio-Matematico-Aplicado|Raciocínio Lógico Matemático]] (lógica de programação, condicionais, estruturas de dados) e [[Fundamentos-e-Modelagem|Banco de Dados]] (modelagem de entidades e relacionamentos)
+> **Pré-requisitos:** [[Java-Fundamentos-da-Linguagem|Java — Fundamentos da Linguagem]] (sintaxe da linguagem) e [[Raciocinio-Matematico-Aplicado|Raciocínio Lógico Matemático]] (lógica de programação, condicionais, estruturas de dados) e [[Fundamentos-e-Modelagem|Banco de Dados]] (modelagem de entidades e relacionamentos)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
-> **Data:** 2026-08-31
+> **Data:** 2026-09-09
 
 ---
 
 ## 1. Por que estudar o paradigma orientado a objetos?
 
-Esta nota abre o coração do edital. A ementa é explícita: a **FASE 4 — Núcleo de Desenvolvimento** é onde todo o conhecimento anterior converge e onde, estatisticamente, a FGV concentra a maior profundidade do Módulo II. E o ponto de partida desse núcleo é o **paradigma orientado a objetos (POO)** — porque é o modelo mental sobre o qual quase todo software moderno é construído, incluindo praticamente tudo o que a DATAPREV desenvolve.
+Esta nota é o **coração do edital** da Fase 4. A ementa é explícita: a **FASE 4 — Núcleo de Desenvolvimento** é onde todo o conhecimento anterior converge e onde, estatisticamente, a FGV concentra a maior profundidade do Módulo II. E o centro desse núcleo é o **paradigma orientado a objetos (POO)** — porque é o modelo mental sobre o qual quase todo software moderno é construído, incluindo praticamente tudo o que a DATAPREV desenvolve.
+
+> [!note] De onde viemos: da sintaxe para o paradigma
+> No tópico anterior ([[Java-Fundamentos-da-Linguagem|Java — Fundamentos da Linguagem]]), você aprendeu a **sintaxe** de Java: variáveis, operadores, controle de fluxo e a definição de classe como molde — com atributos, métodos, construtor e `new`. Aqui elevamos o nível para o **paradigma**: classes e objetos deixam de ser apenas sintaxe e viram **modelo mental de design**. O `new` que você viu lá ganha agora significado — criar um objeto é instanciar um molde que reúne estado e comportamento.
 
 Pense no seu contexto: a DATAPREV processa dados da seguridade social — o **CNIS** (Cadastro Nacional de Informações Sociais), o INSS digital, sistemas de benefícios, consignação, folha de pagamento de benefícios. Nesses domínios, tratamos de *cidadãos*, *vínculos empregatícios*, *contribuições*, *benefícios*, *órgãos concedentes*. Cada uma dessas "coisas" do mundo real vira um **objeto** no software — e é exatamente aí que o POO se conecta com aquilo que você já estudou na Fase 3.
 
 > [!note] A ponte com o Banco de Dados
-> Na [[Fundamentos-e-Modelagem|modelagem conceitual]], você desenhou **entidades** como CLIENTE, PEDIDO e PRODUTO, com atributos e relacionamentos. Pois bem: o POO constrói a aplicação com a mesma visão, mas no código. A **entidade** do banco (uma tabela) e a **classe** do POO (um molde) são leituras do mesmo mundo real. E quando o banco é relacional e o código é orientado a objetos, é preciso de um "tradutor" entre os dois mundos — você verá isso com o **JPA/Hibernate** no tópico 2 desta fase. Guarde essa ponte: *tabela* (banco) e *classe* (objeto) são duas visões da mesma entidade do mundo real.
+> Na [[Fundamentos-e-Modelagem|modelagem conceitual]], você desenhou **entidades** como CLIENTE, PEDIDO e PRODUTO, com atributos e relacionamentos. Pois bem: o POO constrói a aplicação com a mesma visão, mas no código. A **entidade** do banco (uma tabela) e a **classe** do POO (um molde) são leituras do mesmo mundo real. E quando o banco é relacional e o código é orientado a objetos, é preciso de um "tradutor" entre os dois mundos — você verá isso com o **JPA/Hibernate** no tópico 3 desta fase. Guarde essa ponte: *tabela* (banco) e *classe* (objeto) são duas visões da mesma entidade do mundo real.
 
 E por que o [[Raciocinio-Matematico-Aplicado|Raciocínio Lógico Matemático]] é pré-requisito? Porque programar é **aplicar lógica**: condicionais (`se... então`), repetições, representação de conjuntos de dados. O POO é a camada que organiza essa lógica em unidades coerentes chamadas *objetos*. Sem a base lógica, você entende a sintaxe, mas não constrói o raciocínio por trás do design.
 
@@ -204,7 +207,7 @@ Por trás do encapsulamento está o controle de visibilidade. A FGV cobra os qua
 
 ## 4. A relação entre POO e o mundo dos dados
 
-Antes de avançar para SOLID, vale consolidar a conexão com o Banco de Dados, pois ela reaparecerá nos tópicos 2, 4 e 5 desta fase.
+Antes de avançar para SOLID, vale consolidar a conexão com o Banco de Dados, pois ela reaparecerá nos tópicos 3, 5 e 6 desta fase.
 
 | Mundo do banco ([[Fundamentos-e-Modelagem|modelagem]]) | Mundo do POO (código) |
 |---|---|
@@ -416,7 +419,7 @@ public interface Gestor { void gerenciarEquipe(); }
 
 > **Módulos de alto nível não devem depender de módulos de baixo nível; ambos devem depender de abstrações. Abstrações não devem depender de detalhes; detalhes devem depender de abstrações.**
 
-Em termos simples: o código deve depender de **interfaces/abstrações** (o "contrato"), e não de **implementações concretas** (o "como"). Isso permite trocar a implementação sem mexer em quem a usa — e é a base da **Injeção de Dependência**, que veremos a fundo nos tópicos de Spring (tópico 4).
+Em termos simples: o código deve depender de **interfaces/abstrações** (o "contrato"), e não de **implementações concretas** (o "como"). Isso permite trocar a implementação sem mexer em quem a usa — e é a base da **Injeção de Dependência**, que veremos a fundo nos tópicos de Spring (tópico 5).
 
 ```java
 // VIOLAÇÃO — a classe alta depende diretamente de uma implementação concreta
@@ -466,7 +469,7 @@ public class EmissorRelatorio {
 > - [ ] **Clean Code**: nomes significativos, funções pequenas (uma coisa só), comentários *úteis* (o "porquê")
 > - [ ] **Análise estática** (SonarQube): examina código *sem executá-lo*; detecta code smells, bugs, duplicação; Quality Gate define limites mínimos de qualidade
 > - [ ] **SOLID**: S (responsabilidade única), O (aberto/fechado), L (substituição de Liskov), I (segregação de interfaces), D (inversão de dependência)
-> - [ ] Ponte com [[Fundamentos-e-Modelagem|banco de dados]]: tabela ↔ classe, linha ↔ objeto, coluna ↔ atributo — base do JPA do tópico 2
+> - [ ] Ponte com [[Fundamentos-e-Modelagem|banco de dados]]: tabela ↔ classe, linha ↔ objeto, coluna ↔ atributo — base do JPA do tópico 3
 
 > [!warning] O erro mais comum em prova
 > Confundir **abstração com encapsulamento** e **herança com composição**, e reduzir o **SRP** a "uma função só". Na hora da questão: *a frase fala em simplificar o modelo (abstração) ou em esconder/proteger dados (encapsulamento)?* E *a relação é "é-um" (herança) ou "tem-um" (composição)?*
@@ -475,6 +478,6 @@ public class EmissorRelatorio {
 
 ## 9. Próximos passos
 
-Você acaba de construir o alicerce conceitual de toda a FASE 4: sabe distinguir classe de objeto, domina os quatro pilares, entende o SOLID, os princípios de Clean Code e como a análise estática com SonarQube verifica esses princípios na prática. Esse vocabulário será usado em todos os tópicos seguintes — nos **padrões de projeto** (tópico 5), que são soluções prontas construídas sobre esses princípios, e no **ecossistema Spring** (tópico 4), que aplica a inversão de dependência em escala.
+A sintaxe Java já foi consolidada no **tópico 1 ([[Java-Fundamentos-da-Linguagem|Java — Fundamentos da Linguagem]])**: variáveis, coleções, exceções, generics e a classe como molde. Este tópico construiu o que está *acima* da sintaxe — o **paradigma**: classe e objeto, os quatro pilares, SOLID, Clean Code e a análise estática com SonarQube. Esse vocabulário será usado em todos os tópicos seguintes — nos **padrões de projeto** (tópico 6), que são soluções prontas construídas sobre esses princípios, e no **ecossistema Spring** (tópico 5), que aplica a inversão de dependência em escala.
 
-Antes disso, o próximo tópico da ementa é **Java e o Ecossistema JVM**: é lá que esses conceitos se transformam em código concreto — tipos, coleções e exceções da linguagem, e depois as tecnologias empresariais como **JPA e Hibernate** que fazem a ponte com o banco de dados que você estudou na Fase 3. Se o POO é a *filosofia*, o Java é a *linguagem* em que essa filosofia se materializa — e é exatamente isso que a próxima nota desenvolve.
+O próximo tópico da ementa é o **Java Corporativo (tópico 3 — [[Java-Corporativo-JavaEE-JPA-Hibernate|JavaEE, JakartaEE, JPA e Hibernate]])**: é lá que o POO se materializa no banco de dados. As **entidades JPA** convertem a ponte que você construiu aqui em código — *classe* vira *tabela*, *objeto* vira *linha*, *atributo* vira *coluna* — e o **Hibernate** implementa esse mapeamento automaticamente. Se o POO é a *filosofia*, o Java Corporativo é onde essa filosofia conversa com o banco relacional que você estudou na Fase 3.

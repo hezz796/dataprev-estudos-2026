@@ -328,37 +328,47 @@ BLOCO GESTÃO E GOVERNANÇA
 **Pré-requisitos:**
 - Raciocínio Lógico Matemático (algoritmos, lógica de programação)
 - Língua Portuguesa (documentação técnica, nomes de classes, padrão CamelCase)
-- Banco de Dados (SQL, JPA, mapeamento objeto-relacional)
+- Banco de Dados (SQL, consultas)
 
 **Tópicos:**
 
-1. [[Paradigma-Orientado-a-Objetos|Paradigma Orientado a Objetos]]
+1. [[Java-Fundamentos-da-Linguagem|Java — Fundamentos da Linguagem]]
+   - Sintaxe essencial: estrutura de um programa (a classe como recipiente do código: `class` e `main`), variáveis, operadores, controle de fluxo
+   - Tipos primitivos e wrappers (autoboxing/unboxing)
+   - Coleções (List, Set, Map)
+   - Tratamento de exceções (checked/unchecked, try/catch/finally, throws/throw)
+   - Generics
+   - Pré-requisitos: RLM (lógica de programação) + Banco de Dados (SQL, consultas) — SEM POO
+
+2. [[Paradigma-Orientado-a-Objetos|Paradigma Orientado a Objetos]]
    - Conceitos: classe, objeto, herança, polimorfismo, encapsulamento, abstração
    - SOLID: princípios básicos
-   - Princípios de Clean Code: nomes significativos, funções pequenas, comentários úteis
+   - Clean Code: nomes significativos, funções pequenas, comentários úteis
+   - Análise estática de código e SonarQube (consta no edital como "Clean Code/SonarQube")
+   - Pré-requisitos: Java — Fundamentos da Linguagem + RLM + Banco de Dados
 
-2. [[Java-e-Ecossistema-JVM|Java e Ecossistema JVM]]
-   - Java (v6+): tipos primitivos, coleções, tratamento de exceções, generics
-   - JavaEE (v6+): Servlets, JSP, CDI, Bean Validation, JAX-RS
-   - JakartaEE: evolução do JavaEE, mudanças de namespace
-   - JPA (v2+): mapeamento ORM, entidades, repositórios, consultas JPQL
+3. [[Java-Corporativo-JavaEE-JPA-Hibernate|Java Corporativo — JavaEE, JakartaEE, JPA e Hibernate]]
+   - JavaEE: Servlets, JSP, CDI, Bean Validation, JAX-RS
+   - JakartaEE: evolução do JavaEE, mudança de namespace javax.* → jakarta.*
+   - JPA: mapeamento ORM, entidades, repositórios, consultas JPQL
    - Hibernate: configuração, cascata, lazy/eager loading, cache
+   - Pré-requisitos: Java — Fundamentos da Linguagem + POO + Banco de Dados
 
-3. [[JavaScript|JavaScript]]
+4. [[JavaScript|JavaScript]]
    - Sintaxe básica e tipos
    - Funções, closures, escopo
    - Prototype e cadeia de protótipos
    - Async/Await, Promises
    - ES6+: let/const, arrow functions, destructuring, spread/rest
 
-4. [[Frameworks-Java|Frameworks Java]]
+5. [[Frameworks-Java|Frameworks Java]]
    - Spring: IoC, DI, Spring MVC, Spring Data
    - Spring Boot: autoconfiguração, starter dependencies
    - Spring Cloud: Discovery (Eureka), Config, Gateway, Circuit Breaker
    - JSF (JavaServer Faces): ciclos de vida, componentes
-   - Primefaces: componentes, temas, integração com JSF
+   - PrimeFaces: componentes, temas, integração com JSF
 
-5. [[Padroes-de-Projeto-e-Arquitetura|Padrões de Projeto e Arquitetura]]
+6. [[Padroes-de-Projeto-e-Arquitetura|Padrões de Projeto e Arquitetura]]
    - Padrões GoF (criação, estruturais, comportamentais): Singleton, Factory, Strategy, Observer, etc.
    - MVC, MVP, MVVM
    - SOA (Service Oriented Architecture)
@@ -366,18 +376,18 @@ BLOCO GESTÃO E GOVERNANÇA
    - APIs RESTful: verbos HTTP, status codes, recursos
    - Swagger/OpenAPI: especificação e documentação
 
-6. [[Formatos-de-Dados-e-Integracao|Formatos de Dados e Integração]]
+7. [[Formatos-de-Dados-e-Integracao|Formatos de Dados e Integração]]
    - XML: sintaxe, namespaces, validação (XSD)
    - XSLT: transformação de XML
    - JSON: sintaxe, parsing, serialização
    - UDDI: registro e descoberta de serviços
 
-7. [[Desenvolvimento-Mobile|Desenvolvimento Mobile]]
+8. [[Desenvolvimento-Mobile|Desenvolvimento Mobile]]
    - Android: Activity, Fragment, Intent, RecyclerView, lifecycle
    - iOS: UIKit, SwiftUI (conceito), ciclo de vida
    - Low-code e no-code: conceitos, plataformas, quando usar
 
-8. [[DevOps-e-Controle-de-Versao|DevOps e Controle de Versão]]
+9. [[DevOps-e-Controle-de-Versao|DevOps e Controle de Versão]]
    - Git: init, add, commit, branch, merge, rebase, pull request
    - CI/CD: conceito, Jenkins, GitHub Actions (conceito)
    - Containerização: Docker (conceito básico)
@@ -389,6 +399,7 @@ BLOCO GESTÃO E GOVERNANÇA
 - JPA e Hibernate frequentemente aparecem juntos — entender a relação (JPA é especificação, Hibernate é implementação)
 - Git é cobrado de forma prática — saber resolver conflitos e branch management
 - O tópico "Low-code e no-code" é mais conceitual — entender quando aplicar
+- Progressão do bloco: sintaxe (t1, Java — Fundamentos da Linguagem) → paradigma (t2, POO) → ecossistema corporativo (t3, Java Corporativo — JavaEE/JakartaEE, JPA, Hibernate)
 
 ---
 
@@ -736,6 +747,7 @@ BLOCO GESTÃO E GOVERNANÇA
 | Versão | Data | Alteração |
 |--------|------|-----------|
 | 1.0 | 2026-08-26 | Versão inicial — estrutura completa |
+| 1.1 | 2026-09-09 | Reordenação do Bloco 4.1: Java Fundamentos → POO → Java Corporativo → JavaScript → Frameworks → ... |
 
 ---
 

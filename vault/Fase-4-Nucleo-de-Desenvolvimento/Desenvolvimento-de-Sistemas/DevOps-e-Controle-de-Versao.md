@@ -3,7 +3,7 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 8. DevOps e Controle de Versão
+> **Tópico:** 9. DevOps e Controle de Versão
 > **Subtópicos:** Git (init, add, commit, branch, merge, rebase, pull request) · CI/CD (conceito, Jenkins, GitHub Actions — conceito) · Containerização (Docker — conceito básico) · Ambientes (Internet, intranet, portal)
 > **Pré-requisitos:** [[Raciocinio-Matematico-Aplicado|Raciocínio Lógico Matemático]] (raciocínio de processos e sequências) e [[Paradigma-Orientado-a-Objetos|POO/Desenvolvimento]] (contexto do código versionado)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
@@ -246,6 +246,6 @@ A entrega do software acontece em **ambientes de rede** com níveis de acesso di
 
 ## 8. Fecho do Núcleo de Desenvolvimento
 
-Com esta nota, você fecha a **FASE 4 — Núcleo de Desenvolvimento** do edital. Revisite o caminho percorrido: começamos no **POO** (os pilares, SOLID e Clean Code), passamos pelo **Java** e o ecossistema JVM, pelo **JavaScript** e as **frameworks Java** (Spring, Spring Boot, Spring Cloud, JSF, PrimeFaces), pelos **padrões de projeto e arquitetura** (GoF, MVC, SOA, Web Services, RESTful, OpenAPI), pelos **formatos de dados** (XML, XSD, XSLT, JSON, UDDI), pelo **mobile** (Android, iOS, low-code/no-code) e encerramos com o **DevOps e controle de versão** (Git, CI/CD, Docker, ambientes).
+Com esta nota, você fecha a **FASE 4 — Núcleo de Desenvolvimento** do edital. Revisite o caminho percorrido: começamos no **Java — Fundamentos da Linguagem**, passamos pelo **POO** (os pilares, SOLID e Clean Code) e pelo **Java Corporativo** (JavaEE/JakartaEE, JPA, Hibernate), pelo **JavaScript** e as **frameworks Java** (Spring, Spring Boot, Spring Cloud, JSF, PrimeFaces), pelos **padrões de projeto e arquitetura** (GoF, MVC, SOA, Web Services, RESTful, OpenAPI), pelos **formatos de dados** (XML, XSD, XSLT, JSON, UDDI), pelo **mobile** (Android, iOS, low-code/no-code) e encerramos com o **DevOps e controle de versão** (Git, CI/CD, Docker, ambientes).
 
 A ementa indica que os próximos blocos (**Metodologias** e **Testes de Software**) dependem deste. Para o estudo continuar no ritmo certo, lembre-se: o DevOps, o CI/CD e o controle de versão que você acabou de estudar são o **elo entre escrever código e entregar software** — e é exatamente sobre como esse processo é **gerenciado** (Scrum, Kanban, XP) que os blocos seguintes tratarão, já usando o vocabulário que você construiu aqui.

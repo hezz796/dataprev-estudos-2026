@@ -68,7 +68,7 @@ E) Apenas II
 
 **id:** JAVA-SPRING-002
 **disciplina:** Desenvolvimento de Sistemas
-**tópico:** Java e Ecossistema JVM
+**tópico:** Java — Fundamentos da Linguagem
 **subtópico:** Coleções Java (List, Set, Map)
 **origem:** autoral
 **habilidade cognitiva:** compreensão e aplicação
@@ -124,7 +124,7 @@ E) 1
 
 **id:** JAVA-SPRING-003
 **disciplina:** Desenvolvimento de Sistemas
-**tópico:** Java e Ecossistema JVM
+**tópico:** Java Corporativo — JavaEE, JakartaEE, JPA e Hibernate
 **subtópico:** JPA, Hibernate (especificação vs. implementação), JPQL vs. SQL
 **origem:** autoral
 **habilidade cognitiva:** análise

@@ -13,7 +13,7 @@
 
 ## 1. Por que estudar fundamentos de teste?
 
-Você já sabe escrever código em [[Java-e-Ecossistema-JVM|Java]], usar [[Frameworks-Java|Spring]], versionar com [[DevOps-e-Controle-de-Versao|Git]] e organizar o trabalho com [[Metodologias-Ageis|Scrum]]. Mas há uma pergunta que falta responder: **como ter certeza de que o código que você escreveu realmente funciona — e que não quebrou algo que já estava funcionando?**
+Você já sabe escrever código em [[Java-Fundamentos-da-Linguagem|Java]], usar [[Frameworks-Java|Spring]], versionar com [[DevOps-e-Controle-de-Versao|Git]] e organizar o trabalho com [[Metodologias-Ageis|Scrum]]. Mas há uma pergunta que falta responder: **como ter certeza de que o código que você escreveu realmente funciona — e que não quebrou algo que já estava funcionando?**
 
 Essa é a essência dos **testes de software**. E no contexto da DATAPREV — empresa que mantém os sistemas de cálculo de benefícios previdenciários, consignações e pagamentos da seguridade social — a resposta é visceral: **um bug em um sistema de benefício pode significar um idoso recebendo valor errado na aposentadoria**. Testes não são "boa prática": são **necessidade operacional**.
 

@@ -3,7 +3,7 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 3. JavaScript
+> **Tópico:** 4. JavaScript
 > **Subtópicos:** Sintaxe básica e tipos · Funções, closures, escopo · Prototype e cadeia de protótipos · Async/Await, Promises · ES6+ (let/const, arrow functions, destructuring, spread/rest)
 > **Pré-requisitos:** [[Raciocinio-Matematico-Aplicado|Raciocínio Lógico Matemático]] (lógica de programação, condicionais) e [[Compreensao-e-Interpretacao-de-Textos|Língua Portuguesa]] (leitura de código e documentação técnica)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
@@ -34,7 +34,7 @@ valor = 10;             // agora é número — sem erro
 valor = true;           // agora é boolean
 ```
 
-Isso difere frontalmente do Java ([[Java-e-Ecossistema-JVM|estaticamente tipado]]), onde o tipo é fixo em compilação. A pegadinha da banca: a declaração "JavaScript é uma linguagem **estaticamente tipada**" é **falsa**; é **dinamicamente tipada**.
+Isso difere frontalmente do Java ([[Java-Fundamentos-da-Linguagem|estaticamente tipado]]), onde o tipo é fixo em compilação. A pegadinha da banca: a declaração "JavaScript é uma linguagem **estaticamente tipada**" é **falsa**; é **dinamicamente tipada**.
 
 ### 2.2 Tipos primitivos e tipos de referência
 
@@ -376,4 +376,4 @@ Seu benefício será creditado na conta de número 12345-6.`;
 
 Você entendeu o comportamento do JavaScript: a tipagem dinâmica, o escopo e o hoisting, as closures, os protótipos e a assincronia com Promises/async-await, além da sintaxe moderna do ES6+. Esse é exatamente o vocabulário que o **frontend web** (bloco posterior) vai usar com os frameworks Vue, Angular e React — mas ali o foco estará nas diferenças conceituais entre os frameworks, não na sintaxe básica que você acabou de dominar.
 
-Antes disso, porém, a ementa devolve você ao **mundo Java**: o próximo tópico é **Frameworks Java** — Spring, Spring Boot, Spring Cloud, JSF e PrimeFaces. Ou seja, consolidamos três linguagens (Java, JavaScript e o POO) e agora vamos ver como o **Java organiza aplicações corporativas** com injeção de dependência, autoconfiguração e seus padrões — a ponte natural com os **padrões de projeto** do tópico 5.
+Antes disso, porém, a ementa devolve você ao **mundo Java**: o próximo tópico é **Frameworks Java** — Spring, Spring Boot, Spring Cloud, JSF e PrimeFaces. Ou seja, consolidamos os dois momentos do Java (a sintaxe do tópico 1 e o Java Corporativo com JPA/Hibernate do tópico 3), o paradigma orientado a objetos (tópico 2) e o JavaScript (tópico 4); agora vamos ver como o **Java organiza aplicações corporativas** com injeção de dependência, autoconfiguração e seus padrões — a ponte natural com os **padrões de projeto** do tópico 6.

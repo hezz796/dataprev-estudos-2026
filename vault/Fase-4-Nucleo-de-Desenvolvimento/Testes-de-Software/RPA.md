@@ -159,4 +159,4 @@ Parabéns! Você completou o Bloco 4.3 — Testes de Software. Neste bloco, voc�
 4. **[[Gestao-do-Ciclo-de-Vida-de-Testes]]** — plano de teste, registro de defeitos, severidade vs. prioridade, métricas;
 5. **[[RPA]]** — conceito, RPA vs. automação de testes, assistido vs. não assistido.
 
-Com isso, você fecha o **Núcleo de Desenvolvimento** (Fase 4): [[Java-e-Ecossistema-JVM|Java]], [[Frameworks-Java|Spring]], [[Metodologias-Ageis|Metodologias Ágeis]] e agora **Testes de Software**. Você tem a base sólida para avançar para a **Fase 5 — Frontend e Interfaces**, onde verá Vue, Angular, React e Arquitetura de Software Avançada.
+Com isso, você fecha o **Núcleo de Desenvolvimento** (Fase 4): [[Java-Fundamentos-da-Linguagem|Java]], [[Frameworks-Java|Spring]], [[Metodologias-Ageis|Metodologias Ágeis]] e agora **Testes de Software**. Você tem a base sólida para avançar para a **Fase 5 — Frontend e Interfaces**, onde verá Vue, Angular, React e Arquitetura de Software Avançada.

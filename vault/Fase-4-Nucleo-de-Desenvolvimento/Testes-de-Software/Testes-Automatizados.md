@@ -5,7 +5,7 @@
 > **Bloco:** 4.3 — Testes de Software (FASE 4 — Núcleo de Desenvolvimento)
 > **Tópico:** 3. Testes Automatizados
 > **Subtópicos:** JUnit (anotações, asserts, suítes de teste) · Mockito (mocks e stubs) · Selenium (testes de UI web — conceito) · Cobertura de código (métricas e ferramentas)
-> **Pré-requisitos:** [[Fundamentos-de-Teste|Fundamentos de Teste]] (níveis, tipos, estratégias) · [[Testes-Ageis|Testes Ágeis]] (TDD, ciclo Red-Green-Refactor) · [[Java-e-Ecossistema-JVM|Java/JVM]] (linguagem, bibliotecas) · [[Frameworks-Java|Spring]] (conceito de DI, container)
+> **Pré-requisitos:** [[Fundamentos-de-Teste|Fundamentos de Teste]] (níveis, tipos, estratégias) · [[Testes-Ageis|Testes Ágeis]] (TDD, ciclo Red-Green-Refactor) · [[Java-Fundamentos-da-Linguagem|Java]] (linguagem, bibliotecas) · [[Frameworks-Java|Spring]] (conceito de DI, container)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
 > **Data:** 2026-08-31
 
@@ -15,7 +15,7 @@
 
 No [[Testes-Ageis|tópico anterior]] vimos **TDD** e **BDD** como métodos — mas métodos precisam de **ferramentas**. O TDD diz "escreva um teste antes do código" — mas *como* se escreve um teste em Java? O BDD diz "especifique em linguagem natural" — mas *como* se conecta isso ao código? É aqui que entram os **testes automatizados**: a camada técnica que torna os testes **executáveis, reproduzíveis e rápidos**.
 
-Para a DATAPREV, a automação de testes é especialmente relevante: sistemas legados de benefícios previdenciários têm **milhares de regras de negócio**, e manualmente testar todas as combinações seria impossível. Um suite automatizado de testes unitários pode rodar em **segundos** e garantir que nenhuma mudança quebrou as regras existentes — o chamado **teste de regressão** (que você viu no [[Fundamentos-de-Teste]]).
+Para a DATAPREV, a automação de testes é especialmente relevante: sistemas legados de benefícios previdenciários têm **milhares de regras de negócio**, e manualmente testar todas as combinações seria impossível. Uma suíte automatizada de testes unitários pode rodar em **segundos** e garantir que nenhuma mudança quebrou as regras existentes — o chamado **teste de regressão** (que você viu no [[Fundamentos-de-Teste]]).
 
 > [!question] Pergunta orientadora
 > Imagine que você precisa alterar a fórmula de cálculo de um benefício. Como garantir que a alteração não quebrou o cálculo de outros benefícios? Rodar todos os testes anteriores manualmente levaria dias. Rodá-los **automaticamente** leva minutos. É essa a promessa dos testes automatizados.

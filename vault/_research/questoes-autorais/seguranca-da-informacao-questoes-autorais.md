@@ -228,7 +228,7 @@ E) Apenas III
 - **D (I, II e IV):** errada — IV é falsa.
 - **E (Apenas III):** errada — I e II também são verdadeiras.
 
-**Pegadinha:** A afirmativa IV é a armadilha mais rentável: inverte **Injection** e **XSS**. Aliado à comparação SAST × DAST, o candidato precisa de dois mnemônicos: **S**tático → **S**ource (código); **D**inâmico → em execução. E para os ataques: **Injection = servidor/banco**; **XSS = navegador da vítima**. Observação pedagógica: a afirmativa sobre Broken Auth/Access Control (acessar painel administrativo alterando a URL) e o CSRF não foram incluídas nesta questão por priorização — CSRF ainda não consta das notas estudadas do tópico, e o princípio do projeto é não avaliar conhecimento antes de o aluno ter condições de estudá-lo.
+**Pegadinha:** A afirmativa IV é a armadilha mais rentável: inverte **Injection** e **XSS**. Aliado à comparação SAST × DAST, o candidato precisa de dois mnemônicos: **S**tático → **S**ource (código); **D**inâmico → em execução. E para os ataques: **Injection = servidor/banco**; **XSS = navegador da vítima**. Observação pedagógica: a afirmativa sobre Broken Auth/Access Control (acessar painel administrativo alterando a URL) e o CSRF não foram incluídos nesta questão por priorização — CSRF ainda não consta das notas estudadas do tópico, e o princípio do projeto é não avaliar conhecimento antes de o aluno ter condições de estudá-lo.
 
 ---
 

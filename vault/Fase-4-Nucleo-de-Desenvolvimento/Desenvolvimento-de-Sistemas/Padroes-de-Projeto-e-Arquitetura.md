@@ -3,7 +3,7 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 5. Padrões de Projeto e Arquitetura
+> **Tópico:** 6. Padrões de Projeto e Arquitetura
 > **Subtópicos:** Padrões GoF (criação, estruturais, comportamentais: Singleton, Factory, Strategy, Observer etc.) · MVC, MVP, MVVM · SOA · Web Services (SOAP, REST, GraphQL — conceito) · Mensageria (assíncrona, fila, tópico, broker, JMS) · APIs RESTful (verbos HTTP, status codes, recursos) · Swagger/OpenAPI
 > **Pré-requisitos:** [[Paradigma-Orientado-a-Objetos|POO]] (polimorfismo, herança, encapsulamento) e [[Frameworks-Java|Frameworks Java]] (MVC, Spring, IoC/DI)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026

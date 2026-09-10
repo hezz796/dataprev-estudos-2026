@@ -3,9 +3,9 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 4. Frameworks Java
+> **Tópico:** 5. Frameworks Java
 > **Subtópicos:** Spring (IoC, DI, Spring MVC, Spring Data) · Spring Boot (autoconfiguração, starters) · Spring Cloud (Discovery/Eureka, Config, Gateway, Circuit Breaker) · JSF (JavaServer Faces, ciclo de vida, componentes) · PrimeFaces (componentes, temas, integração com JSF)
-> **Pré-requisitos:** [[Paradigma-Orientado-a-Objetos|POO]] (inversão de dependência, SOLID) e [[Java-e-Ecossistema-JVM|Java/JVM]] (CDI, JPA, repositórios, Jakarta EE)
+> **Pré-requisitos:** [[Paradigma-Orientado-a-Objetos|POO]] (inversão de dependência, SOLID) e [[Java-Corporativo-JavaEE-JPA-Hibernate|Java Corporativo]] (CDI, JPA, repositórios, Jakarta EE)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
 > **Data:** 2026-08-31
 
@@ -18,7 +18,7 @@ A ementa é enfática: *"priorizar o ecossistema Spring, que é o mais cobrado."
 Este tópico conecta dois pilares que você já domina:
 
 - A [[Paradigma-Orientado-a-Objetos|nota de POO]] introduziu o **D de SOLID — Inversão de Dependência** e o princípio de **depender de abstrações, não de concretos**. O **Spring** é a materialização em escala desse princípio: ele gerencia automaticamente as dependências dos objetos via **injeção de dependência**.
-- A [[Java-e-Ecossistema-JVM|nota de Java]] apresentou o **CDI** (injeção de dependência do Jakarta EE) e os **repositórios JPA**. O Spring Data aproveita exatamente esses repositórios para oferecer acesso a dados pronto.
+- A [[Java-Corporativo-JavaEE-JPA-Hibernate|nota de Java Corporativo]] apresentou o **CDI** (injeção de dependência do Jakarta EE) e os **repositórios JPA**. O Spring Data aproveita exatamente esses repositórios para oferecer acesso a dados pronto.
 
 > [!question] Pergunta orientadora
 > No POO, aprendemos que "dependa de abstrações, não de concretos". Mas quem vai *de fato* montar essas abstrações? Quem vai criar o objeto `RepositorioDados` concreto e injetá-lo na classe que o usa? Num sistema com centenas de classes, ninguém faria isso manualmente. Quem assume essa responsabilidade? A resposta é o **container de injeção de dependência** — o coração do Spring.

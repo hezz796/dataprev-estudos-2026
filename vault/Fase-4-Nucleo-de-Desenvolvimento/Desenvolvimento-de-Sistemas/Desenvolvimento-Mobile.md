@@ -3,9 +3,9 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 7. Desenvolvimento Mobile
+> **Tópico:** 8. Desenvolvimento Mobile
 > **Subtópicos:** Android (Activity, Fragment, Intent, RecyclerView, lifecycle) · iOS (UIKit, SwiftUI conceito, ciclo de vida) · Low-code e no-code (conceitos, plataformas, quando usar)
-> **Pré-requisitos:** [[Paradigma-Orientado-a-Objetos|POO]] (objetos, ciclo de vida, estados) e [[Java-e-Ecossistema-JVM|Java]] (linguagem do Android nativo) e [[JavaScript|JavaScript]] (base para tecnologias híbridas/React Native)
+> **Pré-requisitos:** [[Paradigma-Orientado-a-Objetos|POO]] (objetos, ciclo de vida, estados) e [[Java-Fundamentos-da-Linguagem|Java]] (linguagem do Android nativo) e [[JavaScript|JavaScript]] (base para tecnologias híbridas/React Native)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
 > **Data:** 2026-08-31
 
@@ -18,7 +18,7 @@ Ao lado do web, o **desenvolvimento mobile** é um dos principais vetores de ent
 Este tópico conecta:
 
 - A [[Paradigma-Orientado-a-Objetos|nota de POO]]: as **Activities** e **Fragments** do Android são **objetos com ciclo de vida e estado** — exatamente a noção de *estado* e *comportamento* que você estudou. O ciclo de vida de uma Activity é um caso real de **estados transitando** sob controle do sistema.
-- A [[Java-e-Ecossistema-JVM|nota de Java]] e a [[JavaScript|de JavaScript]]: o Android nativo é escrito **em Java/Kotlin**; e as soluções **híbridas** (como React Native) usam **JavaScript**. Você já domina as duas linguagens.
+- A [[Java-Fundamentos-da-Linguagem|nota de Java]] e a [[JavaScript|de JavaScript]]: o Android nativo é escrito **em Java/Kotlin**; e as soluções **híbridas** (como React Native) usam **JavaScript**. Você já domina as duas linguagens.
 
 > [!question] Pergunta orientadora
 > Quando você gira a tela do celular, o aplicativo Android "reinicia" — e isso é um comportamento *esperado*, não um bug. Por quê? Porque a plataforma controla o **ciclo de vida** das telas. Entender esse ciclo de vida (onCreate → ... → onDestroy) é entender como o sistema gerencia o estado de cada tela — o coração do Android. Vamos começar por aí.

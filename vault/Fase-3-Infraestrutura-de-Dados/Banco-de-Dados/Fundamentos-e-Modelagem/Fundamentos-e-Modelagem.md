@@ -32,9 +32,11 @@ Antes de definir banco de dados, é preciso distinguir **dado** de **informaçã
 
 Um **banco de dados** é uma **coleção integrada, organizada e persistente de dados relacionados**, que representa uma parte do mundo real — chamada de *mini-mundo* ou *universo de discurso* — e que atende a uma determinada comunidade de usuários e aplicações. Três palavras dessa definição são as favoritas da banca:
 
-- **integrada:** os dados são tratados como um todo, com redundância controlada, em vez de arquivos isolados e repetidos;
-- **organizada:** existe uma estrutura (um modelo) que descreve como os dados se relacionam — não é uma pilha de arquivos soltos;
+- **integrada:** os dados são tratados como um todo, com redundância controlada, em vez de arquivos isolados e repetidos; significa que estão **conectados e relacionados entre si**, formando um conjunto que pode ser analisado em conjunto.
+- **organizada:** existe uma estrutura (um modelo) que descreve como os dados se relacionam — não é uma pilha de arquivos soltos; significa que estão **dispostos de maneira estruturada e lógica**, facilitando sua localização, consulta e utilização.
 - **persistente:** os dados sobrevivem ao término dos programas que os utilizam; ficam guardados de forma duradoura.
+
+![](https://www.youtube.com/watch?v=Q_KTYFgvu1s&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD)
 
 ### 2.2 SGBD — o software por trás do banco
 
@@ -121,11 +123,16 @@ Dois tipos de entidade aparecem em prova:
 
 **Relacionamento** é a associação entre duas ou mais entidades — é o verbo do modelo: CLIENTE **realiza** PEDIDO; PEDIDO **contém** PRODUTO; FUNCIONÁRIO **trabalha em** DEPARTAMENTO. Um relacionamento pode ter **atributos próprios**: a associação entre PEDIDO e PRODUTO tem o atributo `quantidade` — não faz sentido dizer que a quantidade é "do pedido" nem "do produto"; ela é do relacionamento *contém*.
 
-A **cardinalidade** de um relacionamento diz **quantas ocorrências de uma entidade podem se relacionar com quantas ocorrências da outra**. Ela é a informação mais cobrada da modelagem conceitual, e a forma de lê-la é sempre *de um lado, depois do outro*:
+A **cardinalidade** de um relacionamento diz **quantas ocorrências de uma entidade podem se relacionar com quantas ocorrências da outra**. Ela é a informação mais cobrada da modelagem conceitual, e a forma de lê-la é sempre *de um lado, depois do outro*. A tripla clássica — **1:1, 1:N, N:M** — expressa a cardinalidade **máxima** (o maior número de associações permitido); o **mínimo** — inclusive a possibilidade de *zero* — é o assunto da seção 4.4.
+
+![](https://www.youtube.com/watch?v=OVBFFe4-jSM)
 
 - **1:1 (um para um):** cada ocorrência de A se relaciona com no máximo uma de B, e vice-versa. Ex.: cada MEI tem um único CNPJ; cada CNPJ pertence a um único MEI.
 - **1:N (um para muitos):** cada ocorrência de A se relaciona com várias de B, mas cada B se relaciona com **um único** A. Ex.: um CLIENTE realiza vários PEDIDOS, mas cada PEDIDO pertence a um único CLIENTE.
 - **N:M (muitos para muitos):** cada A pode se relacionar com vários B e cada B com vários A. Ex.: um PEDIDO contém vários PRODUTOS e um PRODUTO aparece em vários PEDIDOS.
+
+> [!tip] Como ler a cardinalidade sem errar
+> Leia sempre a frase completa, do ponto de vista de cada entidade: "cada CLIENTE realiza **quantos** PEDIDOS?" e "cada PEDIDO pertence a **quantos** CLIENTES?" A pegadinha da banca é inverter o lado: dizer que "cada pedido tem vários clientes" quando a regra é "cada pedido tem um único cliente". Escreva as duas perguntas no papel antes de marcar a resposta.
 
 A conexão com o [[Raciocinio-Matematico-Aplicado|RLM]] é direta e poderosa: entidades são conjuntos; o relacionamento associa elementos de um conjunto a elementos de outro; e a cardinalidade descreve *quantos elementos* se correspondem. Um relacionamento **1:N** se comporta como uma **função** do conjunto dos N para o conjunto dos 1 — cada elemento do lado N tem exatamente um correspondente do lado 1. Você já sabe, da Fase 1, que funções não admitem um mesmo elemento do domínio com duas imagens diferentes: é exatamente essa a "regra do negócio" que o 1:N impõe.
 
@@ -144,19 +151,29 @@ A conexão com o [[Raciocinio-Matematico-Aplicado|RLM]] é direta e poderosa: en
 >   │ N
 > PEDIDO (num_pedido, data_venda, valor_total)
 >   │ N
+>   |
 >   │ M
 > PRODUTO (cod_produto, descricao, preco_unitario)
 >   com atributo QUANTIDADE no relacionamento PEDIDO-PRODUTO
 > ```
 >
-> CLIENTE–PEDIDO é **1:N** (um cliente, muitos pedidos); PEDIDO–PRODUTO é **N:M** (muitos para muitos). Já dá para antever a consequência: N:M pedirá uma tabela extra no modelo lógico (seção 5.3).
+> CLIENTE–PEDIDO é **1:N** (um cliente, muitos pedidos); PEDIDO–PRODUTO é **N:M** (muitos para muitos). Já dá para antever a consequência: N:M pedirá uma tabela extra no modelo lógico (seção 5.3) — e, na seção 4.4, vamos extrair de cada regra o **mínimo**: quem pode ficar sem associação.
 
-> [!tip] Como ler a cardinalidade sem errar
-> Leia sempre a frase completa, do ponto de vista de cada entidade: "cada CLIENTE realiza **quantos** PEDIDOS?" e "cada PEDIDO pertence a **quantos** CLIENTES?" A pegadinha da banca é inverter o lado: dizer que "cada pedido tem vários clientes" quando a regra é "cada pedido tem um único cliente". Escreva as duas perguntas no papel antes de marcar a resposta.
-
-### 4.4 Participação: opcional vs. obrigatória
+### 4.4 Participação: opcional vs. obrigatória e a notação (min, max)
 
 Além da quantidade, o modelo conceitual costuma registrar se a participação é **obrigatória** ou **opcional**. Se todo pedido precisa ter um cliente, a participação do pedido no relacionamento é *total* (obrigatória); se um cliente pode existir sem nunca ter feito pedido, a participação do cliente é *parcial* (opcional). A banca explora isso com palavras como "todo", "nenhum", "pode", "deve" — a mesma semântica de quantificadores que você estudou na lógica. "**Todo** pedido pertence a um cliente" é um "todo" universal de verdade.
+
+É aqui que mora o **zero** da cardinalidade: **participação total = cardinalidade mínima 1** (obrigatória); **participação parcial = cardinalidade mínima 0** (opcional). Para registrar os dois números de uma vez — o mínimo e o máximo —, a notação precisa é **(mínima, máxima)**, a chamada **(min, max)**. Os quatro casos típicos:
+
+- **(1,1):** exatamente uma associação — nem zero, nem várias. Se todo PEDIDO pertence, obrigatoriamente, a um único CLIENTE, a participação do PEDIDO é (1,1);
+- **(0,1):** no máximo uma, mas pode ser zero. Um FUNCIONÁRIO pode ter no máximo um cônjuge cadastrado — ou nenhum;
+- **(1,N):** pelo menos uma, e até várias — o lado obrigatório e múltiplo do relacionamento;
+- **(0,N):** de zero a várias — o lado opcional e múltiplo. É o caso do CLIENTE em relação a PEDIDO no exemplo da loja: um cliente **pode** ter zero, um ou vários pedidos.
+
+Aplicando ao exemplo da loja, o "1:N" da seção 4.3 fica, com precisão, **CLIENTE (0,N) — PEDIDO (1,1)**: o "1:N" clássico mostra só o máximo; o (min,max) mostra também o mínimo. Em diagramas "pé de galinha" (*crow's foot*), o zero é desenhado como uma bolinha na ponta da linha: `|o` lê-se "zero ou um" e `o{` lê-se "zero ou muitos".
+
+> [!tip] Traduzindo as palavras da banca em números
+> Ouça "todo"/**"deve"** → mínimo 1; ouça "**pode**"/"nenhum" → mínimo 0. Quando o enunciado diz que "todo pedido **deve** ter um cliente", o mínimo é 1; quando diz que um cliente **pode** não ter feito pedido algum, o mínimo é 0.
 
 ---
 
@@ -179,6 +196,8 @@ A **modelagem lógica** traduz o modelo conceitual para o modelo escolhido — n
 
 ### 5.2 Chaves: o coração do modelo relacional
 
+![](https://www.youtube.com/watch?v=sbIT5UXTEg8&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=9)
+
 O modelo relacional conecta tabelas por **valores**, não por ponteiros. Essa conexão é feita por **chaves** — e conhecer os tipos de chave é obrigatório:
 
 - **Superchave:** qualquer conjunto de atributos que identifica **unicamente** uma tupla. Pode conter atributos "a mais" (ex.: `cod_cliente` + `nome` também identifica, mas `nome` é desnecessário).
@@ -192,6 +211,8 @@ Duas regras de integridade sustentam o modelo relacional — decore-as como os d
 
 - **Integridade de entidade:** a chave primária **não pode ser nula** (NULL). Se uma tupla não tem chave, ela não pode ser identificada — e não faz sentido no modelo.
 - **Integridade referencial:** todo valor de **chave estrangeira** deve existir como chave primária na relação referenciada (ou ser nulo, se a participação for opcional). Não se pode ter um pedido apontando para um cliente que não existe.
+
+![](https://www.youtube.com/watch?v=BurdDn16ZgE&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=11)
 
 > [!note] Palavras-chave da modelagem lógica
 > **Chave primária**, **chave estrangeira**, **chave candidata**, **chave alternativa**, **chave composta**, **superchave**, **integridade de entidade**, **integridade referencial**. A FGV cobra principalmente: (1) a definição de cada uma; (2) a diferença entre chave candidata e primária (escolha!); (3) qual chave resolve o relacionamento 1:N (a do lado 1 vira FK no lado N).
@@ -286,12 +307,13 @@ Um **tablespace** é uma **área lógica de armazenamento** que agrupa objetos d
 ## 7. Resumo e pontos-chave
 
 > [!tip] Checklist de revisão
-> - [ ] **Dado** é fato bruto; **informação** é dado interpretado
-> - [ ] **Banco de dados** = coleção integrada, organizada e persistente de dados relacionados (o *dado*)
-> - [ ] **SGBD** = software que gerencia o banco (o *programa*); MySQL é SGBD, não banco
-> - [ ] Funções do SGBD: catálogo/metadados, concorrência, segurança, integridade, backup
-> - [ ] Abordagens: **hierárquica** (árvore), **rede** (grafo), **relacional** (tabelas e chaves), **OO** (objetos)
-> - [ ] Conceitual: o **quê**; entidade (conjunto), atributo, relacionamento (verbo), cardinalidade (1:1, 1:N, N:M)
+> - [x] **Dado** é fato bruto; **informação** é dado interpretado
+> - [x] **Banco de dados** = coleção integrada, organizada e persistente de dados relacionados (o *dado*)
+> - [x] **SGBD** = software que gerencia o banco (o *programa*); MySQL é SGBD, não banco
+> - [x] Funções do SGBD: catálogo/metadados, concorrência, segurança, integridade, backup
+> - [x] Abordagens: **hierárquica** (árvore), **rede** (grafo), **relacional** (tabelas e chaves), **OO** (objetos)
+> - [x] Conceitual: o **quê**; entidade (conjunto), atributo, relacionamento (verbo), cardinalidade (1:1, 1:N, N:M)
+- [ ] Cardinalidade: **máxima** (1:1, 1:N, N:M) vs. **mínima** (0 ou 1); notação (min, max) — (1,1), (0,1), (1,N), (0,N); participação **total** (mín. 1) vs. **parcial** (mín. 0)
 > - [ ] Atributos: simples/composto, monovalorado/multivalorado, derivado; entidade forte/fraca
 > - [ ] Lógico: relação/tupla/atributo/domínio; chaves (primária, estrangeira, candidata, alternativa, composta)
 > - [ ] Integridade de **entidade** (PK não nula) e integridade **referencial** (FK válida)

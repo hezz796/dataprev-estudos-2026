@@ -3,9 +3,9 @@
 > [!info] Metadados
 > **Disciplina:** Desenvolvimento de Sistemas
 > **Bloco:** 4.1 — Desenvolvimento de Sistemas (FASE 4 — Núcleo de Desenvolvimento)
-> **Tópico:** 6. Formatos de Dados e Integração
+> **Tópico:** 7. Formatos de Dados e Integração
 > **Subtópicos:** XML (sintaxe, namespaces, validação XSD) · XSLT (transformação de XML) · JSON (sintaxe, parsing, serialização) · UDDI (registro e descoberta de serviços)
-> **Pré-requisitos:** [[Padroes-de-Projeto-e-Arquitetura|Padrões de Projeto e Arquitetura]] (SOAP, REST, Web Services) e [[Java-e-Ecossistema-JVM|Java/JVM]] (serialização, integração)
+> **Pré-requisitos:** [[Padroes-de-Projeto-e-Arquitetura|Padrões de Projeto e Arquitetura]] (SOAP, REST, Web Services) e [[Java-Fundamentos-da-Linguagem|Java]] (serialização, integração)
 > **Cargo:** Analista de TI — Perfil 3 (Desenvolvimento de Software) · DATAPREV 2026
 > **Data:** 2026-08-31
 

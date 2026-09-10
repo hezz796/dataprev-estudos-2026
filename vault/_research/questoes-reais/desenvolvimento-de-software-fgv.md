@@ -45,4 +45,4 @@ Classificação: **real** (todas as linhas abaixo). Sinalização: ✅ dentro ·
 
 ## Ligações com as notas
 
-[[Java-e-Ecossistema-JVM]] · [[Frameworks-Java]] · [[Metodologias-Ageis]] · [[Fundamentos-de-Teste]] · [[Testes-Automatizados]] · [[Testes-Ageis]] · [[DevOps-e-Controle-de-Versao]] · [[Padroes-de-Projeto-e-Arquitetura]] · [[Gestao-do-Ciclo-de-Vida-de-Testes]]
+[[Java-Fundamentos-da-Linguagem]] · [[Java-Corporativo-JavaEE-JPA-Hibernate]] · [[Frameworks-Java]] · [[Metodologias-Ageis]] · [[Fundamentos-de-Teste]] · [[Testes-Automatizados]] · [[Testes-Ageis]] · [[DevOps-e-Controle-de-Versao]] · [[Padroes-de-Projeto-e-Arquitetura]] · [[Gestao-do-Ciclo-de-Vida-de-Testes]]

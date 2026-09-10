@@ -238,7 +238,7 @@ As questões autorais acima foram inspiradas nos seguintes padrões de cobrança
 2. **V/F combinando frameworks (CNS014 FGV — governança × gestão):** julgamento de afirmativas em que cada item testa um framework (COBIT, ITIL); a fronteira conceitual governança × gestão é o alvo. Inspiração para GOV-002 e GOV-003. Nota: a questão real da CNS014 mencionava a **ISO/IEC 38500:2024**, norma **fora do edital 2026** — por isso foi deliberadamente **excluída** das questões autorais.
 3. **Troca de definições (padrão geral FGV):** atribuir ao framework o papel errado — "ITIL é governança", "COBIT substitui o ITIL", "EDM é domínio de gestão". Inspiração para GOV-003.
 4. **BPMN × UML e elementos de conexão (padrão recorrente FGV):** inverter finalidades (negócio × sistema) e inverter fluxo de sequência × fluxo de mensagem. Inspiração para GOV-004.
-5. **EVM — CPI/SPI (ementa BLoco 6.2 — métricas EVM):** fórmulas exatas e regra "> 1 é bom"; a armadilha de inverter CPI por SPI é a pegadinha mais rentável do tópico. Inspiração para GOV-001 (afirmativa III).
+5. **EVM — CPI/SPI (ementa Bloco 6.2 — métricas EVM):** fórmulas exatas e regra "> 1 é bom"; a armadilha de inverter CPI por SPI é a pegadinha mais rentável do tópico. Inspiração para GOV-001 (afirmativa III).
 6. **WBS por entregáveis × por fases (padrão PMI/PMBOK, reforçado na ementa):** distinção entre escopo e cronograma. Inspiração para GOV-001 (afirmativa II).
 7. **Julgamento de afirmativas (V/F) com uma ou duas falsas sutis** — formato FGV clássico, replicado em todas as quatro questões, no mesmo registro das questões autorais de Java/Spring e Metodologias já aprovadas no vault.
 

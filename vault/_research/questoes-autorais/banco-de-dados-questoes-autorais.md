@@ -315,6 +315,116 @@ E) Apenas I e II
 
 ---
 
+## Questão 06 — Cardinalidade (min,max): leitura de participação total/parcial em cenário textual
+
+**id:** BD-006
+**disciplina:** Banco de Dados
+**tópico:** Fundamentos e Modelagem
+**subtópico:** Cardinalidade mínima e máxima, notação (min,max), participação total vs. parcial
+**origem:** autoral
+**habilidade cognitiva:** análise
+**dificuldade:** média
+**conhecimento avaliado:** leitura de cardinalidade máxima e mínima a partir de regras de negócio em texto; notação (min,max); distinção entre "obrigatório" (mínimo 1) e "opcional" (mínimo 0); aplicação correta dos dois números por entidade no relacionamento
+
+Uma empresa de tecnologia organiza seus projetos e colaboradores da seguinte forma:
+
+- cada colaborador poderá ser designado para, no máximo, um projeto;
+- um colaborador também poderá não estar designado para nenhum projeto;
+- todo projeto deve obrigatoriamente ter pelo menos um colaborador designado, podendo ter vários.
+
+A respeito da modelagem conceitual desse cenário, assinale a opção que apresenta corretamente a cardinalidade do relacionamento PROJETO — COLABORADOR na notação (min,max).
+
+A) A relação é 1:N entre PROJETO e COLABORADOR; na notação (min,max), PROJETO participa com (1,N) e COLABORADOR participa com (1,1).
+
+B) A relação é 1:N entre PROJETO e COLABORADOR; na notação (min,max), PROJETO participa com (1,N) e COLABORADOR participa com (0,1).
+
+C) A relação é 1:N entre PROJETO e COLABORADOR; na notação (min,max), PROJETO participa com (0,N) e COLABORADOR participa com (0,1).
+
+D) A relação é 1:N entre PROJETO e COLABORADOR; na notação (min,max), PROJETO participa com (1,N) e COLABORADOR participa com (0,N).
+
+E) A relação é N:M entre PROJETO e COLABORADOR; na notação (min,max), PROJETO participa com (1,N) e COLABORADOR participa com (0,N).
+
+---
+
+**Gabarito:** B
+
+### Comentário
+
+**Raciocínio:** A questão exige traduzir regras de negócio em cardinalidade máxima e mínima, usando a notação (min,max). O procedimento é sempre o mesmo: (1) leia cada regra e identifique o que ela diz sobre o **máximo** (um ou vários) e sobre o **mínimo** (obrigatório ou opcional); (2) atribua os dois números a cada entidade no relacionamento. A armadilha é pensar que basta acertar "1:N" e esquecer o zero.
+
+**Palavra-chave:** "no máximo um" → máximo 1; "poderá não estar designado" → mínimo 0; "todo projeto deve obrigatoriamente ter pelo menos um" → mínimo 1; "podendo ter vários" → máximo N.
+
+**Conceito:**
+- **Cardinalidade máxima:** a quantidade máxima de associações. Um colaborador se liga a, no máximo, **um** projeto (máximo = 1); um projeto pode ter **vários** colaboradores (máximo = N). Logo, a relação é **1:N** (um projeto para muitos colaboradores).
+- **Cardinalidade mínima de COLABORADOR:** o enunciado diz "poderá não estar designado para nenhum projeto" — mínimo = **0**. A notação é **(0,1)**: zero a um projeto.
+- **Cardinalidade mínima de PROJETO:** o enunciado diz "todo projeto **deve obrigatoriamente** ter pelo menos um colaborador" — mínimo = **1**. A notação é **(1,N)**: de um a vários colaboradores.
+- **Resultado completo:** PROJETO **(1,N)** — COLABORADOR **(0,1)**.
+
+**Análise das alternativas:**
+- **A (errada):** acerta o máximo e o lado do PROJETO, mas atribui (1,1) ao COLABORADOR — como se todo colaborador **devesse** estar em um projeto. O enunciado diz explicitamente que um colaborador pode não estar em nenhum. Quem marca A ignora o "poderá não estar".
+- **B (correta):** apresenta corretamente PROJETO (1,N) e COLABORADOR (0,1), respeitando tanto o máximo quanto o mínimo de cada lado.
+- **C (errada):** atribui (0,N) ao PROJETO — como se um projeto pudesse existir sem nenhum colaborador. O enunciado diz "todo projeto **deve obrigatoriamente** ter pelo menos um". O mínimo do PROJETO é 1, não 0.
+- **D (errada):** acerta o PROJETO (1,N), mas atribui (0,N) ao COLABORADOR — como se um colaborador pudesse estar em vários projetos. O enunciado diz "no máximo, um projeto": o máximo é 1, não N.
+- **E (errada):** afirma N:M (muitos para muitos), mas o enunciado diz que um colaborador está em "no máximo um projeto" — a relação é 1:N. O erro está na cardinalidade máxima.
+
+**Pegadinha:** As alternativas A, C e D mantêm a cardinalidade máxima correta (1:N) e erram apenas o **mínimo** — exatamente a confusão que o zero provoca. Quem decora "1:N e pronto" e não olha para o zero marca qualquer uma delas. Para evitar a armadilha, responda **duas perguntas** para cada entidade: "pode ficar sem associação?" (mínimo 0) ou "deve obrigatoriamente ter?" (mínimo 1). Escreva os dois números no papel antes de marcar.
+
+---
+
+## Questão 07 — Participação total/parcial e integridade referencial no mapeamento 1:N
+
+**id:** BD-007
+**disciplina:** Banco de Dados
+**tópico:** Fundamentos e Modelagem
+**subtópico:** Participação (total vs. parcial), cardinalidade mínima e efeito na integridade referencial (FK NOT NULL vs. NULL)
+**origem:** autoral
+**habilidade cognitiva:** análise e aplicação
+**dificuldade:** média-alta
+**conhecimento avaliado:** mapeamento 1:N para modelo lógico (lado da FK); relação entre participação total/parcial e restrição NOT NULL/NULL na chave estrangeira; integridade referencial
+
+Uma empresa de consultoria levantou as seguintes regras para seu sistema de auditoria interna:
+
+- todo relatório de auditoria deve obrigatoriamente indicar o consultor que o elaborou;
+- um consultor pode elaborar vários relatórios, mas também pode ser contratado sem ter elaborado nenhum relatório ainda.
+
+Considere o relacionamento CONSULTOR — RELATÓRIO (1:N, onde CONSULTOR é o lado 1 e RELATÓRIO é o lado N). Sobre o mapeamento desse relacionamento para o modelo lógico relacional, assinale a opção correta.
+
+A) A chave estrangeira de CONSULTOR deve ser inserida na tabela RELATÓRIO, e essa coluna deve aceitar valores nulos (NULL), pois a participação de CONSULTOR no relacionamento é parcial.
+
+B) A chave estrangeira de CONSULTOR deve ser inserida na tabela RELATÓRIO, e essa coluna deve ter restrição NOT NULL, pois todo relatório precisa obrigatoriamente ter um consultor responsável.
+
+C) A chave estrangeira de RELATÓRIO deve ser inserida na tabela CONSULTOR, e essa coluna deve ter restrição NOT NULL, pois a participação de RELATÓRIO é total.
+
+D) A chave estrangeira de CONSULTOR deve ser inserida na tabela RELATÓRIO, e essa coluna deve aceitar valores nulos (NULL) para refletir que um consultor pode não ter elaborado nenhum relatório.
+
+E) Como a participação de CONSULTOR é parcial, não é necessário incluir chave estrangeira em nenhuma tabela; basta manter os dados de CONSULTOR e RELATÓRIO em tabelas completamente separadas.
+
+---
+
+**Gabarito:** B
+
+### Comentário
+
+**Raciocínio:** A questão combina dois conceitos: (1) **onde** entra a chave estrangeira no mapeamento 1:N e (2) **se** ela aceita NULL, com base na participação. O raciocínio segue dois passos: primeiro, identifique o lado 1 e o lado N do relacionamento; segundo, lembre de que a FK sempre entra no lado N e que a sua nullabilidade é determinada pela **participação do lado que recebe a FK** — não pelo outro lado.
+
+**Palavra-chave:** 1:N → FK no lado N; "todo relatório deve obrigatoriamente" → participação total → FK NOT NULL; "pode... sem ter elaborado" → participação parcial → não afeta a FK do lado N.
+
+**Conceito:**
+- **Lado da FK:** em um relacionamento 1:N, a chave estrangeira **sempre** entra na tabela do lado **N** (muitos). CONSULTOR (1) — RELATÓRIO (N): a FK fica em RELATÓRIO. Isso elimina a alternativa C, que inverte os lados.
+- **Participação e NULL:** a coluna FK na tabela RELATÓRIO aceita ou não valores nulos com base na **participação de RELATÓRIO** — não de CONSULTOR. O enunciado diz "todo relatório **deve obrigatoriamente** indicar o consultor": a participação de RELATÓRIO é **total** (mínimo 1), logo a FK deve ser **NOT NULL**.
+- **Por que a participação de CONSULTOR não afeta a FK:** o fato de um consultor poder não ter elaborado nenhum relatório (participação parcial de CONSULTOR) é garantido simplesmente pela **ausência de linhas** em RELATÓRIO que apontem para ele. Não se trata de "FK nula" — trata-se de "não existe registro". A FK nula em RELATÓRIO significaria "este relatório não tem consultor", o que viola a regra de negócio.
+
+**Análise das alternativas:**
+- **A (errada):** acerta o local da FK (tabela RELATÓRIO), mas erra a restrição: diz que a FK aceita NULL "porque a participação de CONSULTOR é parcial". A pegadinha é achar que é o outro lado que determina a nullabilidade. A FK está em RELATÓRIO, e é a participação de RELATÓRIO (total) que manda.
+- **B (correta):** acerta o local da FK (RELATÓRIO) e a restrição (NOT NULL), com a justificativa correta: "todo relatório precisa obrigatoriamente ter um consultor".
+- **C (errada):** inverte os lados do mapeamento: diz que a FK de RELATÓRIO fica em CONSULTOR. No mapeamento 1:N, a FK **sempre** entra no lado N, que é RELATÓRIO. A participação total de RELATÓRIO está correta, mas o local da FK está errado.
+- **D (errada):** acerta o local da FK, mas erra a restrição e a justificativa. Diz que a FK aceita NULL "para refletir que um consultor pode não ter elaborado relatório". Isso confunde dois conceitos: a FK nula em RELATÓRIO significaria "um relatório sem consultor vinculado", o que é proibido pela regra de negócio. A possibilidade de um consultor não ter relatórios é garantida pela ausência de registros, não por NULL na FK.
+- **E (errada):** propõe eliminar a FK completamente, mantendo tabelas separadas. Isso desfaz o relacionamento no modelo lógico — sem FK, não há integridade referencial entre CONSULTOR e RELATÓRIO. A participação parcial não elimina a FK; apenas permite que ela aceite NULL quando o lado N é parcial (o que não é o caso aqui).
+
+**Pegadinha:** As alternativas A e D contêm a mesma falha conceitual que a FGV mais cobra nesse tema: determinar a nullabilidade da FK pela participação do **lado que não contém a FK**. O raciocínio correto é sempre: **olhe para a entidade que recebe a FK** — se a participação dela é total, FK NOT NULL; se é parcial, FK pode ser NULL. A alternativa C adiciona uma segunda armadilha: inverter o lado do mapeamento 1:N, erro clássico de quem sabe que "entra FK" mas não sabe onde.
+
+---
+
 ## Padrões de cobrança utilizados
 
 As questões autorais acima foram inspiradas nos seguintes padrões de cobrança identificados nas questões reais FGV:
@@ -329,3 +439,5 @@ As questões autorais acima foram inspiradas nos seguintes padrões de cobrança
 8. **Eventual consistency vs. strong consistency** (padrão FGV em NoSQL): divergência temporária entre réplicas, convergência e leitura defasada; relação com sistemas distribuídos. Inspiração para BD-005.
 9. **Julgamento de afirmativas (V/F)** — formato FGV clássico: múltiplas afirmações com uma ou duas falsas sutis, alternativas com combinações tecnicamente próximas. Inspiração para BD-002, BD-004 e BD-005.
 10. **Alternativas tecnicamente próximas** (observação do Gran sobre FGV/DATAPREV): distratores construídos sobre erros comuns (troca de ordens, inversão de níveis, confusão de propriedades) e não sobre absurdos fáceis de eliminar. Aplicado em todas as questões.
+11. **Cardinalidade mínima e notação (min,max)** (padrão FGV em modelagem conceitual): leitura de regras de negócio para extrair o zero da cardinalidade; distinção entre participação total (mínimo 1) e parcial (mínimo 0); alternativas com cardinalidade máxima correta mas mínima errada. Inspiração para BD-006.
+12. **Participação e integridade referencial no mapeamento 1:N** (padrão FGV em modelagem lógica): efeito da participação total/parcial na nullabilidade da FK; local correto da FK no mapeamento 1:N; confusão entre qual lado determina NOT NULL vs. NULL. Inspiração para BD-007.

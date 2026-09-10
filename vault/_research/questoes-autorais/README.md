@@ -37,6 +37,11 @@ padrão de cobrança (quando houver evidência)
 |---|---|
 | [[java-spring-questoes-autorais\|Java e Spring]] | Desenvolvimento de Sistemas (Bloco 4.1) |
 | [[metodologias-questoes-autorais\|Metodologias e Eng. de Software]] | Metodologias (Bloco 4.2) |
+| [[testes-questoes-autorais\|Testes de Software]] | Testes de Software (Bloco 4.3) |
+| [[banco-de-dados-questoes-autorais\|Banco de Dados]] | Banco de Dados (Bloco 3.1) |
+| [[frontend-questoes-autorais\|Frontend Web]] | Tecnologias e Práticas Frontend Web (Bloco 5.1) |
+| [[seguranca-da-informacao-questoes-autorais\|Segurança da Informação]] | Segurança da Informação (Bloco 6.1) |
+| [[governanca-de-ti-questoes-autorais\|Gestão e Governança de TI]] | Gestão e Governança de TI (Bloco 6.2) |
 
 ## Fluxo
 
