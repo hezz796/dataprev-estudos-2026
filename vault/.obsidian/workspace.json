@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Tipos-Primitivos-e-Wrappers.md",
+                "file": "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Classe-e-Objeto.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tipos-Primitivos-e-Wrappers"
+              "title": "Classe-e-Objeto"
             }
           }
         ]
@@ -190,33 +190,34 @@
   },
   "active": "702a20c5f9aac5d7",
   "lastOpenFiles": [
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Paradigma-Orientado-a-Objetos.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Quatro-Pilares-do-POO.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Frameworks-Java.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Analise-Estatica-e-SonarQube.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Clean-Code.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Principios-SOLID.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Classe-e-Objeto.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos",
+    "_research/questoes-autorais/README.md",
+    "_research/questoes-autorais/java-spring-questoes-autorais.md",
+    "_research/questoes-autorais/RELATORIO.md",
+    "_research/questoes-reais/atualidades-e-ia-fgv.md",
+    "Fase-6-Seguranca-e-Governanca/Seguranca-da-Informacao/Fundamentos-de-Seguranca.md",
+    "_system/ementa.md",
+    "Fase-6-Seguranca-e-Governanca/Gestao-e-Governanca-de-TI/Gerenciamento-de-Projetos.md",
+    "Edital.md",
+    "Prova.md",
+    "Fase-6-Seguranca-e-Governanca/Gestao-e-Governanca-de-TI/BPMN.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Tipos-Primitivos-e-Wrappers.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Sintaxe-Essencial-de-Java.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Java-Fundamentos-da-Linguagem.md",
-    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Tipos-Primitivos-e-Wrappers.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Controle-de-Fluxo-Java.md",
-    "_system/ementa.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Tratamento-de-Excecoes.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Generics.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem/Colecoes-Java.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Fundamentos-da-Linguagem",
-    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Java-Corporativo-JavaEE-JPA-Hibernate.md",
-    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos.md",
-    "_research/questoes-autorais/banco-de-dados-questoes-autorais.md",
-    "Fase-3-Infraestrutura-de-Dados/Banco-de-Dados/Fundamentos-e-Modelagem/Fundamentos-e-Modelagem.md",
-    "Fase-3-Infraestrutura-de-Dados/Banco-de-Dados/Normalizacao/Normalizacao.md",
-    "_research/questoes-autorais/RELATORIO.md",
-    "Fase-3-Infraestrutura-de-Dados/Banco-de-Dados/Big-Data/Big-Data.md",
-    "_research/questoes-autorais/testes-questoes-autorais.md",
-    "_research/questoes-autorais/seguranca-da-informacao-questoes-autorais.md",
-    "_research/questoes-autorais/metodologias-questoes-autorais.md",
-    "_research/questoes-autorais/governanca-de-ti-questoes-autorais.md",
-    "_research/questoes-autorais/frontend-questoes-autorais.md",
-    "_research/questoes-autorais/java-spring-questoes-autorais.md",
-    "_research/questoes-autorais/README.md",
-    "_research/questoes-reais/banco-de-dados-fgv.md",
-    "_research/questoes-reais/desenvolvimento-de-software-fgv.md",
-    "_research/questoes-reais/atualidades-e-ia-fgv.md",
     "_research/questoes-autorais",
     "Fase-6-Seguranca-e-Governanca/Seguranca-da-Informacao",
     "Fase-6-Seguranca-e-Governanca",
@@ -224,7 +225,6 @@
     "Fase-5-Frontend-e-Interfaces/UX-e-Gestao-de-Conteudo",
     "Fase-5-Frontend-e-Interfaces/Frontend-Web",
     "Fase-5-Frontend-e-Interfaces",
-    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software",
-    "Fase-4-Nucleo-de-Desenvolvimento/Metodologias-e-Engenharia-de-Software"
+    "Fase-4-Nucleo-de-Desenvolvimento/Testes-de-Software"
   ]
 }
