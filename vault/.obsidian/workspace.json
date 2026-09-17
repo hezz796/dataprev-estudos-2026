@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Classe-e-Objeto.md",
+                "file": "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Principios-SOLID.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Classe-e-Objeto"
+              "title": "Principios-SOLID"
             }
           }
         ]
@@ -190,13 +190,13 @@
   },
   "active": "702a20c5f9aac5d7",
   "lastOpenFiles": [
-    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Paradigma-Orientado-a-Objetos.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Quatro-Pilares-do-POO.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Paradigma-Orientado-a-Objetos.md",
+    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Classe-e-Objeto.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Frameworks-Java.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Analise-Estatica-e-SonarQube.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Clean-Code.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Principios-SOLID.md",
-    "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos/Classe-e-Objeto.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos.md",
     "Fase-4-Nucleo-de-Desenvolvimento/Desenvolvimento-de-Sistemas/Paradigma-Orientado-a-Objetos",
     "_research/questoes-autorais/README.md",

@@ -116,7 +116,47 @@ Repare em dois detalhes do código que caem em prova:
 
 ### O construtor
 
-Um método especial com o mesmo nome da classe (`public Beneficiario(...)`), que não tem tipo de retorno e roda automaticamente no momento do `new`. Ele existe para **preencher o estado inicial** do objeto — é o "molde sendo preenchido" no instante da criação.
+O construtor é um método especial que existe em toda classe Java. Ele tem três características que o diferenciam dos métodos comuns:
+
+| Característica | Construtor | Método comum |
+|---|---|---|
+| **Nome** | Mesmo nome da classe | Qualquer nome válido |
+| **Tipo de retorno** | **Nenhum** (nem `void`) | Sempre tem (`void`, `int`, `String`, etc.) |
+| **Quando roda** | Automaticamente no `new` | Manualmente, quando você chama |
+
+**Por que essas características existem?**
+
+1. **Mesmo nome da classe** — o Java usa o nome para identificar qual construtor está sendo chamado. Quando você escreve `new Beneficiario(...)`, o compilador procura um construtor chamado `Beneficiario`. Se a classe tiver vários construtores (sobrecarga), o compilador diferencia pelo número e tipo dos parâmetros.
+
+2. **Sem tipo de retorno** — o construtor não *retorna* nada. Ele não produz um valor que você possa guardar numa variável. O que ele faz é *preparar* o objeto que está sendo criado. Por isso, declarar `public void Beneficiario(...)` seria um erro — o compilador entenderia que é um método comum (que ninguém chama pelo nome da classe), e não um construtor.
+
+3. **Roda automaticamente no `new`** — quem "chama" o construtor é o próprio operador `new`. Quando você escreve `new Beneficiario("José", "123.456.789-00", 3200.0)`, o Java faz três coisas, em sequência:
+   - **Aloca memória** para o novo objeto;
+   - **Executa o construtor** (preenche o estado inicial);
+   - **Retorna a referência** ao objeto criado (que é guardada na variável).
+
+**Exemplo passo a passo:**
+
+```java
+// O que acontece quando você escreve isso:
+Beneficiario jose = new Beneficiario("José", "123.456.789-00", 3200.0);
+
+// 1. Java aloca memória para um novo Beneficiario
+// 2. Java executa: public Beneficiario(String nome, String cpf, double rendaMensal)
+//    → this.nome = "José"
+//    → this.cpf = "123.456.789-00"
+//    → this.rendaMensal = 3200.0
+// 3. Java retorna a referência → jose aponta para o objeto
+```
+
+**O que acontece se a classe não tiver construtor?**
+
+Se você não escrever nenhum construtor, o Java cria um **construtor padrão** (default) automaticamente — sem parâmetros, que inicializa todos os atributos com valores padrão (`0` para `int`/`double`, `null` para objetos, `false` para `boolean`). Mas no momento em que você escreve **pelo menos um construtor**, o Java deixa de criar o padrão. Ou seja: se sua classe tem um construtor com parâmetros (como o `Beneficiario` acima) e você tenta criar `new Beneficiario()` sem argumentos, o compilador gera erro — porque não existe aquele construtor sem parâmetros.
+
+> [!warning] PEGADINHA — construtor não é método comum
+> **A armadilha:** afirmar que "o construtor é um método como qualquer outro, só que com nome especial" ou que "o construtor retorna o objeto criado".
+> **O raciocínio errado:** tratar o construtor como se fosse um método que você chama manualmente e que retorna algo.
+> **Como se proteger:** o construtor é **invocado pelo `new`**, nunca pelo programador diretamente. Ele **não retorna valor** — quem retorna a referência ao objeto é o `new`, não o construtor. O construtor apenas *prepara* o objeto.
 
 ### O `this`
 

@@ -66,6 +66,22 @@ Quem não abstrai cria classes gigantes com dezenas de atributos irrelevantes �
 
 **Encapsulamento** é o princípio de **proteger os dados internos** do objeto, permitindo acesso e modificação apenas por **métodos controlados** — não por acesso direto aos atributos. Na prática, os atributos ficam **privados** (`private`) e o acesso passa por **métodos getters/setters** (ou por métodos que representam regras de negócio).
 
+**Getter** é o método de **leitura**: retorna o valor atual de um atributo privado — como `getCpf()`, no exemplo abaixo. **Setter** é o método de **escrita**: atribui um novo valor ao atributo, frequentemente validando antes — como `setCpf(String cpf)`. Juntos, são o mecanismo padrão que **implementa** o encapsulamento: o mundo externo não toca o atributo (que é `private`); passa pelos métodos controlados. Vale destacar que getter/setter **não são palavras-chave da linguagem** — são uma **convenção de nomenclatura** (métodos comuns com nome padronizado: `get<Atributo>()`, `set<Atributo>(valor)`, e `is<Atributo>()` para booleanos) — distinção que a FGV pode cobrar: getters/setters de um atributo `private` são a forma típica de acesso controlado.
+
+Veja, na prática, o problema que o encapsulamento resolve e como ele é corrigido:
+
+```java
+// Campo público: acesso direto, sem validação
+public class Beneficiario {
+    public String cpf;   // público — nada impede o acesso direto
+}
+
+// Em algum ponto do sistema:
+beneficiario.cpf = "123";   // sem validação — a regra não existe aqui
+```
+
+O problema: a regra de validação **não está em lugar nenhum** — cada ponto do sistema que atribui `cpf` valida (ou não) do seu jeito, e os bugs de consistência se espalham. A correção — o exemplo abaixo — **centraliza** a regra no próprio objeto: `private` impede o acesso direto e `setCpf()` concentra a validação em um único ponto.
+
 ```java
 public class Beneficiario {
     private String cpf;            // atributo privado — ninguém acessa de fora
@@ -98,6 +114,25 @@ A ligação com `private` é direta: o modificador `private` é o mecanismo que 
 ## 4. Herança — herdar e especializar
 
 **Herança** é a relação em que uma classe (**subclasse**/classe derivada/filha) **herda atributos e métodos** de outra (**superclasse**/classe base/pai), podendo **adicionar** novos e **sobrescrever** (especializar) os herdados. É a materialização do relacionamento "é-um" ("é um tipo de").
+
+Veja, na prática, o problema que a herança resolve e como ele é corrigido:
+
+```java
+// Sem herança: cada classe repete nome e cpf, sem relação entre elas
+public class Servidor {
+    private String nome;
+    private String cpf;
+    // ...
+}
+
+public class Pensionista {
+    private String nome;
+    private String cpf;
+    // ...
+}
+```
+
+O problema: `nome` e `cpf` são **copiados** em cada classe — uma mudança (ex.: novo campo `email`) exige alterar todas; e nada no código expressa que `Servidor` e `Pensionista` são variações de uma mesma coisa. A correção — o exemplo abaixo — **extrai o comum** para a superclasse `Pessoa` e usa `extends`: o que é comum fica em um só lugar, e cada subclasse só declara o que é próprio.
 
 ```java
 public class Pessoa {
@@ -181,6 +216,56 @@ Note o que a herança fez aqui: `getNumeroBeneficio()` é herdado por ambos os b
 > [!question] Por que não deixar `Beneficio` ser instanciada diretamente?
 > O que significaria um "benefício genérico" com `calcularValor()` sem regra definida? Ele não existe no domínio real: todo benefício é aposentadoria, pensão, auxílio... A classe abstrata traduz isso em código: não há objeto "benefício em geral"; há objetos de benefícios **específicos** que compartilham a base comum.
 
+### 5.1 Qual é a utilidade prática?
+
+A pergunta natural neste ponto é: *"se eu posso simplesmente criar classes concretas normais, por que eu precisaria de uma classe abstrata?"* A resposta tem duas metades — e as duas estão no exemplo acima:
+
+1. **Reutilizar código de verdade.** `getNumeroBeneficio()` tem corpo, está pronto e é herdado por todas as subclasses. Ninguém reescreve a consulta do número do benefício em cada tipo — o molde abstrato carrega o que é comum.
+2. **Obrigar as subclasses a declarar a regra.** `calcularValor()` é abstrato: a subclasse **não tem escolha** — se não implementar, não compila. O molde garante que todo benefício "sabe" calcular seu valor, sem decidir como.
+
+**Reuso + obrigação** — essa é a utilidade prática em uma frase: a classe abstrata entrega o código comum pronto e, ao mesmo tempo, força cada variação a se declarar. Um desdobramento dessa combinação — métodos concretos do molde chamando métodos abstratos, como um "esqueleto" com passos fixos e passos variáveis — será retomado nos padrões de projeto.
+
+### 5.2 O que aconteceria sem a classe abstrata?
+
+O callout acima mostrou o argumento do domínio: um "benefício genérico" não existe. Agora veja o que acontece no código se **nada** impedir que ele seja criado — a versão "ingênua", com `Beneficio` como classe **concreta** e `calcularValor()` retornando `0` como "padrão":
+
+```java
+// VERSÃO SEM CLASSE ABSTRATA — o problema
+public class Beneficio {
+    private String numeroBeneficio;
+
+    public String getNumeroBeneficio() { return numeroBeneficio; }
+
+    public double calcularValor() {
+        return 0;   // "padrão" — mas que regra é essa?
+    }
+}
+
+// Isso COMPILA — e cria um objeto que não existe no domínio:
+Beneficio b = new Beneficio();   // um "benefício genérico" sem regra de cálculo
+```
+
+O que há de errado? **Nada impede** que alguém crie `new Beneficio()` e use esse objeto com `calcularValor()` retornando `0` — um benefício que não é aposentadoria, nem pensão, nem auxílio, mas que "existe" no sistema. Pior: se um novo programador esquecer de sobrescrever `calcularValor()` em uma subclasse, o erro só apareceria em tempo de execução (um `0` silencioso), não em tempo de compilação.
+
+Com a classe abstrata, os dois problemas morrem juntos:
+
+- `new Beneficio()` **não compila** — o objeto impossível é barrado pelo compilador, antes de qualquer execução;
+- uma subclasse que esqueça `calcularValor()` **não compila** — a obrigação é verificada em tempo de compilação.
+
+Esse é o coração da utilidade prática: **impedir o que não faz sentido** (o benefício genérico) e **obrigar quem herda a declarar a regra** (o cálculo específico). O compilador vira o guardião do domínio.
+
+### 5.3 Por que não usar sempre interface?
+
+Se a interface já é um contrato — e ela será detalhada na seção 7 —, por que a classe abstrata existe? A resposta está no que cada uma carrega:
+
+- A **classe abstrata** carrega **estado e código**: atributos (`numeroBeneficio`) e métodos concretos (`getNumeroBeneficio()`) são herdados prontos. Ela serve quando as classes têm em comum **o que são** — uma relação "é-um" com base compartilhada.
+- A **interface** carrega apenas **contrato**: não tem atributos de instância nem código herdado (só constantes e, no Java 8+, métodos `default`). Ela serve quando o comum é **o que fazem** — uma capacidade que classes não relacionadas podem assumir.
+
+Regra prática: **estado + código em comum → classe abstrata; só comportamento em comum → interface.** A tabela da seção 8 resume exatamente essa divisão — vale a pena fixá-la.
+
+> [!tip] A pergunta que decide
+> Antes de escolher entre classe abstrata e interface, pergunte: *"o que as classes têm em comum é estado e código, ou apenas comportamento?"* Se for estado e código (ex.: todo benefício tem `numeroBeneficio` e consulta esse número do mesmo jeito), a classe abstrata é a ferramenta certa. Se for apenas comportamento (classes que prometem fazer a mesma coisa, sem compartilhar atributos), a interface resolve.
+
 Pontos que caem em prova:
 
 (a) **Classe abstrata não é instanciável** — `new ClasseAbstrata()` NÃO compila, mesmo que todos os seus métodos sejam concretos. A regra é a declaração `abstract`, não a presença de métodos abstratos.
@@ -206,6 +291,22 @@ Pontos que caem em prova:
 
 - **sobrescrita (override):** a subclasse **redefine** um método herdado — cada classe tem sua versão, com a mesma assinatura;
 - **sobrecarga (overload):** a mesma classe (ou classes diferentes) tem **vários métodos com o mesmo nome**, mas assinaturas (parâmetros) diferentes.
+
+Veja, na prática, o problema que o polimorfismo resolve e como ele é corrigido:
+
+```java
+// Sem polimorfismo: um único método decide pelo tipo, com if/else
+public void processar(String tipo, double valor) {
+    if (tipo.equals("PIX")) {
+        System.out.println("Valor final: " + valor * 0.95);   // 5% de desconto
+    } else if (tipo.equals("CARTAO")) {
+        System.out.println("Valor final: " + valor * 1.03);   // 3% de taxa
+    }
+    // novo tipo de pagamento? novo else if aqui dentro...
+}
+```
+
+O problema: cada novo tipo de pagamento exige **alterar** o método `processar` — o código cresce, mistura regras e viola o princípio aberto/fechado (OCP): aberto para extensão, fechado para modificação. A correção — o exemplo da subseção 6.1 — usa o **override**: `processar` recebe um `Pagamento` e chama `calcularValor()`; cada subclasse responde do seu jeito (dispatch dinâmico), e um novo tipo é apenas uma **nova subclasse**, sem tocar no método existente.
 
 ### 6.1 Sobrescrita (override) — mesma assinatura, comportamento próprio
 
@@ -281,6 +382,22 @@ O polimorfismo que acabamos de ver funciona porque cada subclasse sobrescreve um
 Uma interface declara **o que** um objeto sabe fazer (o comportamento esperado), **sem dizer como** ele faz. Ela é uma lista de compromissos: "quem assumir este contrato deverá, obrigatoriamente, saber executar estas operações". Por isso ela **não é instanciável** — não existe "objeto interface"; existe objeto de uma classe que **implementa** a interface. Quem assume o contrato é a classe, usando a palavra-chave `implements`.
 
 Pense no contexto DATAPREV: um sistema de benefícios precisa validar documentos antes de aceitá-los. Um **CPF** e um **CNS** (Cartão Nacional de Saúde) são documentos diferentes, com regras de validação diferentes. Mas, para quem usa a validação, basta saber que existe uma operação "validar(documento)". O contrato é único; as regras são de cada implementação:
+
+Veja, na prática, o problema que a interface resolve e como ele é corrigido:
+
+```java
+// Quem valida decide qual classe concreta usar, com if/else
+public boolean validarDocumento(String tipo, String documento) {
+    if (tipo.equals("CPF")) {
+        return new ValidadorCpf().validar(documento);
+    } else if (tipo.equals("CNS")) {
+        return new ValidadorCns().validar(documento);
+    }
+    return false;
+}
+```
+
+O problema: quem valida **acopla-se às classes concretas** — conhece `ValidadorCpf`, `ValidadorCns` e precisa de um `if/else` para cada documento. Novo documento? Novo `else if` e alteração no chamador. A correção — o exemplo abaixo — **inverte** isso: o chamador depende apenas do **contrato** `ValidaDocumento`; a escolha da implementação concreta fica fora dele, e estender (novo documento) não exige modificar quem usa.
 
 ```java
 // Interface: o contrato — declara o QUE, não o COMO
